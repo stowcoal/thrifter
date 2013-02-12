@@ -1,0 +1,304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE5C3CD116CAAFCD006CAE2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C3CD016CAAFCD006CAE2B /* UIKit.framework */; };
+		DE5C3CD316CAAFCD006CAE2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C3CD216CAAFCD006CAE2B /* Foundation.framework */; };
+		DE5C3CD516CAAFCD006CAE2B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C3CD416CAAFCD006CAE2B /* CoreGraphics.framework */; };
+		DE5C3CDB16CAAFCD006CAE2B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE5C3CD916CAAFCD006CAE2B /* InfoPlist.strings */; };
+		DE5C3CDD16CAAFCD006CAE2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CDC16CAAFCD006CAE2B /* main.m */; };
+		DE5C3CE116CAAFCD006CAE2B /* thrifterAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CE016CAAFCD006CAE2B /* thrifterAppDelegate.m */; };
+		DE5C3CE316CAAFCD006CAE2B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5C3CE216CAAFCD006CAE2B /* Default.png */; };
+		DE5C3CE516CAAFCD006CAE2B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5C3CE416CAAFCD006CAE2B /* Default@2x.png */; };
+		DE5C3CE716CAAFCD006CAE2B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5C3CE616CAAFCD006CAE2B /* Default-568h@2x.png */; };
+		DE5C3CEE16CAAFF9006CAE2B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5C3CED16CAAFF9006CAE2B /* MainStoryboard.storyboard */; };
+		DE5C3CF516CAB386006CAE2B /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CF416CAB386006CAE2B /* MasterViewController.m */; };
+		DE5C3CF816CAB65E006CAE2B /* doodad.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CF716CAB65E006CAE2B /* doodad.m */; };
+		DE5C3CFB16CAB83E006CAE2B /* doodadDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CFA16CAB83E006CAE2B /* doodadDataController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DE5C3CCC16CAAFCD006CAE2B /* thrifter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thrifter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE5C3CD016CAAFCD006CAE2B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DE5C3CD216CAAFCD006CAE2B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DE5C3CD416CAAFCD006CAE2B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DE5C3CD816CAAFCD006CAE2B /* thrifter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "thrifter-Info.plist"; sourceTree = "<group>"; };
+		DE5C3CDA16CAAFCD006CAE2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DE5C3CDC16CAAFCD006CAE2B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DE5C3CDE16CAAFCD006CAE2B /* thrifter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "thrifter-Prefix.pch"; sourceTree = "<group>"; };
+		DE5C3CDF16CAAFCD006CAE2B /* thrifterAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = thrifterAppDelegate.h; sourceTree = "<group>"; };
+		DE5C3CE016CAAFCD006CAE2B /* thrifterAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = thrifterAppDelegate.m; sourceTree = "<group>"; };
+		DE5C3CE216CAAFCD006CAE2B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DE5C3CE416CAAFCD006CAE2B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DE5C3CE616CAAFCD006CAE2B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DE5C3CED16CAAFF9006CAE2B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		DE5C3CF316CAB386006CAE2B /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		DE5C3CF416CAB386006CAE2B /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		DE5C3CF616CAB65E006CAE2B /* doodad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doodad.h; sourceTree = "<group>"; };
+		DE5C3CF716CAB65E006CAE2B /* doodad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = doodad.m; sourceTree = "<group>"; };
+		DE5C3CF916CAB83E006CAE2B /* doodadDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doodadDataController.h; sourceTree = "<group>"; };
+		DE5C3CFA16CAB83E006CAE2B /* doodadDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = doodadDataController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE5C3CC916CAAFCD006CAE2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE5C3CD116CAAFCD006CAE2B /* UIKit.framework in Frameworks */,
+				DE5C3CD316CAAFCD006CAE2B /* Foundation.framework in Frameworks */,
+				DE5C3CD516CAAFCD006CAE2B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE5C3CC116CAAFCD006CAE2B = {
+			isa = PBXGroup;
+			children = (
+				DE5C3CD616CAAFCD006CAE2B /* thrifter */,
+				DE5C3CCF16CAAFCD006CAE2B /* Frameworks */,
+				DE5C3CCD16CAAFCD006CAE2B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE5C3CCD16CAAFCD006CAE2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE5C3CCC16CAAFCD006CAE2B /* thrifter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE5C3CCF16CAAFCD006CAE2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE5C3CD016CAAFCD006CAE2B /* UIKit.framework */,
+				DE5C3CD216CAAFCD006CAE2B /* Foundation.framework */,
+				DE5C3CD416CAAFCD006CAE2B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE5C3CD616CAAFCD006CAE2B /* thrifter */ = {
+			isa = PBXGroup;
+			children = (
+				DE5C3CDF16CAAFCD006CAE2B /* thrifterAppDelegate.h */,
+				DE5C3CE016CAAFCD006CAE2B /* thrifterAppDelegate.m */,
+				DE5C3CD716CAAFCD006CAE2B /* Supporting Files */,
+				DE5C3CED16CAAFF9006CAE2B /* MainStoryboard.storyboard */,
+				DE5C3CF316CAB386006CAE2B /* MasterViewController.h */,
+				DE5C3CF416CAB386006CAE2B /* MasterViewController.m */,
+				DE5C3CF916CAB83E006CAE2B /* doodadDataController.h */,
+				DE5C3CFA16CAB83E006CAE2B /* doodadDataController.m */,
+				DE5C3CF616CAB65E006CAE2B /* doodad.h */,
+				DE5C3CF716CAB65E006CAE2B /* doodad.m */,
+			);
+			path = thrifter;
+			sourceTree = "<group>";
+		};
+		DE5C3CD716CAAFCD006CAE2B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE5C3CD816CAAFCD006CAE2B /* thrifter-Info.plist */,
+				DE5C3CD916CAAFCD006CAE2B /* InfoPlist.strings */,
+				DE5C3CDC16CAAFCD006CAE2B /* main.m */,
+				DE5C3CDE16CAAFCD006CAE2B /* thrifter-Prefix.pch */,
+				DE5C3CE216CAAFCD006CAE2B /* Default.png */,
+				DE5C3CE416CAAFCD006CAE2B /* Default@2x.png */,
+				DE5C3CE616CAAFCD006CAE2B /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE5C3CCB16CAAFCD006CAE2B /* thrifter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE5C3CEA16CAAFCD006CAE2B /* Build configuration list for PBXNativeTarget "thrifter" */;
+			buildPhases = (
+				DE5C3CC816CAAFCD006CAE2B /* Sources */,
+				DE5C3CC916CAAFCD006CAE2B /* Frameworks */,
+				DE5C3CCA16CAAFCD006CAE2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = thrifter;
+			productName = thrifter;
+			productReference = DE5C3CCC16CAAFCD006CAE2B /* thrifter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE5C3CC316CAAFCD006CAE2B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = thrifter;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "CURTIS STOCHL";
+			};
+			buildConfigurationList = DE5C3CC616CAAFCD006CAE2B /* Build configuration list for PBXProject "thrifter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DE5C3CC116CAAFCD006CAE2B;
+			productRefGroup = DE5C3CCD16CAAFCD006CAE2B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE5C3CCB16CAAFCD006CAE2B /* thrifter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE5C3CCA16CAAFCD006CAE2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE5C3CDB16CAAFCD006CAE2B /* InfoPlist.strings in Resources */,
+				DE5C3CE316CAAFCD006CAE2B /* Default.png in Resources */,
+				DE5C3CE516CAAFCD006CAE2B /* Default@2x.png in Resources */,
+				DE5C3CE716CAAFCD006CAE2B /* Default-568h@2x.png in Resources */,
+				DE5C3CEE16CAAFF9006CAE2B /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE5C3CC816CAAFCD006CAE2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE5C3CDD16CAAFCD006CAE2B /* main.m in Sources */,
+				DE5C3CE116CAAFCD006CAE2B /* thrifterAppDelegate.m in Sources */,
+				DE5C3CF516CAB386006CAE2B /* MasterViewController.m in Sources */,
+				DE5C3CF816CAB65E006CAE2B /* doodad.m in Sources */,
+				DE5C3CFB16CAB83E006CAE2B /* doodadDataController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DE5C3CD916CAAFCD006CAE2B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE5C3CDA16CAAFCD006CAE2B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE5C3CE816CAAFCD006CAE2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DE5C3CE916CAAFCD006CAE2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE5C3CEB16CAAFCD006CAE2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "thrifter/thrifter-Prefix.pch";
+				INFOPLIST_FILE = "thrifter/thrifter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DE5C3CEC16CAAFCD006CAE2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "thrifter/thrifter-Prefix.pch";
+				INFOPLIST_FILE = "thrifter/thrifter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE5C3CC616CAAFCD006CAE2B /* Build configuration list for PBXProject "thrifter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE5C3CE816CAAFCD006CAE2B /* Debug */,
+				DE5C3CE916CAAFCD006CAE2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE5C3CEA16CAAFCD006CAE2B /* Build configuration list for PBXNativeTarget "thrifter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE5C3CEB16CAAFCD006CAE2B /* Debug */,
+				DE5C3CEC16CAAFCD006CAE2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE5C3CC316CAAFCD006CAE2B /* Project object */;
+}
