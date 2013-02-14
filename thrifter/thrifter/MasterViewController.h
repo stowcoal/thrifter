@@ -11,5 +11,6 @@
 
 @interface MasterViewController : UITableViewController
 @property (strong, nonatomic) doodadDataController *dataController;
+- (IBAction)AddDoodad:(UIBarButtonItem *)sender;
 
 @end

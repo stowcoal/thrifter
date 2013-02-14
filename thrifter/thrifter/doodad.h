@@ -12,7 +12,7 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSNumber *cost;
-@property (nonatomic, copy) NSDate *date;
+@property (nonatomic, strong) NSDate *date;
 -(id)initWithName:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date;
 
 @end

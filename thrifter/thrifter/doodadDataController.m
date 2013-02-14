@@ -9,13 +9,20 @@
 #import "doodadDataController.h"
 
 @implementation doodadDataController
+- (id)init {
+    if (self = [super init]) {
+        _doodadList = [[NSMutableArray alloc] init];
+        return self;
+    }
+    return nil;
+}
 -(void)addDoodadToDoodadList:(doodad *)doodadToAdd
 {
-    [self.doodadList addObject:doodadToAdd];
+    [_doodadList addObject:doodadToAdd];
 }
 -(doodad *)doodadAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [[self doodadList] objectAtIndex:[indexPath row]];
+    return [_doodadList objectAtIndex:[indexPath row]];
 }
 
 @end

@@ -1,27 +1,24 @@
 //
-//  MasterViewController.m
+//  AddDoodadViewController.m
 //  thrifter
 //
-//  Created by CURTIS STOCHL on 2/12/13.
+//  Created by CURTIS STOCHL on 2/14/13.
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "doodadDataController.h"
-#import "doodad.h"
-#import "DetailDoodadViewController.h"
+#import "AddDoodadViewController.h"
 
-@interface MasterViewController ()
+@interface AddDoodadViewController ()
 
 @end
 
-@implementation MasterViewController
+@implementation AddDoodadViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.dataController = [[doodadDataController alloc] init];
+        // Custom initialization
     }
     return self;
 }
@@ -30,16 +27,11 @@
 {
     [super viewDidLoad];
 
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.dataController = [[doodadDataController alloc] init];
-    doodad *d = [[doodad alloc] initWithName:@"tree person" cost:@1.55 date:[NSDate date]];
-    [[self dataController] addDoodadToDoodadList:d];
-    [[self tableView] reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,25 +44,23 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    doodad *doodadForCell = [[self dataController] doodadAtIndexPath:indexPath];
-    NSLog(@"%@",doodadForCell.name);
-    [[cell textLabel] setText:doodadForCell.name];
+    
     // Configure the cell...
     
     return cell;
@@ -127,15 +117,5 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"SegueDetail"]) {
-        DetailDoodadViewController *detailViewController = [segue destinationViewController];
-        NSLog(@"%@", [self.tableView indexPathForSelectedRow]);
-        [self.dataController doodadAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        detailViewController.detailDoodad = [self.dataController doodadAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        
-    }
-}
-- (IBAction)AddDoodad:(UIBarButtonItem *)sender {
-}
+
 @end
