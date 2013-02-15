@@ -25,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE03654316CDE19D0083B2D6 /* doodad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doodad.h; sourceTree = "<group>"; };
 		DE5C3CCC16CAAFCD006CAE2B /* thrifter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thrifter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5C3CD016CAAFCD006CAE2B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE5C3CD216CAAFCD006CAE2B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,6 +103,7 @@
 				DE5C3CF416CAB386006CAE2B /* MasterViewController.m */,
 				DE5C3CF916CAB83E006CAE2B /* doodadDataController.h */,
 				DE5C3CFA16CAB83E006CAE2B /* doodadDataController.m */,
+				DE03654316CDE19D0083B2D6 /* doodad.h */,
 				DE5C3CF716CAB65E006CAE2B /* doodad.m */,
 				DEE4619116CD558400CECA5E /* AddDoodadViewController.h */,
 				DEE4619216CD558400CECA5E /* AddDoodadViewController.m */,
