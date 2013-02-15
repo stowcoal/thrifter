@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "doodad.h"
 
 @interface AddDoodadViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UITextField *TextFieldName;
+@property (weak, nonatomic) IBOutlet UITextField *TextFieldCost;
+@property (weak, nonatomic) doodad *doodad;
 
 @end

@@ -10,6 +10,7 @@
 #import "doodadDataController.h"
 #import "doodad.h"
 #import "DetailDoodadViewController.h"
+#import "AddDoodadViewController.h"
 
 @interface MasterViewController ()
 
@@ -135,6 +136,22 @@
         detailViewController.detailDoodad = [self.dataController doodadAtIndexPath:[self.tableView indexPathForSelectedRow]];
         
     }
+}
+- (IBAction)done:(UIStoryboardSegue *)segue
+{
+    if ([[segue identifier] isEqualToString:@"Done"]) {
+        AddDoodadViewController *addController = [segue sourceViewController];
+        if (addController.doodad) {
+            [self.dataController addDoodadToDoodadList:addController.doodad];
+            [[self tableView] reloadData];
+        }
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
+    NSLog(@"done");
+}
+- (IBAction)cancel:(UIStoryboardSegue *)sender
+{
+    NSLog(@"cancel");
 }
 - (IBAction)AddDoodad:(UIBarButtonItem *)sender {
 }

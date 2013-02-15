@@ -8,6 +8,7 @@
 
 #import "AddDoodadViewController.h"
 
+
 @interface AddDoodadViewController ()
 
 @end
@@ -40,18 +41,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"Done"]) {
+        /*if([self.birdNameInput.text length] || [self.locationInput.text length]) {
+            BirdSighting *sighting;
+            NSDate *today = [NSDate date];
+            sighting = [[BirdSighting alloc] initWithName:self.birdNameInput.text location:self.locationInput.text date:today];
+            self.birdSighting = sighting;*/
+            NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
+        
+            NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
+            doodad *doodadToAdd = [[doodad alloc] initWithName:self.TextFieldName.text cost:cost date:[NSDate date]];
+            self.doodad = doodadToAdd;
 
+    }
+}
+
+#pragma mark - Table view data source
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+//#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+//#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }
@@ -65,7 +82,7 @@
     
     return cell;
 }
-
+*/
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

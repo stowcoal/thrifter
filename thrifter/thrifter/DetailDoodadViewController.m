@@ -32,10 +32,25 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self.CellCost.textLabel setText:[self.detailDoodad.cost stringValue]];
-    [self.CellDate.textLabel setText:[self.detailDoodad.date description]];
-    [self.CellName.textLabel setText:self.detailDoodad.name];
-    
+    [self configureView];
+}
+
+- (void)configureView
+{
+    static NSDateFormatter *dateFormatter = nil;
+    if (dateFormatter == nil) {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    }
+    static NSNumberFormatter *numberFormatter = nil;
+    if (numberFormatter == nil) {
+        numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [numberFormatter setCurrencyCode:@"USD"];
+    }
+    [self.CellCost.detailTextLabel setText:[numberFormatter stringFromNumber:self.detailDoodad.cost]];
+    [self.CellDate.detailTextLabel setText:[dateFormatter stringFromDate:self.detailDoodad.date]];
+    [self.CellName.detailTextLabel setText:self.detailDoodad.name];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,21 +60,23 @@
 }
 
 #pragma mark - Table view data source
-
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 //#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
 }
-
+*/
+/*
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }
-
+ */
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -68,8 +85,9 @@
     // Configure the cell...
     
     return cell;
+     
 }
-
+*/
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
