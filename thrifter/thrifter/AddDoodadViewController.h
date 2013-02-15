@@ -12,6 +12,9 @@
 @interface AddDoodadViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldName;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldCost;
-@property (weak, nonatomic) doodad *doodad;
+@property (weak, nonatomic) IBOutlet UITextField *TextFieldStore;
+@property (weak, nonatomic) IBOutlet UITextField *TextFieldCity;
+@property (strong, nonatomic) doodad *doodad;
+@property (weak, nonatomic) IBOutlet UITextView *TextViewDescription;
 
 @end

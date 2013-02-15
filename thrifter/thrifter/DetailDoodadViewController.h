@@ -12,8 +12,11 @@
 @interface DetailDoodadViewController : UITableViewController
 @property (strong, nonatomic) doodad *detailDoodad;
 
-@property (weak, nonatomic) IBOutlet UITableViewCell *CellName;
-@property (weak, nonatomic) IBOutlet UITableViewCell *CellDate;
-@property (weak, nonatomic) IBOutlet UITableViewCell *CellCost;
+@property (weak, nonatomic) IBOutlet UILabel *TextLabelStore;
+@property (weak, nonatomic) IBOutlet UILabel *TextLabelCity;
+@property (weak, nonatomic) IBOutlet UILabel *TextLabelDate;
+@property (weak, nonatomic) IBOutlet UILabel *TextLabelCost;
+@property (weak, nonatomic) IBOutlet UILabel *TextLabelFind;
+@property (weak, nonatomic) IBOutlet UITextView *TextViewDescription;
 
 @end

@@ -40,7 +40,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ((textField == self.TextFieldCity)
+        || (textField == self.TextFieldCost)
+        || (textField == self.TextFieldName)
+        || (textField == self.TextFieldStore)) {
+        [textField resignFirstResponder];
+    }
+    return YES;
+    
+}
+- (BOOL)textViewShouldReturn:(UITextView *)textView {
+    if (textView == self.TextViewDescription)
+    {
+        [textView resignFirstResponder];
+    }
+    return YES;
+}
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"Done"]) {
         /*if([self.birdNameInput.text length] || [self.locationInput.text length]) {
@@ -51,7 +67,8 @@
             NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
         
             NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
-            doodad *doodadToAdd = [[doodad alloc] initWithName:self.TextFieldName.text cost:cost date:[NSDate date]];
+            //doodad *doodadToAdd = [[doodad alloc] initWithName:self.TextFieldName.text cost:cost date:[NSDate date]];
+            doodad *doodadToAdd = [[doodad alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:self.TextFieldStore.text city:self.TextFieldCity.text description:self.TextViewDescription.text];
             self.doodad = doodadToAdd;
 
     }

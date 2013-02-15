@@ -48,9 +48,12 @@
         [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
         [numberFormatter setCurrencyCode:@"USD"];
     }
-    [self.CellCost.detailTextLabel setText:[numberFormatter stringFromNumber:self.detailDoodad.cost]];
-    [self.CellDate.detailTextLabel setText:[dateFormatter stringFromDate:self.detailDoodad.date]];
-    [self.CellName.detailTextLabel setText:self.detailDoodad.name];
+    [self.TextLabelCost setText:[numberFormatter stringFromNumber:self.detailDoodad.cost]];
+    [self.TextLabelDate setText:[dateFormatter stringFromDate:self.detailDoodad.date]];
+    [self.TextLabelFind setText:self.detailDoodad.name];
+    [self.TextLabelStore setText:self.detailDoodad.store];
+    [self.TextLabelCity setText:self.detailDoodad.city];
+    [self.TextViewDescription setText:self.detailDoodad.description];
 }
 
 - (void)didReceiveMemoryWarning

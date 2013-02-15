@@ -38,9 +38,13 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.dataController = [[doodadDataController alloc] init];
-    doodad *d = [[doodad alloc] initWithName:@"tree person" cost:@1.55 date:[NSDate date]];
+    /*
+    doodad *d = [[doodad alloc] initWithName:@"tree person" cost:@2.38 date:[NSDate date]];
+    doodad *e = [[doodad alloc] initWithName:@"clown" cost:@1.38 date:[NSDate date]];
     [[self dataController] addDoodadToDoodadList:d];
+    [[self dataController] addDoodadToDoodadList:e];
     [[self tableView] reloadData];
+     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,7 +66,7 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return [self.dataController.doodadList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
