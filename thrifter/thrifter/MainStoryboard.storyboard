@@ -48,7 +48,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1P5-Hm-FaZ">
                             <connections>
                                 <action selector="AddDoodad:" destination="5ym-bw-R8d" id="4oh-da-hgR"/>
-                                <segue destination="Z8b-mB-DG4" kind="modal" identifier="AddDoodad" id="Ndg-nJ-SGc"/>
+                                <segue destination="Z8b-mB-DG4" kind="modal" identifier="SegueAdd" id="Ndg-nJ-SGc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -527,44 +527,6 @@
             <point key="canvasLocation" x="-189" y="-64"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AddDoodadViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddDoodadViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="TextFieldCity" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="TextFieldCost" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="TextFieldName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="TextFieldStore" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="TextViewDescription" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="DetailDoodadViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailDoodadViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="TextLabelCity" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextLabelCost" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextLabelDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextLabelFind" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextLabelStore" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextViewDescription" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="AddDoodad:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="buttonEditClick:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

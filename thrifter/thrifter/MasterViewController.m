@@ -130,9 +130,13 @@
         DetailDoodadViewController *detailViewController = [segue destinationViewController];
         NSLog(@"%@", [self.tableView indexPathForSelectedRow]);
         [self.dataController doodadAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        detailViewController.detailDoodad = [self.dataController doodadAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        
+        detailViewController.detailDoodad = [self.dataController doodadAtIndexPath:[self.tableView indexPathForSelectedRow]];        
     }
+    /*if ([[segue identifier] isEqualToString:@"SegueAdd"])
+    {
+        AddDoodadViewController *addViewController = (AddDoodadViewController *)[[segue destinationViewController] rootViewController];
+        addViewController.stores = [[NSSet alloc] initWithSet:[self.dataController readStores]];
+    }*/
 }
 - (IBAction)done:(UIStoryboardSegue *)segue
 {

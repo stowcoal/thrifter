@@ -49,7 +49,7 @@
     doodad *d;
     while ( d = [enumerator nextObject])
     {
-        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:d.name, @"name", d.cost, @"cost", d.date, @"date", d.store, @"store", d.city, @"city", d.description, @"description", nil];
+        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:d.name, @"name", d.cost, @"cost", d.date, @"date", d.store.Name, @"store", d.store.City, @"city", d.description, @"description", nil];
         [array addObject:tempDictionary];
     }
     [array writeToFile:plistPath atomically:YES];
@@ -59,13 +59,11 @@
     NSMutableArray *returnArray = [[NSMutableArray alloc] init];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    // paths[0];
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:_locationString];
     if ([fileManager fileExistsAtPath:plistPath] == YES)
     {
         NSArray *readArray = [NSArray arrayWithContentsOfFile:plistPath];
-        //self.dataController.doodadList = [[NSMutableArray alloc] init];
         NSEnumerator *enumerator = [readArray objectEnumerator];
         NSDictionary *doodadDictionary = [[NSDictionary alloc] init];
         while ( doodadDictionary = [enumerator nextObject])
@@ -76,4 +74,25 @@
     }
     return returnArray;
 }
+-(NSSet *)readStores
+{
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:_locationString];
+    NSSet *stores = [[NSSet alloc] init];
+    if ([fileManager fileExistsAtPath:plistPath] == YES)
+    {
+        NSArray *readArray = [NSArray arrayWithContentsOfFile:plistPath];
+        NSDictionary *doodadDictionary = [[NSDictionary alloc] init];
+        NSEnumerator *enumerator = [readArray objectEnumerator];
+        while( doodadDictionary = [enumerator nextObject] )
+        {
+            stores = [stores setByAddingObject:[[store alloc] initWithData:[doodadDictionary objectForKey:@"store"] city:[doodadDictionary objectForKey:@"city"]]];
+        }
+    }
+    return stores;
+}
+
 @end

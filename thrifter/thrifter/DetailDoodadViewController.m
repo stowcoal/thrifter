@@ -51,8 +51,8 @@
     [self.TextLabelCost setText:[numberFormatter stringFromNumber:self.detailDoodad.cost]];
     [self.TextLabelDate setText:[dateFormatter stringFromDate:self.detailDoodad.date]];
     [self.TextLabelFind setText:self.detailDoodad.name];
-    [self.TextLabelStore setText:self.detailDoodad.store];
-    [self.TextLabelCity setText:self.detailDoodad.city];
+    [self.TextLabelStore setText:self.detailDoodad.store.Name];
+    [self.TextLabelCity setText:self.detailDoodad.store.City];
     [self.TextViewDescription setText:self.detailDoodad.description];
 }
 

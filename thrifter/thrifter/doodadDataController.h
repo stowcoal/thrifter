@@ -21,5 +21,5 @@
 
 -(void)writeToPList;
 -(NSMutableArray *)readFromPList;
-
+-(NSSet *)readStores;
 @end

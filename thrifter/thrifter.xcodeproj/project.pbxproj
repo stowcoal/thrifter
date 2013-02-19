@@ -20,6 +20,7 @@
 		DE5C3CF516CAB386006CAE2B /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CF416CAB386006CAE2B /* MasterViewController.m */; };
 		DE5C3CF816CAB65E006CAE2B /* doodad.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CF716CAB65E006CAE2B /* doodad.m */; };
 		DE5C3CFB16CAB83E006CAE2B /* doodadDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CFA16CAB83E006CAE2B /* doodadDataController.m */; };
+		DEB8A94116D3E9610066DB2A /* store.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB8A94016D3E9610066DB2A /* store.m */; };
 		DEE4619316CD558400CECA5E /* AddDoodadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE4619216CD558400CECA5E /* AddDoodadViewController.m */; };
 		DEE4619716CD579A00CECA5E /* DetailDoodadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE4619616CD579A00CECA5E /* DetailDoodadViewController.m */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,8 @@
 		DE5C3CF716CAB65E006CAE2B /* doodad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = doodad.m; sourceTree = "<group>"; };
 		DE5C3CF916CAB83E006CAE2B /* doodadDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doodadDataController.h; sourceTree = "<group>"; };
 		DE5C3CFA16CAB83E006CAE2B /* doodadDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = doodadDataController.m; sourceTree = "<group>"; };
+		DEB8A93F16D3E9610066DB2A /* store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = store.h; sourceTree = "<group>"; };
+		DEB8A94016D3E9610066DB2A /* store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = store.m; sourceTree = "<group>"; };
 		DEE4619116CD558400CECA5E /* AddDoodadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDoodadViewController.h; sourceTree = "<group>"; };
 		DEE4619216CD558400CECA5E /* AddDoodadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDoodadViewController.m; sourceTree = "<group>"; };
 		DEE4619516CD579A00CECA5E /* DetailDoodadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailDoodadViewController.h; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 				DEE4619216CD558400CECA5E /* AddDoodadViewController.m */,
 				DEE4619516CD579A00CECA5E /* DetailDoodadViewController.h */,
 				DEE4619616CD579A00CECA5E /* DetailDoodadViewController.m */,
+				DEB8A93F16D3E9610066DB2A /* store.h */,
+				DEB8A94016D3E9610066DB2A /* store.m */,
 			);
 			path = thrifter;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				DE5C3CFB16CAB83E006CAE2B /* doodadDataController.m in Sources */,
 				DEE4619316CD558400CECA5E /* AddDoodadViewController.m in Sources */,
 				DEE4619716CD579A00CECA5E /* DetailDoodadViewController.m in Sources */,
+				DEB8A94116D3E9610066DB2A /* store.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

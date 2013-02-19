@@ -8,7 +8,6 @@
 
 #import "AddDoodadViewController.h"
 
-
 @interface AddDoodadViewController ()
 
 @end
@@ -33,6 +32,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,18 +59,10 @@
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"Done"]) {
-        /*if([self.birdNameInput.text length] || [self.locationInput.text length]) {
-            BirdSighting *sighting;
-            NSDate *today = [NSDate date];
-            sighting = [[BirdSighting alloc] initWithName:self.birdNameInput.text location:self.locationInput.text date:today];
-            self.birdSighting = sighting;*/
             NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
-        
             NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
-            //doodad *doodadToAdd = [[doodad alloc] initWithName:self.TextFieldName.text cost:cost date:[NSDate date]];
             doodad *doodadToAdd = [[doodad alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:self.TextFieldStore.text city:self.TextFieldCity.text description:self.TextViewDescription.text];
             self.doodad = doodadToAdd;
-
     }
 }
 

@@ -10,11 +10,13 @@
 #import "doodad.h"
 
 @interface AddDoodadViewController : UITableViewController
+@property (strong, nonatomic) doodad *doodad;
+@property (strong, nonatomic) NSSet *stores;
+
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldName;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldCost;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldStore;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldCity;
-@property (strong, nonatomic) doodad *doodad;
 @property (weak, nonatomic) IBOutlet UITextView *TextViewDescription;
 
 @end
