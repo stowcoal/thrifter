@@ -37,14 +37,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.dataController = [[doodadDataController alloc] init];
-    /*
-    doodad *d = [[doodad alloc] initWithName:@"tree person" cost:@2.38 date:[NSDate date]];
-    doodad *e = [[doodad alloc] initWithName:@"clown" cost:@1.38 date:[NSDate date]];
-    [[self dataController] addDoodadToDoodadList:d];
-    [[self dataController] addDoodadToDoodadList:e];
+    self.dataController = [[doodadDataController alloc] initFromPList:@"data.plist"];
     [[self tableView] reloadData];
-     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,7 +67,7 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    doodad *doodadForCell = [[self dataController] doodadAtIndexPath:indexPath];
+    doodad *doodadForCell = [self.dataController doodadAtIndexPath:indexPath];
     NSLog(@"%@",doodadForCell.name);
     [[cell textLabel] setText:doodadForCell.name];
     // Configure the cell...
@@ -81,28 +75,27 @@
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.dataController removeDoodadAtIndexPath:indexPath];
+        [tableView reloadData];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -149,13 +142,21 @@
             [self.dataController addDoodadToDoodadList:addController.doodad];
             [[self tableView] reloadData];
         }
-        [self dismissViewControllerAnimated:YES completion:NULL];
     }
+    [self dismissViewControllerAnimated:YES completion:NULL];
+
     NSLog(@"done");
 }
 - (IBAction)cancel:(UIStoryboardSegue *)sender
 {
     NSLog(@"cancel");
+}
+
+- (IBAction)buttonEditClick:(UIBarButtonItem *)sender {
+    if (self.tableView.editing)
+        [[self tableView] setEditing:NO animated:YES];
+    else
+        [[self tableView] setEditing:YES animated:YES];
 }
 - (IBAction)AddDoodad:(UIBarButtonItem *)sender {
 }

@@ -40,6 +40,11 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="thrifter" id="JKt-Yj-grR">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="KHZ-QJ-9I3">
+                            <connections>
+                                <action selector="buttonEditClick:" destination="5ym-bw-R8d" id="awo-KK-YUR"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1P5-Hm-FaZ">
                             <connections>
                                 <action selector="AddDoodad:" destination="5ym-bw-R8d" id="4oh-da-hgR"/>
@@ -75,7 +80,7 @@
                                                         <constraint firstAttribute="width" constant="161" id="E6W-dx-Gfm"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="EqX-gz-gD0" id="5mz-W2-O7H"/>
                                                     </connections>
@@ -110,7 +115,7 @@
                                                         <constraint firstAttribute="width" constant="161" id="vIW-8r-hAs"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="EqX-gz-gD0" id="Sif-t5-iVU"/>
                                                     </connections>
@@ -145,7 +150,7 @@
                                                         <constraint firstAttribute="width" constant="161" id="c0P-je-T4k"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="EqX-gz-gD0" id="aRm-Jd-xcF"/>
                                                     </connections>
@@ -180,7 +185,7 @@
                                                         <constraint firstAttribute="width" constant="161" id="2qn-Zh-xWi"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="EqX-gz-gD0" id="FQt-dI-PMi"/>
                                                     </connections>
@@ -226,7 +231,7 @@
                                                     </constraints>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="EqX-gz-gD0" id="Wg3-67-TB7"/>
                                                     </connections>
@@ -548,6 +553,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
             <relationships>
                 <relationship kind="action" name="AddDoodad:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="buttonEditClick:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
             </relationships>
