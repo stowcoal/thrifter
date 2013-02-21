@@ -1,26 +1,23 @@
 //
-//  AddDoodadViewController.m
+//  storeSelectViewController.m
 //  thrifter
 //
-//  Created by CURTIS STOCHL on 2/14/13.
+//  Created by CURTIS STOCHL on 2/21/13.
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-#import "AddDoodadViewController.h"
-#import "storeSelectViewController.h"
-#import "doodadDataController.h"
 
-@interface AddDoodadViewController ()
+#import "storeSelectViewController.h"
+@interface storeSelectViewController ()
 
 @end
 
-@implementation AddDoodadViewController
+@implementation storeSelectViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -34,7 +31,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    _stores = [[self dataController] readStores];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,60 +39,35 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if ( (textField == self.TextFieldCost)
-        || (textField == self.TextFieldName)) {
-        [textField resignFirstResponder];
-    }
-    return YES;
-    
-}
-- (BOOL)textViewShouldReturn:(UITextView *)textView {
-    if (textView == self.TextViewDescription)
-    {
-        [textView resignFirstResponder];
-    }
-    return YES;
-}
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"Done"]) {
-        NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
-        NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
-        doodad *doodadToAdd = [[doodad alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:self.LabelStoreName.text city:self.LabelStoreCity.text description:self.TextViewDescription.text];
-        self.doodad = doodadToAdd;
-    }
-    if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){
-        storeSelectViewController *storeSelect = [segue destinationViewController];
-        storeSelect.dataController = self.dataController;
-    }
-}
 
-#pragma mark - Table view data source
-/*
+//#pragma mark - Table view data source
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 //#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [_stores count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"CellStore";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.textLabel.text = [[_stores objectAtIndex:indexPath.row] Name];
+    cell.detailTextLabel.text = [[_stores objectAtIndex:indexPath.row] City];
+     
     
     return cell;
 }
-*/
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -146,19 +118,6 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-}
-- (IBAction)done:(UIStoryboardSegue *)segue
-{
-    if ([[segue identifier] isEqualToString:@"DoneSelectStore"]) {
-        storeSelectViewController *storeController = [segue sourceViewController];
-        if (storeController.storeForDoodad) {
-            self.LabelStoreCity.text = [self.doodad.store City];
-            self.LabelStoreName.text = [self.doodad.store Name];
-        }
-    }
-    [self dismissViewControllerAnimated:YES completion:NULL];
-    
-    NSLog(@"done");
 }
 
 @end

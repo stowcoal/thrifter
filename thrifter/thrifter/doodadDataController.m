@@ -74,22 +74,29 @@
     }
     return returnArray;
 }
--(NSSet *)readStores
+-(NSMutableArray *)readStores
 {
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:_locationString];
-    NSSet *stores = [[NSSet alloc] init];
+    NSMutableArray *stores = [[NSMutableArray alloc] init];
     if ([fileManager fileExistsAtPath:plistPath] == YES)
     {
         NSArray *readArray = [NSArray arrayWithContentsOfFile:plistPath];
         NSDictionary *doodadDictionary = [[NSDictionary alloc] init];
-        NSEnumerator *enumerator = [readArray objectEnumerator];
-        while( doodadDictionary = [enumerator nextObject] )
+        NSEnumerator *readEnumerator = [readArray objectEnumerator];
+        while( doodadDictionary = [readEnumerator nextObject] )
         {
-            stores = [stores setByAddingObject:[[store alloc] initWithData:[doodadDictionary objectForKey:@"store"] city:[doodadDictionary objectForKey:@"city"]]];
+            store *storeToAdd = [[store alloc] initWithData:[doodadDictionary objectForKey:@"store"] city:[doodadDictionary objectForKey:@"city"]];
+            NSEnumerator *storesEnumerator = [stores objectEnumerator];
+            store *s = [[store alloc] init];
+            BOOL found = NO;
+            while ( (s = [storesEnumerator nextObject]) && !found)
+                found = [s isEqual:storeToAdd];
+            if (!found)
+                [stores addObject:storeToAdd];
         }
     }
     return stores;

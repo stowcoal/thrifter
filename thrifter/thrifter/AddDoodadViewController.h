@@ -8,15 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "doodad.h"
+#import "doodadDataController.h"
 
 @interface AddDoodadViewController : UITableViewController
 @property (strong, nonatomic) doodad *doodad;
-@property (strong, nonatomic) NSSet *stores;
+@property (strong, nonatomic) doodadDataController *dataController;
 
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldName;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldCost;
-@property (weak, nonatomic) IBOutlet UITextField *TextFieldStore;
-@property (weak, nonatomic) IBOutlet UITextField *TextFieldCity;
 @property (weak, nonatomic) IBOutlet UITextView *TextViewDescription;
+@property (weak, nonatomic) IBOutlet UILabel *LabelStoreName;
+@property (weak, nonatomic) IBOutlet UILabel *LabelStoreCity;
+- (IBAction)done:(UIStoryboardSegue *)segue;
+
 
 @end

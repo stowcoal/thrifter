@@ -65,7 +65,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"CellDoodad";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     doodad *doodadForCell = [self.dataController doodadAtIndexPath:indexPath];
     NSLog(@"%@",doodadForCell.name);
@@ -132,11 +132,11 @@
         [self.dataController doodadAtIndexPath:[self.tableView indexPathForSelectedRow]];
         detailViewController.detailDoodad = [self.dataController doodadAtIndexPath:[self.tableView indexPathForSelectedRow]];        
     }
-    /*if ([[segue identifier] isEqualToString:@"SegueAdd"])
+    if ([[segue identifier] isEqualToString:@"SegueAdd"])
     {
-        AddDoodadViewController *addViewController = (AddDoodadViewController *)[[segue destinationViewController] rootViewController];
-        addViewController.stores = [[NSSet alloc] initWithSet:[self.dataController readStores]];
-    }*/
+        AddDoodadViewController *addViewController = (AddDoodadViewController *)[[[segue destinationViewController] viewControllers] objectAtIndex:0];
+        addViewController.dataController = self.dataController;
+    }
 }
 - (IBAction)done:(UIStoryboardSegue *)segue
 {

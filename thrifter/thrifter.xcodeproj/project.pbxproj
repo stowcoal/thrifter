@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE2991C216D68EB800F94427 /* storeSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2991C116D68EB800F94427 /* storeSelectViewController.m */; };
 		DE5C3CD116CAAFCD006CAE2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C3CD016CAAFCD006CAE2B /* UIKit.framework */; };
 		DE5C3CD316CAAFCD006CAE2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C3CD216CAAFCD006CAE2B /* Foundation.framework */; };
 		DE5C3CD516CAAFCD006CAE2B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C3CD416CAAFCD006CAE2B /* CoreGraphics.framework */; };
@@ -27,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		DE03654316CDE19D0083B2D6 /* doodad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doodad.h; sourceTree = "<group>"; };
+		DE2991C016D68EB800F94427 /* storeSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storeSelectViewController.h; sourceTree = "<group>"; };
+		DE2991C116D68EB800F94427 /* storeSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = storeSelectViewController.m; sourceTree = "<group>"; };
 		DE5C3CCC16CAAFCD006CAE2B /* thrifter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thrifter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5C3CD016CAAFCD006CAE2B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE5C3CD216CAAFCD006CAE2B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -114,6 +117,8 @@
 				DEE4619616CD579A00CECA5E /* DetailDoodadViewController.m */,
 				DEB8A93F16D3E9610066DB2A /* store.h */,
 				DEB8A94016D3E9610066DB2A /* store.m */,
+				DE2991C016D68EB800F94427 /* storeSelectViewController.h */,
+				DE2991C116D68EB800F94427 /* storeSelectViewController.m */,
 			);
 			path = thrifter;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				DEE4619316CD558400CECA5E /* AddDoodadViewController.m in Sources */,
 				DEE4619716CD579A00CECA5E /* DetailDoodadViewController.m in Sources */,
 				DEB8A94116D3E9610066DB2A /* store.m in Sources */,
+				DE2991C216D68EB800F94427 /* storeSelectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
