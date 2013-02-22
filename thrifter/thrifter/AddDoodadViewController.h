@@ -17,9 +17,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldName;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldCost;
 @property (weak, nonatomic) IBOutlet UITextView *TextViewDescription;
-@property (weak, nonatomic) IBOutlet UILabel *LabelStoreName;
-@property (weak, nonatomic) IBOutlet UILabel *LabelStoreCity;
-- (IBAction)done:(UIStoryboardSegue *)segue;
+@property (weak, nonatomic) IBOutlet UITextField *TextViewStoreName;
+@property (weak, nonatomic) IBOutlet UITextField *TextViewStoreCity;
+- (IBAction)doneSelectStore:(UIStoryboardSegue *)segue;
 
 
 @end

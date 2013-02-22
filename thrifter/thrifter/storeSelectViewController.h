@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "doodadDataController.h"
+#import "addStoreViewController.h"
 #import "store.h"
 
 
 @interface storeSelectViewController : UITableViewController
 @property (strong, nonatomic) doodadDataController *dataController;
 @property (strong, nonatomic) NSArray *stores;
-@property (strong, nonatomic) store *storeForDoodad;
-
+- (IBAction)doneAddStore:(UIStoryboardSegue *)segue;
 @end

@@ -63,7 +63,6 @@
     
     cell.textLabel.text = [[_stores objectAtIndex:indexPath.row] Name];
     cell.detailTextLabel.text = [[_stores objectAtIndex:indexPath.row] City];
-     
     
     return cell;
 }
@@ -111,13 +110,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [self dismissViewControllerAnimated:YES completion:NULL];
+
+}
+- (IBAction)doneAddStore:(UIStoryboardSegue *)segue
+{
+    if ([[segue identifier] isEqualToString:@"UnwindAddStore"]) {
+        addStoreViewController *addController = [segue sourceViewController];
+        if (addController.TextViewStoreName &&
+            addController.TextViewStoreCity) {
+            self.stores = [self.stores arrayByAddingObject:[[store alloc] initWithData:addController.TextViewStoreName.text city:addController.TextViewStoreCity.text]];
+            [[self tableView] reloadData];
+        }
+    }
+    //[self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end
