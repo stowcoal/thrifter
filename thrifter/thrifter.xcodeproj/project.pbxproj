@@ -46,7 +46,6 @@
 		DE5C3CF316CAB386006CAE2B /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		DE5C3CF416CAB386006CAE2B /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		DE5C3CF716CAB65E006CAE2B /* Find.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Find.m; sourceTree = "<group>"; };
-		DE5C3CF916CAB83E006CAE2B /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
 		DE5C3CFA16CAB83E006CAE2B /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
 		DEB8A93F16D3E9610066DB2A /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
 		DEB8A94016D3E9610066DB2A /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
@@ -115,7 +114,6 @@
 				DEDE61DF16D811A300642342 /* AddStoreViewController.m */,
 				DE5C3CF316CAB386006CAE2B /* MasterViewController.h */,
 				DE5C3CF416CAB386006CAE2B /* MasterViewController.m */,
-				DE5C3CF916CAB83E006CAE2B /* DataController.h */,
 				DEE0BA8916DD31A900609A0B /* DataController.h */,
 				DE5C3CFA16CAB83E006CAE2B /* DataController.m */,
 				DE03654316CDE19D0083B2D6 /* Find.h */,
