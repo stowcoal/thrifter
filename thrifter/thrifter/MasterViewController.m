@@ -7,7 +7,7 @@
 //
 
 #import "MasterViewController.h"
-#import "FindDataController.h"
+#import "DataController.h"
 #import "Find.h"
 #import "DetailFindViewController.h"
 #import "AddFindViewController.h"
@@ -22,7 +22,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.dataController = [[FindDataController alloc] init];
+        self.dataController = [[DataController alloc] init];
     }
     return self;
 }
@@ -37,7 +37,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.dataController = [[FindDataController alloc] initFromPList:@"data.plist"];
+    self.dataController = [[DataController alloc] initFromPList:@"finds.plist"];
+    self.dataController
     [[self tableView] reloadData];
 }
 

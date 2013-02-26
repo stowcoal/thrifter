@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "Find.h"
 
-@interface FindDataController : NSObject
+@interface DataController : NSObject
 @property (nonatomic, copy)NSMutableArray *findList;
 @property (nonatomic, copy)NSString *locationString;
+
 -(id)initFromPList:(NSString *)locationString;
 
 -(void)addFindToFindList:(Find *)findToAdd;

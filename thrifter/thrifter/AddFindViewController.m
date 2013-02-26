@@ -8,7 +8,7 @@
 
 #import "AddFindViewController.h"
 #import "StoreSelectViewController.h"
-#import "FindDataController.h"
+#import "DataController.h"
 #import "Store.h"
 
 @interface AddFindViewController ()

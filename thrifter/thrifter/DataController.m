@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-#import "FindDataController.h"
+#import "DataController.h"
 
-@implementation FindDataController
+@implementation DataController
 - (id)init {
     if (self = [super init]) {
         _findList = [[NSMutableArray alloc] init];

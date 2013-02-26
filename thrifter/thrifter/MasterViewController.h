@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class FindDataController;
+@class DataController;
 
 @interface MasterViewController : UITableViewController
-@property (strong, nonatomic) FindDataController *dataController;
+@property (strong, nonatomic) DataController *dataController;
 - (IBAction)AddDoodad:(UIBarButtonItem *)sender;
 - (IBAction)done:(UIStoryboardSegue *)sender;
 - (IBAction)cancel:(UIStoryboardSegue *)sender;

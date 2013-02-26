@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Find.h"
-#import "FindDataController.h"
+#import "DataController.h"
 
 @interface AddFindViewController : UITableViewController
 @property (strong, nonatomic) Find *find;
-@property (strong, nonatomic) FindDataController *dataController;
+@property (strong, nonatomic) DataController *dataController;
 
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldName;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldCost;
