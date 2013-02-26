@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "doodad.h"
+#import "Doodad.h"
 
 @interface DetailDoodadViewController : UITableViewController
-@property (strong, nonatomic) doodad *detailDoodad;
+@property (strong, nonatomic) Doodad *detailDoodad;
 
 @property (weak, nonatomic) IBOutlet UILabel *TextLabelStore;
 @property (weak, nonatomic) IBOutlet UILabel *TextLabelCity;

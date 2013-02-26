@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "doodad.h"
+#import "Doodad.h"
 
 @interface doodadDataController : NSObject
 @property (nonatomic, copy)NSMutableArray *doodadList;
 @property (nonatomic, copy)NSString *locationString;
 -(id)initFromPList:(NSString *)locationString;
 
--(void)addDoodadToDoodadList:(doodad *)doodadToAdd;
+-(void)addDoodadToDoodadList:(Doodad *)doodadToAdd;
 -(void)removeDoodadAtIndexPath:(NSIndexPath *)indexPath;
 
--(doodad *)doodadAtIndexPath:(NSIndexPath *)indexPath;
+-(Doodad *)doodadAtIndexPath:(NSIndexPath *)indexPath;
 
 -(void)writeToPList;
 -(NSMutableArray *)readFromPList;

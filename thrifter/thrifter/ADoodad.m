@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-#import "doodad.h"
+#import "Doodad.h"
 
-@implementation doodad
+@implementation Doodad
 -(id) initWithName:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date
 {
     self = [super init];

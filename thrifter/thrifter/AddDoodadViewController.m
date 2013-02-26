@@ -62,7 +62,7 @@
     if ([[segue identifier] isEqualToString:@"Done"]) {
         NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
         NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
-        doodad *doodadToAdd = [[doodad alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:self.TextViewStoreName.text city:self.TextViewStoreCity.text description:self.TextViewDescription.text];
+        Doodad *doodadToAdd = [[Doodad alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:self.TextViewStoreName.text city:self.TextViewStoreCity.text description:self.TextViewDescription.text];
         self.doodad = doodadToAdd;
     }
     if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){

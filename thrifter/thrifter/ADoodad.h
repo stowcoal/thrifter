@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "store.h"
 
-@interface doodad : NSObject
+@interface Doodad : NSObject
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSNumber *cost;

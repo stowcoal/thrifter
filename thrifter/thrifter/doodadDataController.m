@@ -25,7 +25,7 @@
     }
     return nil;
 }
--(void)addDoodadToDoodadList:(doodad *)doodadToAdd
+-(void)addDoodadToDoodadList:(Doodad *)doodadToAdd
 {
     [_doodadList addObject:doodadToAdd];
     [self writeToPList];
@@ -35,7 +35,7 @@
     [_doodadList removeObjectAtIndex:indexPath.row];
     [self writeToPList];
 }
--(doodad *)doodadAtIndexPath:(NSIndexPath *)indexPath
+-(Doodad *)doodadAtIndexPath:(NSIndexPath *)indexPath
 {
     return [_doodadList objectAtIndex:[indexPath row]];
 }
@@ -46,7 +46,7 @@
     NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:_locationString];
     NSMutableArray  *array = [[NSMutableArray alloc] init];
     NSEnumerator *enumerator = [_doodadList objectEnumerator];
-    doodad *d;
+    Doodad *d;
     while ( d = [enumerator nextObject])
     {
         NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:d.name, @"name", d.cost, @"cost", d.date, @"date", d.store.Name, @"store", d.store.City, @"city", d.description, @"description", nil];
@@ -68,7 +68,7 @@
         NSDictionary *doodadDictionary = [[NSDictionary alloc] init];
         while ( doodadDictionary = [enumerator nextObject])
         {
-            doodad *d = [[doodad alloc] initWithData:[doodadDictionary objectForKey:@"name"] cost:[doodadDictionary objectForKey:@"cost"] date:[doodadDictionary objectForKey:@"date"] store:[doodadDictionary objectForKey:@"store"] city:[doodadDictionary objectForKey:@"city"] description:[doodadDictionary objectForKey:@"description"]];
+            Doodad *d = [[Doodad alloc] initWithData:[doodadDictionary objectForKey:@"name"] cost:[doodadDictionary objectForKey:@"cost"] date:[doodadDictionary objectForKey:@"date"] store:[doodadDictionary objectForKey:@"store"] city:[doodadDictionary objectForKey:@"city"] description:[doodadDictionary objectForKey:@"description"]];
             [returnArray addObject:d];
         }
     }

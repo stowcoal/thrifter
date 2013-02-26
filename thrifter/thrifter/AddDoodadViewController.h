@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "doodad.h"
+#import "Doodad.h"
 #import "doodadDataController.h"
 
 @interface AddDoodadViewController : UITableViewController
-@property (strong, nonatomic) doodad *doodad;
+@property (strong, nonatomic) Doodad *doodad;
 @property (strong, nonatomic) doodadDataController *dataController;
 
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldName;

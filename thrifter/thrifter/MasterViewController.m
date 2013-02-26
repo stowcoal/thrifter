@@ -8,7 +8,7 @@
 
 #import "MasterViewController.h"
 #import "doodadDataController.h"
-#import "doodad.h"
+#import "Doodad.h"
 #import "DetailDoodadViewController.h"
 #import "AddDoodadViewController.h"
 
@@ -67,7 +67,7 @@
 {
     static NSString *CellIdentifier = @"CellDoodad";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    doodad *doodadForCell = [self.dataController doodadAtIndexPath:indexPath];
+    Doodad *doodadForCell = [self.dataController doodadAtIndexPath:indexPath];
     NSLog(@"%@",doodadForCell.name);
     [[cell textLabel] setText:doodadForCell.name];
     // Configure the cell...
