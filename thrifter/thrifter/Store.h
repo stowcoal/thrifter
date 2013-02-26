@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SStore : NSObject
+@interface Store : NSObject
 @property (nonatomic, copy)NSString *name;
 @property (nonatomic, copy)NSString *city;
 -(id)initWithData:(NSString *)name city:(NSString *)city;

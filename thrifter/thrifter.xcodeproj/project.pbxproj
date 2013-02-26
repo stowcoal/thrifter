@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE2991C216D68EB800F94427 /* SStoreSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2991C116D68EB800F94427 /* SStoreSelectViewController.m */; };
+		DE2991C216D68EB800F94427 /* StoreSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2991C116D68EB800F94427 /* StoreSelectViewController.m */; };
 		DE5C3CD116CAAFCD006CAE2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C3CD016CAAFCD006CAE2B /* UIKit.framework */; };
 		DE5C3CD316CAAFCD006CAE2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C3CD216CAAFCD006CAE2B /* Foundation.framework */; };
 		DE5C3CD516CAAFCD006CAE2B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C3CD416CAAFCD006CAE2B /* CoreGraphics.framework */; };
@@ -21,16 +21,15 @@
 		DE5C3CF516CAB386006CAE2B /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CF416CAB386006CAE2B /* MasterViewController.m */; };
 		DE5C3CF816CAB65E006CAE2B /* Find.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CF716CAB65E006CAE2B /* Find.m */; };
 		DE5C3CFB16CAB83E006CAE2B /* FindDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CFA16CAB83E006CAE2B /* FindDataController.m */; };
-		DEB8A94116D3E9610066DB2A /* SStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB8A94016D3E9610066DB2A /* SStore.m */; };
-		DEDE61E016D811A300642342 /* AAddStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE61DF16D811A300642342 /* AAddStoreViewController.m */; };
+		DEB8A94116D3E9610066DB2A /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB8A94016D3E9610066DB2A /* Store.m */; };
+		DEDE61E016D811A300642342 /* AddStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE61DF16D811A300642342 /* AddStoreViewController.m */; };
 		DEE4619316CD558400CECA5E /* AddFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE4619216CD558400CECA5E /* AddFindViewController.m */; };
 		DEE4619716CD579A00CECA5E /* DetailFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE4619616CD579A00CECA5E /* DetailFindViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DE03654316CDE19D0083B2D6 /* Find.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Find.h; sourceTree = "<group>"; };
-		DE2991C016D68EB800F94427 /* SStoreSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SStoreSelectViewController.h; sourceTree = "<group>"; };
-		DE2991C116D68EB800F94427 /* SStoreSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SStoreSelectViewController.m; sourceTree = "<group>"; };
+		DE2991C116D68EB800F94427 /* StoreSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreSelectViewController.m; sourceTree = "<group>"; };
 		DE5C3CCC16CAAFCD006CAE2B /* thrifter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thrifter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5C3CD016CAAFCD006CAE2B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE5C3CD216CAAFCD006CAE2B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -50,10 +49,11 @@
 		DE5C3CF716CAB65E006CAE2B /* Find.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Find.m; sourceTree = "<group>"; };
 		DE5C3CF916CAB83E006CAE2B /* FindDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindDataController.h; sourceTree = "<group>"; };
 		DE5C3CFA16CAB83E006CAE2B /* FindDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindDataController.m; sourceTree = "<group>"; };
-		DEB8A93F16D3E9610066DB2A /* SStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SStore.h; sourceTree = "<group>"; };
-		DEB8A94016D3E9610066DB2A /* SStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SStore.m; sourceTree = "<group>"; };
-		DEDE61DE16D811A300642342 /* AAddStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAddStoreViewController.h; sourceTree = "<group>"; };
-		DEDE61DF16D811A300642342 /* AAddStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAddStoreViewController.m; sourceTree = "<group>"; };
+		DEB8A93F16D3E9610066DB2A /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+		DEB8A94016D3E9610066DB2A /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		DEDE61DE16D811A300642342 /* AddStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStoreViewController.h; sourceTree = "<group>"; };
+		DEDE61DF16D811A300642342 /* AddStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStoreViewController.m; sourceTree = "<group>"; };
+		DEE0BA7016DD2AB700609A0B /* StoreSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreSelectViewController.h; sourceTree = "<group>"; };
 		DEE4619116CD558400CECA5E /* AddFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFindViewController.h; sourceTree = "<group>"; };
 		DEE4619216CD558400CECA5E /* AddFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFindViewController.m; sourceTree = "<group>"; };
 		DEE4619516CD579A00CECA5E /* DetailFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFindViewController.h; sourceTree = "<group>"; };
@@ -108,8 +108,8 @@
 				DE5C3CE016CAAFCD006CAE2B /* thrifterAppDelegate.m */,
 				DE5C3CD716CAAFCD006CAE2B /* Supporting Files */,
 				DE5C3CED16CAAFF9006CAE2B /* MainStoryboard.storyboard */,
-				DEDE61DE16D811A300642342 /* AAddStoreViewController.h */,
-				DEDE61DF16D811A300642342 /* AAddStoreViewController.m */,
+				DEDE61DE16D811A300642342 /* AddStoreViewController.h */,
+				DEDE61DF16D811A300642342 /* AddStoreViewController.m */,
 				DE5C3CF316CAB386006CAE2B /* MasterViewController.h */,
 				DE5C3CF416CAB386006CAE2B /* MasterViewController.m */,
 				DE5C3CF916CAB83E006CAE2B /* FindDataController.h */,
@@ -120,10 +120,10 @@
 				DEE4619216CD558400CECA5E /* AddFindViewController.m */,
 				DEE4619516CD579A00CECA5E /* DetailFindViewController.h */,
 				DEE4619616CD579A00CECA5E /* DetailFindViewController.m */,
-				DEB8A93F16D3E9610066DB2A /* SStore.h */,
-				DEB8A94016D3E9610066DB2A /* SStore.m */,
-				DE2991C016D68EB800F94427 /* SStoreSelectViewController.h */,
-				DE2991C116D68EB800F94427 /* SStoreSelectViewController.m */,
+				DEB8A93F16D3E9610066DB2A /* Store.h */,
+				DEB8A94016D3E9610066DB2A /* Store.m */,
+				DEE0BA7016DD2AB700609A0B /* StoreSelectViewController.h */,
+				DE2991C116D68EB800F94427 /* StoreSelectViewController.m */,
 			);
 			path = thrifter;
 			sourceTree = "<group>";
@@ -216,9 +216,9 @@
 				DE5C3CFB16CAB83E006CAE2B /* FindDataController.m in Sources */,
 				DEE4619316CD558400CECA5E /* AddFindViewController.m in Sources */,
 				DEE4619716CD579A00CECA5E /* DetailFindViewController.m in Sources */,
-				DEB8A94116D3E9610066DB2A /* SStore.m in Sources */,
-				DE2991C216D68EB800F94427 /* SStoreSelectViewController.m in Sources */,
-				DEDE61E016D811A300642342 /* AAddStoreViewController.m in Sources */,
+				DEB8A94116D3E9610066DB2A /* Store.m in Sources */,
+				DE2991C216D68EB800F94427 /* StoreSelectViewController.m in Sources */,
+				DEDE61E016D811A300642342 /* AddStoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

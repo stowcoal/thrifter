@@ -296,7 +296,7 @@
         <!--Store Select View Controller - store select-->
         <scene sceneID="EsM-Vb-Ln2">
             <objects>
-                <tableViewController id="6oX-yB-X0n" customClass="SStoreSelectViewController" sceneMemberID="viewController">
+                <tableViewController id="6oX-yB-X0n" customClass="StoreSelectViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ecI-MM-bbE">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,7 +336,7 @@
         <!--Add Store View Controller - add store-->
         <scene sceneID="CV0-s9-wDZ">
             <objects>
-                <tableViewController id="5EC-zy-8kf" customClass="AAddStoreViewController" sceneMemberID="viewController">
+                <tableViewController id="5EC-zy-8kf" customClass="AddStoreViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zpo-Ik-jLC">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

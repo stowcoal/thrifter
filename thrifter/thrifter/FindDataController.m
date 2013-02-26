@@ -89,9 +89,9 @@
         NSEnumerator *readEnumerator = [readArray objectEnumerator];
         while( findDictionary = [readEnumerator nextObject] )
         {
-            SStore *storeToAdd = [[SStore alloc] initWithData:[findDictionary objectForKey:@"store"] city:[findDictionary objectForKey:@"city"]];
+            Store *storeToAdd = [[Store alloc] initWithData:[findDictionary objectForKey:@"store"] city:[findDictionary objectForKey:@"city"]];
             NSEnumerator *storesEnumerator = [stores objectEnumerator];
-            SStore *s = [[SStore alloc] init];
+            Store *s = [[Store alloc] init];
             BOOL found = NO;
             while ( (s = [storesEnumerator nextObject]) && !found)
                 found = [s isEqual:storeToAdd];

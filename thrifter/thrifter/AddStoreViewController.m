@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-#import "AAddStoreViewController.h"
+#import "AddStoreViewController.h"
 
-@interface AAddStoreViewController ()
+@interface AddStoreViewController ()
 
 @end
 
-@implementation AAddStoreViewController
+@implementation AddStoreViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

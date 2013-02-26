@@ -7,12 +7,12 @@
 //
 
 
-#import "SStoreSelectViewController.h"
-@interface SStoreSelectViewController ()
+#import "StoreSelectViewController.h"
+@interface StoreSelectViewController ()
 
 @end
 
-@implementation SStoreSelectViewController
+@implementation StoreSelectViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -61,8 +61,8 @@
     static NSString *CellIdentifier = @"CellStore";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = ((SStore *)[_stores objectAtIndex:indexPath.row]).name;
-    cell.detailTextLabel.text = ((SStore *)[_stores objectAtIndex:indexPath.row]).city;
+    cell.textLabel.text = ((Store *)[_stores objectAtIndex:indexPath.row]).name;
+    cell.detailTextLabel.text = ((Store *)[_stores objectAtIndex:indexPath.row]).city;
     
     return cell;
 }
@@ -116,10 +116,10 @@
 - (IBAction)doneAddStore:(UIStoryboardSegue *)segue
 {
     if ([[segue identifier] isEqualToString:@"UnwindAddStore"]) {
-        AAddStoreViewController *addController = [segue sourceViewController];
+        AddStoreViewController *addController = [segue sourceViewController];
         if (addController.TextViewStoreName &&
             addController.TextViewStoreCity) {
-            self.stores = [self.stores arrayByAddingObject:[[SStore alloc] initWithData:addController.TextViewStoreName.text city:addController.TextViewStoreCity.text]];
+            self.stores = [self.stores arrayByAddingObject:[[Store alloc] initWithData:addController.TextViewStoreName.text city:addController.TextViewStoreCity.text]];
             [[self tableView] reloadData];
         }
     }

@@ -29,7 +29,7 @@
         _name = name;
         _cost = cost;
         _date = date;
-        _store = [[SStore alloc] initWithData:storeName city:city];
+        _store = [[Store alloc] initWithData:storeName city:city];
         _description = description;
         return self;
     }

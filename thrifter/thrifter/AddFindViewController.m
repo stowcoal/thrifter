@@ -7,9 +7,9 @@
 //
 
 #import "AddFindViewController.h"
-#import "SStoreSelectViewController.h"
+#import "StoreSelectViewController.h"
 #import "FindDataController.h"
-#import "SStore.h"
+#import "Store.h"
 
 @interface AddFindViewController ()
 
@@ -66,7 +66,7 @@
         self.find = findToAdd;
     }
     if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){
-        SStoreSelectViewController *storeSelect = [segue destinationViewController];
+        StoreSelectViewController *storeSelect = [segue destinationViewController];
         storeSelect.dataController = self.dataController;
     }
 }
@@ -151,8 +151,8 @@
 - (IBAction)doneSelectStore:(UIStoryboardSegue *)segue
 {
     if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
-        SStoreSelectViewController *storeController = [segue sourceViewController];
-        SStore *storeForFind = [[self.dataController readStores] objectAtIndex:[storeController.tableView indexPathForSelectedRow].row];
+        StoreSelectViewController *storeController = [segue sourceViewController];
+        Store *storeForFind = [[self.dataController readStores] objectAtIndex:[storeController.tableView indexPathForSelectedRow].row];
         if (storeForFind) {
             self.TextViewStoreCity.text = storeForFind.city;
             self.TextViewStoreName.text = storeForFind.name;
