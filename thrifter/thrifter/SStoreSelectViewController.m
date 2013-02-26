@@ -1,24 +1,23 @@
 //
-//  DetailDoodadViewController.m
+//  storeSelectViewController.m
 //  thrifter
 //
-//  Created by CURTIS STOCHL on 2/14/13.
+//  Created by CURTIS STOCHL on 2/21/13.
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-#import "DetailDoodadViewController.h"
 
-@interface DetailDoodadViewController ()
+#import "SStoreSelectViewController.h"
+@interface SStoreSelectViewController ()
 
 @end
 
-@implementation DetailDoodadViewController
+@implementation SStoreSelectViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -32,28 +31,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self configureView];
-}
-
-- (void)configureView
-{
-    static NSDateFormatter *dateFormatter = nil;
-    if (dateFormatter == nil) {
-        dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-    }
-    static NSNumberFormatter *numberFormatter = nil;
-    if (numberFormatter == nil) {
-        numberFormatter = [[NSNumberFormatter alloc] init];
-        [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-        [numberFormatter setCurrencyCode:@"USD"];
-    }
-    [self.TextLabelCost setText:[numberFormatter stringFromNumber:self.detailDoodad.cost]];
-    [self.TextLabelDate setText:[dateFormatter stringFromDate:self.detailDoodad.date]];
-    [self.TextLabelFind setText:self.detailDoodad.name];
-    [self.TextLabelStore setText:self.detailDoodad.store.Name];
-    [self.TextLabelCity setText:self.detailDoodad.store.City];
-    [self.TextViewDescription setText:self.detailDoodad.description];
+    _stores = [[self dataController] readStores];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,35 +40,33 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-/*
+//#pragma mark - Table view data source
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 //#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
-*/
-/*
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [_stores count];
 }
- */
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"CellStore";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.textLabel.text = ((SStore *)[_stores objectAtIndex:indexPath.row]).name;
+    cell.detailTextLabel.text = ((SStore *)[_stores objectAtIndex:indexPath.row]).city;
     
     return cell;
-     
 }
-*/
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -134,13 +110,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [self dismissViewControllerAnimated:YES completion:NULL];
+
+}
+- (IBAction)doneAddStore:(UIStoryboardSegue *)segue
+{
+    if ([[segue identifier] isEqualToString:@"UnwindAddStore"]) {
+        AAddStoreViewController *addController = [segue sourceViewController];
+        if (addController.TextViewStoreName &&
+            addController.TextViewStoreCity) {
+            self.stores = [self.stores arrayByAddingObject:[[SStore alloc] initWithData:addController.TextViewStoreName.text city:addController.TextViewStoreCity.text]];
+            [[self tableView] reloadData];
+        }
+    }
+    //[self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellDoodad" textLabel="fMb-Xd-KFX" detailTextLabel="mzC-Ff-ZWO" style="IBUITableViewCellStyleValue1" id="zZO-xJ-I2V">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellFind" textLabel="fMb-Xd-KFX" detailTextLabel="mzC-Ff-ZWO" style="IBUITableViewCellStyleValue1" id="zZO-xJ-I2V">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="345" y="-64"/>
         </scene>
-        <!--Add Doodad View Controller - add find-->
+        <!--Add Find View Controller - add find-->
         <scene sceneID="x1n-4b-sFy">
             <objects>
-                <tableViewController id="EqX-gz-gD0" customClass="AddDoodadViewController" sceneMemberID="viewController">
+                <tableViewController id="EqX-gz-gD0" customClass="AddFindViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6Sw-Ui-W7a">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -296,7 +296,7 @@
         <!--Store Select View Controller - store select-->
         <scene sceneID="EsM-Vb-Ln2">
             <objects>
-                <tableViewController id="6oX-yB-X0n" customClass="storeSelectViewController" sceneMemberID="viewController">
+                <tableViewController id="6oX-yB-X0n" customClass="SStoreSelectViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ecI-MM-bbE">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,7 +336,7 @@
         <!--Add Store View Controller - add store-->
         <scene sceneID="CV0-s9-wDZ">
             <objects>
-                <tableViewController id="5EC-zy-8kf" customClass="addStoreViewController" sceneMemberID="viewController">
+                <tableViewController id="5EC-zy-8kf" customClass="AAddStoreViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zpo-Ik-jLC">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -450,10 +450,10 @@
             </objects>
             <point key="canvasLocation" x="345" y="-735"/>
         </scene>
-        <!--Detail Doodad View Controller - find detail-->
+        <!--Detail Find View Controller - find detail-->
         <scene sceneID="Q1n-5o-L6q">
             <objects>
-                <tableViewController id="TTR-x3-Y6g" customClass="DetailDoodadViewController" sceneMemberID="viewController">
+                <tableViewController id="TTR-x3-Y6g" customClass="DetailFindViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="14E-Qk-iVQ">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -684,59 +684,6 @@
             <point key="canvasLocation" x="-189" y="-64"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AddDoodadViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddDoodadViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneSelectStore:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="outlet" name="TextFieldCost" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="TextFieldName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="TextViewDescription" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="TextViewStoreCity" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="TextViewStoreName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="DetailDoodadViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailDoodadViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="TextLabelCity" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextLabelCost" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextLabelDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextLabelFind" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextLabelStore" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextViewDescription" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="MasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="AddDoodad:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="buttonEditClick:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
-        <class className="addStoreViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/addStoreViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="ButtonDoneClick:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="TextViewStoreCity" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="TextViewStoreName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="storeSelectViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/storeSelectViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneAddStore:" candidateClass="UIStoryboardSegue"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

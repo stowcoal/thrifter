@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Doodad.h"
+#import "Find.h"
 
-@interface DetailDoodadViewController : UITableViewController
-@property (strong, nonatomic) Doodad *detailDoodad;
+@interface DetailFindViewController : UITableViewController
+@property (strong, nonatomic) Find *detailFind;
 
 @property (weak, nonatomic) IBOutlet UILabel *TextLabelStore;
 @property (weak, nonatomic) IBOutlet UILabel *TextLabelCity;

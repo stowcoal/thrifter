@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-#import "doodadDataController.h"
+#import "FindDataController.h"
 
-@implementation doodadDataController
+@implementation FindDataController
 - (id)init {
     if (self = [super init]) {
-        _doodadList = [[NSMutableArray alloc] init];
+        _findList = [[NSMutableArray alloc] init];
         return self;
     }
     return nil;
@@ -20,24 +20,24 @@
 {
     if (self = [super init]) {
         _locationString = locationString;
-        _doodadList = [self readFromPList];
+        _findList = [self readFromPList];
         return self;
     }
     return nil;
 }
--(void)addDoodadToDoodadList:(Doodad *)doodadToAdd
+-(void)addFindToFindList:(Find *)findToAdd
 {
-    [_doodadList addObject:doodadToAdd];
+    [_findList addObject:findToAdd];
     [self writeToPList];
 }
--(void)removeDoodadAtIndexPath:(NSIndexPath *)indexPath
+-(void)removeFindAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_doodadList removeObjectAtIndex:indexPath.row];
+    [_findList removeObjectAtIndex:indexPath.row];
     [self writeToPList];
 }
--(Doodad *)doodadAtIndexPath:(NSIndexPath *)indexPath
+-(Find *)findAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [_doodadList objectAtIndex:[indexPath row]];
+    return [_findList objectAtIndex:[indexPath row]];
 }
 -(void)writeToPList
 {
@@ -45,11 +45,11 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:_locationString];
     NSMutableArray  *array = [[NSMutableArray alloc] init];
-    NSEnumerator *enumerator = [_doodadList objectEnumerator];
-    Doodad *d;
-    while ( d = [enumerator nextObject])
+    NSEnumerator *enumerator = [_findList objectEnumerator];
+    Find *f;
+    while ( f = [enumerator nextObject])
     {
-        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:d.name, @"name", d.cost, @"cost", d.date, @"date", d.store.Name, @"store", d.store.City, @"city", d.description, @"description", nil];
+        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:f.name, @"name", f.cost, @"cost", f.date, @"date", f.store.name, @"store", f.store.city, @"city", f.description, @"description", nil];
         [array addObject:tempDictionary];
     }
     [array writeToFile:plistPath atomically:YES];
@@ -65,11 +65,11 @@
     {
         NSArray *readArray = [NSArray arrayWithContentsOfFile:plistPath];
         NSEnumerator *enumerator = [readArray objectEnumerator];
-        NSDictionary *doodadDictionary = [[NSDictionary alloc] init];
-        while ( doodadDictionary = [enumerator nextObject])
+        NSDictionary *findDictionary = [[NSDictionary alloc] init];
+        while ( findDictionary = [enumerator nextObject])
         {
-            Doodad *d = [[Doodad alloc] initWithData:[doodadDictionary objectForKey:@"name"] cost:[doodadDictionary objectForKey:@"cost"] date:[doodadDictionary objectForKey:@"date"] store:[doodadDictionary objectForKey:@"store"] city:[doodadDictionary objectForKey:@"city"] description:[doodadDictionary objectForKey:@"description"]];
-            [returnArray addObject:d];
+            Find *f = [[Find alloc] initWithData:[findDictionary objectForKey:@"name"] cost:[findDictionary objectForKey:@"cost"] date:[findDictionary objectForKey:@"date"] store:[findDictionary objectForKey:@"store"] city:[findDictionary objectForKey:@"city"] description:[findDictionary objectForKey:@"description"]];
+            [returnArray addObject:f];
         }
     }
     return returnArray;
@@ -85,13 +85,13 @@
     if ([fileManager fileExistsAtPath:plistPath] == YES)
     {
         NSArray *readArray = [NSArray arrayWithContentsOfFile:plistPath];
-        NSDictionary *doodadDictionary = [[NSDictionary alloc] init];
+        NSDictionary *findDictionary = [[NSDictionary alloc] init];
         NSEnumerator *readEnumerator = [readArray objectEnumerator];
-        while( doodadDictionary = [readEnumerator nextObject] )
+        while( findDictionary = [readEnumerator nextObject] )
         {
-            store *storeToAdd = [[store alloc] initWithData:[doodadDictionary objectForKey:@"store"] city:[doodadDictionary objectForKey:@"city"]];
+            SStore *storeToAdd = [[SStore alloc] initWithData:[findDictionary objectForKey:@"store"] city:[findDictionary objectForKey:@"city"]];
             NSEnumerator *storesEnumerator = [stores objectEnumerator];
-            store *s = [[store alloc] init];
+            SStore *s = [[SStore alloc] init];
             BOOL found = NO;
             while ( (s = [storesEnumerator nextObject]) && !found)
                 found = [s isEqual:storeToAdd];

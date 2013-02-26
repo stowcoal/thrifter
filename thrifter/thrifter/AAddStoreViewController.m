@@ -1,21 +1,18 @@
 //
-//  AddDoodadViewController.m
+//  addStoreViewController.m
 //  thrifter
 //
-//  Created by CURTIS STOCHL on 2/14/13.
+//  Created by CURTIS STOCHL on 2/22/13.
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-#import "AddDoodadViewController.h"
-#import "storeSelectViewController.h"
-#import "doodadDataController.h"
-#import "store.h"
+#import "AAddStoreViewController.h"
 
-@interface AddDoodadViewController ()
+@interface AAddStoreViewController ()
 
 @end
 
-@implementation AddDoodadViewController
+@implementation AAddStoreViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -35,7 +32,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,48 +39,21 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if ( (textField == self.TextFieldCost)
-        || (textField == self.TextFieldName)) {
-        [textField resignFirstResponder];
-    }
-    return YES;
-    
-}
-- (BOOL)textViewShouldReturn:(UITextView *)textView {
-    if (textView == self.TextViewDescription)
-    {
-        [textView resignFirstResponder];
-    }
-    return YES;
-}
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"Done"]) {
-        NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
-        NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
-        Doodad *doodadToAdd = [[Doodad alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:self.TextViewStoreName.text city:self.TextViewStoreCity.text description:self.TextViewDescription.text];
-        self.doodad = doodadToAdd;
-    }
-    if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){
-        storeSelectViewController *storeSelect = [segue destinationViewController];
-        storeSelect.dataController = self.dataController;
-    }
-}
 
 #pragma mark - Table view data source
 /*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -148,19 +117,8 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
-- (IBAction)doneSelectStore:(UIStoryboardSegue *)segue
-{
-    if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
-        storeSelectViewController *storeController = [segue sourceViewController];
-        store *storeForDoodad = [[self.dataController readStores] objectAtIndex:[storeController.tableView indexPathForSelectedRow].row];
-        if (storeForDoodad) {
-            self.TextViewStoreCity.text = [storeForDoodad City];
-            self.TextViewStoreName.text = [storeForDoodad Name];
-        }
-    }
-    //[self dismissViewControllerAnimated:YES completion:NULL];
-    
-    NSLog(@"done");
-}
 
+- (IBAction)ButtonDoneClick:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 @end

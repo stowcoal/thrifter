@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class doodadDataController;
+@class FindDataController;
 
 @interface MasterViewController : UITableViewController
-@property (strong, nonatomic) doodadDataController *dataController;
+@property (strong, nonatomic) FindDataController *dataController;
 - (IBAction)AddDoodad:(UIBarButtonItem *)sender;
 - (IBAction)done:(UIStoryboardSegue *)sender;
 - (IBAction)cancel:(UIStoryboardSegue *)sender;

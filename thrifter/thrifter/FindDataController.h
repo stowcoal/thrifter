@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Doodad.h"
+#import "Find.h"
 
-@interface doodadDataController : NSObject
-@property (nonatomic, copy)NSMutableArray *doodadList;
+@interface FindDataController : NSObject
+@property (nonatomic, copy)NSMutableArray *findList;
 @property (nonatomic, copy)NSString *locationString;
 -(id)initFromPList:(NSString *)locationString;
 
--(void)addDoodadToDoodadList:(Doodad *)doodadToAdd;
--(void)removeDoodadAtIndexPath:(NSIndexPath *)indexPath;
+-(void)addFindToFindList:(Find *)findToAdd;
+-(void)removeFindAtIndexPath:(NSIndexPath *)indexPath;
 
--(Doodad *)doodadAtIndexPath:(NSIndexPath *)indexPath;
+-(Find *)findAtIndexPath:(NSIndexPath *)indexPath;
 
 -(void)writeToPList;
 -(NSMutableArray *)readFromPList;

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-#import "Doodad.h"
+#import "Find.h"
 
-@implementation Doodad
+@implementation Find
 -(id) initWithName:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date
 {
     self = [super init];
@@ -29,7 +29,7 @@
         _name = name;
         _cost = cost;
         _date = date;
-        _store = [[store alloc] initWithData:storeName city:city];
+        _store = [[SStore alloc] initWithData:storeName city:city];
         _description = description;
         return self;
     }

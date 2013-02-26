@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-#import "store.h"
+#import "SStore.h"
 
-@implementation store
+@implementation SStore
 -(id)initWithData:(NSString *)name city:(NSString *)city
 {
     self = [super init];
@@ -20,17 +20,9 @@
     }
     return nil;
 }
--(BOOL)isEqual:(store *)other
+-(BOOL)isEqual:(SStore *)other
 {
-    return _city == other.City && _name == other.Name;
-}
--(NSString *)City
-{
-    return _city;
-}
--(NSString *)Name
-{
-    return _name;
+    return _city == other.city && _name == other.name;
 }
 
 @end

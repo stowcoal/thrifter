@@ -1,23 +1,24 @@
 //
-//  storeSelectViewController.m
+//  DetailDoodadViewController.m
 //  thrifter
 //
-//  Created by CURTIS STOCHL on 2/21/13.
+//  Created by CURTIS STOCHL on 2/14/13.
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
+#import "DetailFindViewController.h"
 
-#import "storeSelectViewController.h"
-@interface storeSelectViewController ()
+@interface DetailFindViewController ()
 
 @end
 
-@implementation storeSelectViewController
+@implementation DetailFindViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
+        // Custom initialization
     }
     return self;
 }
@@ -31,7 +32,28 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    _stores = [[self dataController] readStores];
+    [self configureView];
+}
+
+- (void)configureView
+{
+    static NSDateFormatter *dateFormatter = nil;
+    if (dateFormatter == nil) {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    }
+    static NSNumberFormatter *numberFormatter = nil;
+    if (numberFormatter == nil) {
+        numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [numberFormatter setCurrencyCode:@"USD"];
+    }
+    [self.TextLabelCost setText:[numberFormatter stringFromNumber:self.detailFind.cost]];
+    [self.TextLabelDate setText:[dateFormatter stringFromDate:self.detailFind.date]];
+    [self.TextLabelFind setText:self.detailFind.name];
+    [self.TextLabelStore setText:self.detailFind.store.name];
+    [self.TextLabelCity setText:self.detailFind.store.city];
+    [self.TextViewDescription setText:self.detailFind.description];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,33 +62,35 @@
     // Dispose of any resources that can be recreated.
 }
 
-//#pragma mark - Table view data source
-
+#pragma mark - Table view data source
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 //#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
-
+*/
+/*
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [_stores count];
+    return 0;
 }
-
+ */
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"CellStore";
+    static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [[_stores objectAtIndex:indexPath.row] Name];
-    cell.detailTextLabel.text = [[_stores objectAtIndex:indexPath.row] City];
+    // Configure the cell...
     
     return cell;
+     
 }
-
+*/
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -110,20 +134,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self dismissViewControllerAnimated:YES completion:NULL];
-
-}
-- (IBAction)doneAddStore:(UIStoryboardSegue *)segue
-{
-    if ([[segue identifier] isEqualToString:@"UnwindAddStore"]) {
-        addStoreViewController *addController = [segue sourceViewController];
-        if (addController.TextViewStoreName &&
-            addController.TextViewStoreCity) {
-            self.stores = [self.stores arrayByAddingObject:[[store alloc] initWithData:addController.TextViewStoreName.text city:addController.TextViewStoreCity.text]];
-            [[self tableView] reloadData];
-        }
-    }
-    //[self dismissViewControllerAnimated:YES completion:NULL];
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
 }
 
 @end

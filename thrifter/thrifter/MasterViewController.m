@@ -7,10 +7,10 @@
 //
 
 #import "MasterViewController.h"
-#import "doodadDataController.h"
-#import "Doodad.h"
-#import "DetailDoodadViewController.h"
-#import "AddDoodadViewController.h"
+#import "FindDataController.h"
+#import "Find.h"
+#import "DetailFindViewController.h"
+#import "AddFindViewController.h"
 
 @interface MasterViewController ()
 
@@ -22,7 +22,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.dataController = [[doodadDataController alloc] init];
+        self.dataController = [[FindDataController alloc] init];
     }
     return self;
 }
@@ -37,7 +37,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.dataController = [[doodadDataController alloc] initFromPList:@"data.plist"];
+    self.dataController = [[FindDataController alloc] initFromPList:@"data.plist"];
     [[self tableView] reloadData];
 }
 
@@ -60,16 +60,16 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.dataController.doodadList count];
+    return [self.dataController.findList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"CellDoodad";
+    static NSString *CellIdentifier = @"CellFind";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    Doodad *doodadForCell = [self.dataController doodadAtIndexPath:indexPath];
-    NSLog(@"%@",doodadForCell.name);
-    [[cell textLabel] setText:doodadForCell.name];
+    Find *findForCell = [self.dataController findAtIndexPath:indexPath];
+    NSLog(@"%@",findForCell.name);
+    [[cell textLabel] setText:findForCell.name];
     // Configure the cell...
     
     return cell;
@@ -88,7 +88,7 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [self.dataController removeDoodadAtIndexPath:indexPath];
+        [self.dataController removeFindAtIndexPath:indexPath];
         [tableView reloadData];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -127,23 +127,23 @@
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"SegueDetail"]) {
-        DetailDoodadViewController *detailViewController = [segue destinationViewController];
+        DetailFindViewController *detailViewController = [segue destinationViewController];
         NSLog(@"%@", [self.tableView indexPathForSelectedRow]);
-        [self.dataController doodadAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        detailViewController.detailDoodad = [self.dataController doodadAtIndexPath:[self.tableView indexPathForSelectedRow]];        
+        [self.dataController findAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        detailViewController.detailFind = [self.dataController findAtIndexPath:[self.tableView indexPathForSelectedRow]];
     }
     if ([[segue identifier] isEqualToString:@"SegueAdd"])
     {
-        AddDoodadViewController *addViewController = (AddDoodadViewController *)[[[segue destinationViewController] viewControllers] objectAtIndex:0];
+        AddFindViewController *addViewController = (AddFindViewController *)[[[segue destinationViewController] viewControllers] objectAtIndex:0];
         addViewController.dataController = self.dataController;
     }
 }
 - (IBAction)done:(UIStoryboardSegue *)segue
 {
     if ([[segue identifier] isEqualToString:@"Done"]) {
-        AddDoodadViewController *addController = [segue sourceViewController];
-        if (addController.doodad) {
-            [self.dataController addDoodadToDoodadList:addController.doodad];
+        AddFindViewController *addController = [segue sourceViewController];
+        if (addController.find) {
+            [self.dataController addFindToFindList:addController.find];
             [[self tableView] reloadData];
         }
     }

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface addStoreViewController : UITableViewController
+@interface AAddStoreViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UITextField *TextViewStoreName;
 @property (weak, nonatomic) IBOutlet UITextField *TextViewStoreCity;
 - (IBAction)ButtonDoneClick:(UIBarButtonItem *)sender;

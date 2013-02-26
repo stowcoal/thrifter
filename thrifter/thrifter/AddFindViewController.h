@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Doodad.h"
-#import "doodadDataController.h"
+#import "Find.h"
+#import "FindDataController.h"
 
-@interface AddDoodadViewController : UITableViewController
-@property (strong, nonatomic) Doodad *doodad;
-@property (strong, nonatomic) doodadDataController *dataController;
+@interface AddFindViewController : UITableViewController
+@property (strong, nonatomic) Find *find;
+@property (strong, nonatomic) FindDataController *dataController;
 
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldName;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldCost;
