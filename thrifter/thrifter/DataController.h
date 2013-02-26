@@ -11,7 +11,9 @@
 
 @interface DataController : NSObject
 @property (nonatomic, copy)NSMutableArray *findList;
+@property (nonatomic, copy)NSMutableArray *storeList;
 @property (nonatomic, copy)NSString *locationString;
+
 
 -(id)initFromPList:(NSString *)locationString;
 
@@ -21,6 +23,6 @@
 -(Find *)findAtIndexPath:(NSIndexPath *)indexPath;
 
 -(void)writeToPList;
--(NSMutableArray *)readFromPList;
+-(NSMutableArray *)readFinds;
 -(NSMutableArray *)readStores;
 @end

@@ -74,7 +74,8 @@
     }
     return returnArray;
 }
--(NSMutableArray *)readStores
+
+ -(NSMutableArray *)readStores
 {
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -101,5 +102,6 @@
     }
     return stores;
 }
+
 
 @end
