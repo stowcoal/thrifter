@@ -21,7 +21,7 @@
     }
     return nil;
 }
--(id)initWithData:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSString *)storeName city:(NSString *)city description:(NSString *)description
+-(id)initWithData:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSNumber *)storeKey description:(NSString *)description
 {
     self = [super init];
     if (self)
@@ -29,7 +29,7 @@
         _name = name;
         _cost = cost;
         _date = date;
-        _store = [[Store alloc] initWithData:storeName city:city];
+        _storeKey = storeKey;
         _description = description;
         return self;
     }

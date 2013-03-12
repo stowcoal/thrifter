@@ -15,9 +15,9 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSNumber *cost;
 @property (nonatomic, strong) NSDate *date;
-@property (nonatomic, copy) Store *store;
+@property (nonatomic, copy) NSNumber *storeKey;
 @property (nonatomic, copy) NSString *description;
 -(id)initWithName:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date;
--(id)initWithData:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSString *)storeName city:(NSString *)city description:(NSString *)description;
+-(id)initWithData:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSNumber *)storeKey description:(NSString *)description;
 
 @end

@@ -12,6 +12,7 @@
 
 @interface AddFindViewController : UITableViewController
 @property (strong, nonatomic) Find *find;
+@property (strong, nonatomic) NSNumber *storeKey;
 @property (strong, nonatomic) DataController *dataController;
 
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldName;

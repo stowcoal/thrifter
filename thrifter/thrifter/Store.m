@@ -20,9 +20,21 @@
     }
     return nil;
 }
+-(id)initWithDataAndKey:(NSString *)name city:(NSString *)city key:(NSNumber *)key
+{
+    self = [super init];
+    if (self)
+    {
+        _name = name;
+        _city = city;
+        _key = key;
+        return self;
+    }
+    return nil;
+}
 -(BOOL)isEqual:(Store *)other
 {
-    return _city == other.city && _name == other.name;
+    return _key == other.key;
 }
 
 @end

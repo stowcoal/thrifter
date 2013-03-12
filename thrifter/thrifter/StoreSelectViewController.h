@@ -14,6 +14,7 @@
 
 @interface StoreSelectViewController : UITableViewController
 @property (strong, nonatomic) DataController *dataController;
-@property (strong, nonatomic) NSArray *stores;
+@property (strong, nonatomic) NSNumber *storeKey;
+
 - (IBAction)doneAddStore:(UIStoryboardSegue *)segue;
 @end

@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Store : NSObject
+@property (nonatomic, copy)NSNumber *key;
 @property (nonatomic, copy)NSString *name;
 @property (nonatomic, copy)NSString *city;
 -(id)initWithData:(NSString *)name city:(NSString *)city;
+-(id)initWithDataAndKey:(NSString *)name city:(NSString *)city key:(NSNumber *)key;
 -(BOOL)isEqual:(id)other;
 @end

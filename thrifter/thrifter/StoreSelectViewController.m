@@ -31,7 +31,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    _stores = [[self dataController] readStores];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,7 +52,7 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [_stores count];
+    return [[[self dataController] storeList] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,8 +60,8 @@
     static NSString *CellIdentifier = @"CellStore";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = ((Store *)[_stores objectAtIndex:indexPath.row]).name;
-    cell.detailTextLabel.text = ((Store *)[_stores objectAtIndex:indexPath.row]).city;
+    cell.textLabel.text = [[self dataController] storeAtIndexPath:indexPath].name;
+    cell.detailTextLabel.text = [[self dataController] storeAtIndexPath:indexPath].city;
     
     return cell;
 }
@@ -119,7 +118,7 @@
         AddStoreViewController *addController = [segue sourceViewController];
         if (addController.TextViewStoreName &&
             addController.TextViewStoreCity) {
-            self.stores = [self.stores arrayByAddingObject:[[Store alloc] initWithData:addController.TextViewStoreName.text city:addController.TextViewStoreCity.text]];
+            [[self dataController] addStoreToStoreList:[[Store alloc] initWithData:addController.TextViewStoreName.text city:addController.TextViewStoreCity.text]];
             [[self tableView] reloadData];
         }
     }
