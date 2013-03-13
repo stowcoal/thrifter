@@ -45,24 +45,29 @@
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ( (textField == self.TextFieldCost)
-        || (textField == self.TextFieldName)) {
+        || (textField == self.TextFieldName)
+        || (textField == self.TextFieldDescription)
+        || (textField == self.TextFieldStoreCity)
+        || (textField == self.TextFieldStoreName)) {
         [textField resignFirstResponder];
     }
     return YES;
     
 }
+/*
 - (BOOL)textViewShouldReturn:(UITextView *)textView {
-    if (textView == self.TextViewDescription)
+    if (textView == self.TextFieldDescription)
     {
         [textView resignFirstResponder];
     }
     return YES;
 }
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"Done"]) {
         NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
         NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
-        Find *findToAdd = [[Find alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:_storeKey description:self.TextViewDescription.text];
+        Find *findToAdd = [[Find alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:_storeKey description:self.TextFieldDescription.text];
         self.find = findToAdd;
     }
     if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){
@@ -152,10 +157,11 @@
 {
     if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
         StoreSelectViewController *storeController = [segue sourceViewController];
-        Store *storeForFind = [[self.dataController readStores] objectAtIndex:[storeController.tableView indexPathForSelectedRow].row];
+        _storeKey = [[self dataController] storeAtIndexPath:[storeController.tableView indexPathForSelectedRow]].key;
+        Store *storeForFind = [[self dataController] storeForKey:_storeKey];
         if (storeForFind) {
-            self.TextViewStoreCity.text = storeForFind.city;
-            self.TextViewStoreName.text = storeForFind.name;
+            self.TextFieldStoreCity.text = storeForFind.city;
+            self.TextFieldStoreName.text = storeForFind.name;
         }
     }
     //[self dismissViewControllerAnimated:YES completion:NULL];
@@ -163,4 +169,30 @@
     NSLog(@"done");
 }
 
+- (IBAction)ButtonAddPicture:(UIButton *)sender {
+    /*
+    UIWindow* window;
+    UIImagePickerController* imagePickerController;
+    UIImageView* imageView;
+    
+    //window = [[[UIWindow alloc]
+                    //initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    
+    
+    // Set up the image picker controller and add it to the view
+    imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    imagePickerController.sourceType =
+    UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [window addSubview:imagePickerController.view];
+    
+    
+    // Set up the image view and add it to the view but make it hidden
+    imageView = [[UIImageView alloc] initWithFrame:[window bounds]];
+    imageView.hidden = YES;
+    
+    [window addSubview:imageView];
+     */
+}
 @end

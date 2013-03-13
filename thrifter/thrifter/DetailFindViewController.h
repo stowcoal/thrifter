@@ -11,6 +11,7 @@
 
 @interface DetailFindViewController : UITableViewController
 @property (strong, nonatomic) Find *detailFind;
+@property (strong, nonatomic) Store *detailStore;
 
 @property (weak, nonatomic) IBOutlet UILabel *TextLabelStore;
 @property (weak, nonatomic) IBOutlet UILabel *TextLabelCity;

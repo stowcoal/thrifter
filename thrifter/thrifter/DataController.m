@@ -34,7 +34,10 @@
 }
 -(void)addStoreToStoreList:(Store *)storeToAdd
 {
-    storeToAdd.key = [NSNumber numberWithInteger:((Store *)[_storeList lastObject]).key.integerValue + 1];
+    if ([[self storeList] lastObject])
+        storeToAdd.key = [NSNumber numberWithInteger:((Store *)[_storeList lastObject]).key.integerValue + 1];
+    else
+        storeToAdd.key = 0;
     [_storeList addObject:storeToAdd];
     [self writeStores];
 }
@@ -152,12 +155,36 @@
         NSEnumerator *readEnumerator = [readArray objectEnumerator];
         while( findDictionary = [readEnumerator nextObject] )
         {
-            Store *storeToAdd = [[Store alloc] initWithDataAndKey:[findDictionary objectForKey:@"store"] city:[findDictionary objectForKey:@"city"] key:[findDictionary objectForKey:@"key"]];
+            Store *storeToAdd = [[Store alloc] initWithDataAndKey:[findDictionary objectForKey:@"name"] city:[findDictionary objectForKey:@"city"] key:[findDictionary objectForKey:@"key"]];
             [stores addObject:storeToAdd];
         }
     }
     _storeList = stores;
 }
-
-
+-(Store *)storeForFind:(Find *)find
+{
+    Store *s = [[Store alloc] init];
+    NSEnumerator *storeEnumerator = [[self storeList] objectEnumerator];
+    while ( s = [storeEnumerator nextObject])
+    {
+        if( s.key == find.storeKey)
+        {
+            return s;
+        }
+    }
+    return s;
+}
+-(Store *)storeForKey:(NSNumber *)key
+{
+    Store *s = [[Store alloc] init];
+    NSEnumerator *storeEnumerator = [[self storeList] objectEnumerator];
+    while ( s = [storeEnumerator nextObject])
+    {
+        if( s.key == key)
+        {
+            return s;
+        }
+    }
+    return s;
+}
 @end

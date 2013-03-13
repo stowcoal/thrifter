@@ -14,13 +14,12 @@
 @property (strong, nonatomic) Find *find;
 @property (strong, nonatomic) NSNumber *storeKey;
 @property (strong, nonatomic) DataController *dataController;
-
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldName;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldCost;
-@property (weak, nonatomic) IBOutlet UITextView *TextViewDescription;
-@property (weak, nonatomic) IBOutlet UITextField *TextViewStoreName;
-@property (weak, nonatomic) IBOutlet UITextField *TextViewStoreCity;
+@property (weak, nonatomic) IBOutlet UITextField *TextFieldDescription;
+@property (weak, nonatomic) IBOutlet UITextField *TextFieldStoreName;
+@property (weak, nonatomic) IBOutlet UITextField *TextFieldStoreCity;
 - (IBAction)doneSelectStore:(UIStoryboardSegue *)segue;
-
+- (IBAction)ButtonAddPicture:(UIButton *)sender;
 
 @end

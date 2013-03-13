@@ -131,6 +131,7 @@
         NSLog(@"%@", [self.tableView indexPathForSelectedRow]);
         [self.dataController findAtIndexPath:[self.tableView indexPathForSelectedRow]];
         detailViewController.detailFind = [self.dataController findAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        detailViewController.detailStore = [[self dataController] storeForFind:detailViewController.detailFind];
     }
     if ([[segue identifier] isEqualToString:@"SegueAdd"])
     {

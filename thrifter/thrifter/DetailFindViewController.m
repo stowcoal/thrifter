@@ -51,9 +51,10 @@
     [self.TextLabelCost setText:[numberFormatter stringFromNumber:self.detailFind.cost]];
     [self.TextLabelDate setText:[dateFormatter stringFromDate:self.detailFind.date]];
     [self.TextLabelFind setText:self.detailFind.name];
-    //[self.TextLabelStore setText:self.detailFind.store.name];
-    //[self.TextLabelCity setText:self.detailFind.store.city];
     [self.TextViewDescription setText:self.detailFind.description];
+    [self.TextLabelCity setText:self.detailStore.city];
+    [self.TextLabelStore setText:self.detailStore.name];
+    
 }
 
 - (void)didReceiveMemoryWarning

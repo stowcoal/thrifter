@@ -24,6 +24,8 @@
 -(Find *)findAtIndexPath:(NSIndexPath *)indexPath;
 -(Store *)storeAtIndexPath:(NSIndexPath *)indexPath;
 
+-(Store *)storeForFind:(Find *)find;
+-(Store *)storeForKey:(NSNumber *)key;
 
 -(void)readFinds;
 -(void)readStores;
