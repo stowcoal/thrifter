@@ -704,6 +704,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="find detail" id="mlj-2k-YAR"/>
                     <connections>
+                        <outlet property="PictureFind" destination="4bf-WY-OFh" id="nTt-su-FjO"/>
                         <outlet property="TextLabelCity" destination="EoC-MV-KhJ" id="rSJ-Pq-t1p"/>
                         <outlet property="TextLabelCost" destination="0Bo-IR-eQ5" id="peG-Mr-OYA"/>
                         <outlet property="TextLabelDate" destination="QMW-E4-r74" id="HW9-kB-ExQ"/>

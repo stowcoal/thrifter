@@ -68,6 +68,7 @@
         NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
         NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
         Find *findToAdd = [[Find alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:_storeKey description:self.TextFieldDescription.text];
+        self.find.picture = self.imageData;
         self.find = findToAdd;
     }
     if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){
@@ -170,29 +171,22 @@
 }
 
 - (IBAction)ButtonAddPicture:(UIButton *)sender {
-    /*
-    UIWindow* window;
-    UIImagePickerController* imagePickerController;
-    UIImageView* imageView;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        
+        imagePicker.sourceType =  UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        
+        imagePicker.delegate = (id)self;
+        
+        [self presentViewController:imagePicker animated:YES completion:NULL];
+    }
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     
-    //window = [[[UIWindow alloc]
-                    //initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    _imageData = UIImagePNGRepresentation(image);
     
-    
-    // Set up the image picker controller and add it to the view
-    imagePickerController = [[UIImagePickerController alloc] init];
-    imagePickerController.delegate = self;
-    imagePickerController.sourceType =
-    UIImagePickerControllerSourceTypePhotoLibrary;
-    
-    [window addSubview:imagePickerController.view];
-    
-    
-    // Set up the image view and add it to the view but make it hidden
-    imageView = [[UIImageView alloc] initWithFrame:[window bounds]];
-    imageView.hidden = YES;
-    
-    [window addSubview:imageView];
-     */
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 @end

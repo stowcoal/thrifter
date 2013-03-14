@@ -101,7 +101,7 @@
     Find *f;
     while ( f = [enumerator nextObject])
     {
-        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:f.name, @"name", f.cost, @"cost", f.date, @"date", f.storeKey, @"store", f.description, @"description", nil];
+        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:f.name, @"name", f.cost, @"cost", f.date, @"date", f.storeKey, @"store", f.description, @"description", f.picture, @"picture", nil];
         [array addObject:tempDictionary];
     }
     [array writeToFile:plistPath atomically:YES];
@@ -136,6 +136,7 @@
         while ( findDictionary = [enumerator nextObject])
         {
             Find *f = [[Find alloc] initWithData:[findDictionary objectForKey:@"name"] cost:[findDictionary objectForKey:@"cost"] date:[findDictionary objectForKey:@"date"] store:[findDictionary objectForKey:@"store"] description:[findDictionary objectForKey:@"description"]];
+            f.picture = [findDictionary objectForKey:@"picture"];
             [finds addObject:f];
         }
     }
