@@ -35,7 +35,16 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        [[self ButtonTakePicture] setEnabled:NO];
+        [[self ButtonTakePicture] setAlpha:.4];
+    }
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+    {
+        [[self ButtonSelectPicture] setEnabled:NO];
+        [[self ButtonSelectPicture] setAlpha:.4];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,8 +76,7 @@
     if ([[segue identifier] isEqualToString:@"Done"]) {
         NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
         NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
-        Find *findToAdd = [[Find alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:_storeKey description:self.TextFieldDescription.text];
-        self.find.picture = self.imageData;
+        Find *findToAdd = [[Find alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:_storeKey description:self.TextFieldDescription.text picture:self.imageData];
         self.find = findToAdd;
     }
     if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){
@@ -154,6 +162,7 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
 - (IBAction)doneSelectStore:(UIStoryboardSegue *)segue
 {
     if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
@@ -169,8 +178,18 @@
     
     NSLog(@"done");
 }
-
-- (IBAction)ButtonAddPicture:(UIButton *)sender {
+- (IBAction)ClickTakePicture:(UIButton *)sender {
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        
+        imagePicker.sourceType =  UIImagePickerControllerSourceTypeCamera;
+        
+        imagePicker.delegate = (id)self;
+        
+        [self presentViewController:imagePicker animated:YES completion:NULL];
+    }
+}
+- (IBAction)ClickSelectPicture:(UIButton *)sender {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
         UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
         
@@ -188,5 +207,7 @@
     _imageData = UIImagePNGRepresentation(image);
     
     [self dismissViewControllerAnimated:YES completion:NULL];
+    [[self ImageFind] setImage:[[UIImage alloc] initWithData:_imageData]];
 }
+
 @end

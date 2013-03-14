@@ -19,6 +19,6 @@
 @property (nonatomic, copy) NSString *description;
 @property (nonatomic, copy) NSData *picture;
 -(id)initWithName:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date;
--(id)initWithData:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSNumber *)storeKey description:(NSString *)description;
+-(id)initWithData:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSNumber *)storeKey description:(NSString *)description picture:(NSData *)picture;
 
 @end

@@ -257,20 +257,20 @@
                                             <constraint firstItem="Lue-s4-KnU" firstAttribute="leading" secondItem="9lp-RR-osi" secondAttribute="leading" type="default" id="oMA-qH-SSw"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Zfz-W3-M56">
-                                        <rect key="frame" x="0.0" y="281" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="125" id="Zfz-W3-M56">
+                                        <rect key="frame" x="0.0" y="281" width="320" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8z-0D-OQl">
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="105" id="Kas-3C-Bso"/>
                                                         <constraint firstAttribute="height" constant="37" id="NLP-tZ-KGV"/>
-                                                        <constraint firstAttribute="width" constant="105" id="rWC-Al-As3"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="Add Picture">
+                                                    <state key="normal" title="select picture">
                                                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -278,15 +278,42 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="ButtonAddPicture:" destination="EqX-gz-gD0" eventType="touchUpInside" id="aGn-FU-T2S"/>
+                                                        <action selector="ClickSelectPicture:" destination="EqX-gz-gD0" eventType="touchUpInside" id="8i0-NU-a07"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeA-Zn-pso">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="37" id="hKO-Fd-ZAX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="take picture">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="ClickTakePicture:" destination="EqX-gz-gD0" eventType="touchUpInside" id="L9Y-Hu-rtE"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="RyN-hI-Jxq">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="160" id="0z9-wf-vbc"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Z8z-0D-OQl" firstAttribute="centerX" secondItem="Zfz-W3-M56" secondAttribute="centerX" type="default" id="jfx-yU-Abo"/>
-                                            <constraint firstItem="Z8z-0D-OQl" firstAttribute="top" secondItem="Zfz-W3-M56" secondAttribute="top" constant="3" id="pbe-vg-rZT"/>
+                                            <constraint firstItem="RyN-hI-Jxq" firstAttribute="centerY" secondItem="Zfz-W3-M56" secondAttribute="centerY" type="default" id="2vJ-v3-zmG"/>
+                                            <constraint firstItem="EeA-Zn-pso" firstAttribute="bottom" secondItem="RyN-hI-Jxq" secondAttribute="bottom" type="default" id="9Cv-Lt-xtD"/>
+                                            <constraint firstAttribute="trailing" secondItem="EeA-Zn-pso" secondAttribute="trailing" constant="20" type="default" id="Obd-LV-U90"/>
+                                            <constraint firstItem="RyN-hI-Jxq" firstAttribute="leading" secondItem="Zfz-W3-M56" secondAttribute="leading" constant="20" type="default" id="YkG-nY-zA2"/>
+                                            <constraint firstItem="EeA-Zn-pso" firstAttribute="leading" secondItem="Z8z-0D-OQl" secondAttribute="leading" type="default" id="dJu-Dy-kMi"/>
+                                            <constraint firstItem="Z8z-0D-OQl" firstAttribute="top" secondItem="Zfz-W3-M56" secondAttribute="top" constant="20" type="default" id="gVJ-na-8dE"/>
+                                            <constraint firstItem="RyN-hI-Jxq" firstAttribute="top" secondItem="Zfz-W3-M56" secondAttribute="top" constant="20" type="default" id="kpN-Vf-r9U"/>
+                                            <constraint firstAttribute="trailing" secondItem="Z8z-0D-OQl" secondAttribute="trailing" constant="20" type="default" id="meB-7u-qrT"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -308,6 +335,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ButtonSelectPicture" destination="Z8z-0D-OQl" id="Lgr-jd-vvG"/>
+                        <outlet property="ButtonTakePicture" destination="EeA-Zn-pso" id="nqm-p2-zt1"/>
+                        <outlet property="ImageFind" destination="RyN-hI-Jxq" id="BBn-4e-BW6"/>
                         <outlet property="TextFieldCost" destination="tQZ-T1-jkd" id="Jlq-Cs-a0P"/>
                         <outlet property="TextFieldDescription" destination="oBI-Dw-gsq" id="Xhj-sx-b0v"/>
                         <outlet property="TextFieldName" destination="r0R-7b-Hej" id="WII-4O-i7W"/>
@@ -680,18 +710,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bf-WY-OFh">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="4bf-WY-OFh">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="160" id="6BB-OE-UgC"/>
-                                                        <constraint firstAttribute="height" constant="94" id="rHq-H2-Moh"/>
+                                                        <constraint firstAttribute="height" constant="128" id="tw1-8a-2dj"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="4bf-WY-OFh" firstAttribute="top" secondItem="fe1-XQ-HaQ" secondAttribute="top" constant="15" id="8oI-3q-cvk"/>
                                             <constraint firstItem="4bf-WY-OFh" firstAttribute="centerX" secondItem="fe1-XQ-HaQ" secondAttribute="centerX" type="default" id="SYl-CA-ZXg"/>
+                                            <constraint firstItem="4bf-WY-OFh" firstAttribute="centerY" secondItem="fe1-XQ-HaQ" secondAttribute="centerY" type="default" id="oOo-zg-uT0"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>

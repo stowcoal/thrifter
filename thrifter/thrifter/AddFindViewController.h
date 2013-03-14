@@ -20,7 +20,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldDescription;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldStoreName;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldStoreCity;
+@property (weak, nonatomic) IBOutlet UIButton *ButtonTakePicture;
+@property (weak, nonatomic) IBOutlet UIButton *ButtonSelectPicture;
+@property (weak, nonatomic) IBOutlet UIImageView *ImageFind;
+- (IBAction)ClickTakePicture:(UIButton *)sender;
 - (IBAction)doneSelectStore:(UIStoryboardSegue *)segue;
-- (IBAction)ButtonAddPicture:(UIButton *)sender;
+- (IBAction)ClickSelectPicture:(UIButton *)sender;
 
 @end

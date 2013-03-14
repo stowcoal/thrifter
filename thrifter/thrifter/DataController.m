@@ -135,8 +135,7 @@
         NSDictionary *findDictionary = [[NSDictionary alloc] init];
         while ( findDictionary = [enumerator nextObject])
         {
-            Find *f = [[Find alloc] initWithData:[findDictionary objectForKey:@"name"] cost:[findDictionary objectForKey:@"cost"] date:[findDictionary objectForKey:@"date"] store:[findDictionary objectForKey:@"store"] description:[findDictionary objectForKey:@"description"]];
-            f.picture = [findDictionary objectForKey:@"picture"];
+            Find *f = [[Find alloc] initWithData:[findDictionary objectForKey:@"name"] cost:[findDictionary objectForKey:@"cost"] date:[findDictionary objectForKey:@"date"] store:[findDictionary objectForKey:@"store"] description:[findDictionary objectForKey:@"description"] picture:[findDictionary objectForKey:@"picture"]];
             [finds addObject:f];
         }
     }

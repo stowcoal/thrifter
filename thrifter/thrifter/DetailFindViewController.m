@@ -55,8 +55,7 @@
     [self.TextLabelCity setText:self.detailStore.city];
     [self.TextLabelStore setText:self.detailStore.name];
     [self.PictureFind setImage:[[UIImage alloc] initWithData:self.detailFind.picture]];
-    
-    
+
 }
 
 - (void)didReceiveMemoryWarning
