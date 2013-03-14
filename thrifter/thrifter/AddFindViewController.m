@@ -55,9 +55,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ( (textField == self.TextFieldCost)
         || (textField == self.TextFieldName)
-        || (textField == self.TextFieldDescription)
-        || (textField == self.TextFieldStoreCity)
-        || (textField == self.TextFieldStoreName)) {
+        || (textField == self.TextFieldDescription)) {
         [textField resignFirstResponder];
     }
     return YES;
@@ -170,8 +168,10 @@
         _storeKey = [[self dataController] storeAtIndexPath:[storeController.tableView indexPathForSelectedRow]].key;
         Store *storeForFind = [[self dataController] storeForKey:_storeKey];
         if (storeForFind) {
-            self.TextFieldStoreCity.text = storeForFind.city;
-            self.TextFieldStoreName.text = storeForFind.name;
+            self.LabelCity.hidden = NO;
+            self.LabelName.hidden = NO;
+            self.LabelCity.text = storeForFind.city;
+            self.LabelName.text = storeForFind.name;
         }
     }
     //[self dismissViewControllerAnimated:YES completion:NULL];
