@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FindCell.h"
 @class DataController;
 
 @interface MasterViewController : UITableViewController

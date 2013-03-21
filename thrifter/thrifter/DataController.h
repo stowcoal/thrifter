@@ -20,6 +20,7 @@
 -(void)addFindToFindList:(Find *)findToAdd;
 -(void)addStoreToStoreList:(Store *)storeToAdd;
 -(void)removeFindAtIndexPath:(NSIndexPath *)indexPath;
+-(void)removeStoreAtIndexPath:(NSIndexPath *)indexPath;
 
 -(Find *)findAtIndexPath:(NSIndexPath *)indexPath;
 -(Store *)storeAtIndexPath:(NSIndexPath *)indexPath;

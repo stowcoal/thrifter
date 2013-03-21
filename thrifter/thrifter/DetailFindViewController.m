@@ -7,6 +7,7 @@
 //
 
 #import "DetailFindViewController.h"
+#import "StoreSelectViewController.h"
 
 @interface DetailFindViewController ()
 
@@ -52,9 +53,17 @@
     [self.TextLabelDate setText:[dateFormatter stringFromDate:self.detailFind.date]];
     [self.TextLabelFind setText:self.detailFind.name];
     [self.TextViewDescription setText:self.detailFind.description];
-    [self.TextLabelCity setText:self.detailStore.city];
-    [self.TextLabelStore setText:self.detailStore.name];
     [self.PictureFind setImage:[[UIImage alloc] initWithData:self.detailFind.picture]];
+    if ([self detailStore] )
+    {
+        [self.TextLabelCity setText:self.detailStore.city];
+        [self.TextLabelStore setText:self.detailStore.name];
+    }
+    else
+    {
+        [self.TextLabelCity setText:@"not found"];
+        [self.TextLabelStore setText:@"not found"];
+    }
 
 }
 
@@ -63,7 +72,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"SegueSelectNewStore"]) {
+        StoreSelectViewController *storeSelectViewController = [segue destinationViewController];
+        storeSelectViewController.dataController = [self dataController];
+    }
+}
 #pragma mark - Table view data source
 /*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

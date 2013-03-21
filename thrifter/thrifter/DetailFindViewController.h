@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Find.h"
+#import "DataController.h"
 
 @interface DetailFindViewController : UITableViewController
 @property (strong, nonatomic) Find *detailFind;
 @property (strong, nonatomic) Store *detailStore;
+@property (strong, nonatomic) DataController *dataController;
 
 @property (weak, nonatomic) IBOutlet UILabel *TextLabelStore;
 @property (weak, nonatomic) IBOutlet UILabel *TextLabelCity;

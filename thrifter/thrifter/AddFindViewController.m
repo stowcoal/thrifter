@@ -77,26 +77,27 @@
         Find *findToAdd = [[Find alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:_storeKey description:self.TextFieldDescription.text picture:self.imageData];
         self.find = findToAdd;
     }
-    if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){
+    if([[segue identifier] isEqualToString:@"SegueStoreSelect"] ||
+        [[segue identifier] isEqualToString:@"SegueStoreSelectAgain"]){
         StoreSelectViewController *storeSelect = [segue destinationViewController];
         storeSelect.dataController = self.dataController;
     }
 }
-
-#pragma mark - Table view data source
 /*
+#pragma mark - Table view data source
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 //#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -168,9 +169,6 @@
         _storeKey = [[self dataController] storeAtIndexPath:[storeController.tableView indexPathForSelectedRow]].key;
         Store *storeForFind = [[self dataController] storeForKey:_storeKey];
         if (storeForFind) {
-            self.LabelName.hidden = NO;
-            self.LabelCity.hidden = NO;
-            self.LabelStore.hidden = YES;
             self.LabelCity.text = storeForFind.city;
             self.LabelName.text = storeForFind.name;
         }

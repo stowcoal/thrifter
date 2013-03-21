@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldCost;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldDescription;
 @property (weak, nonatomic) IBOutlet UITableViewCell *CellStoreData;
+@property (weak, nonatomic) IBOutlet UITableViewCell *CellStoreSelect;
 @property (weak, nonatomic) IBOutlet UILabel *LabelCity;
 @property (weak, nonatomic) IBOutlet UILabel *LabelName;
 @property (weak, nonatomic) IBOutlet UIButton *ButtonTakePicture;

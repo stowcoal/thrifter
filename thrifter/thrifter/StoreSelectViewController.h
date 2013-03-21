@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DataController.h"
 #import "AddStoreViewController.h"
+#import "StoreCell.h"
 #import "Store.h"
 
 

@@ -66,10 +66,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CellFind";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    FindCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     Find *findForCell = [self.dataController findAtIndexPath:indexPath];
     NSLog(@"%@",findForCell.name);
-    [[cell textLabel] setText:findForCell.name];
+    [cell.customLabel setText:findForCell.name];
     // Configure the cell...
     
     return cell;
@@ -132,6 +132,7 @@
         [self.dataController findAtIndexPath:[self.tableView indexPathForSelectedRow]];
         detailViewController.detailFind = [self.dataController findAtIndexPath:[self.tableView indexPathForSelectedRow]];
         detailViewController.detailStore = [[self dataController] storeForFind:detailViewController.detailFind];
+        detailViewController.dataController = [self dataController];
     }
     if ([[segue identifier] isEqualToString:@"SegueAdd"])
     {

@@ -58,15 +58,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CellStore";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    StoreCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [[self dataController] storeAtIndexPath:indexPath].name;
-    cell.detailTextLabel.text = [[self dataController] storeAtIndexPath:indexPath].city;
+    cell.LabelStoreName.text = [[self dataController] storeAtIndexPath:indexPath].name;
+    cell.LabelStoreCity.text = [[self dataController] storeAtIndexPath:indexPath].city;
     
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -81,13 +81,14 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [[self dataController] removeStoreAtIndexPath:indexPath];
+        [[self tableView] reloadData];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -121,6 +122,7 @@
             [[self dataController] addStoreToStoreList:[[Store alloc] initWithData:addController.TextViewStoreName.text city:addController.TextViewStoreCity.text]];
             [[self tableView] reloadData];
         }
+        
     }
     //[self dismissViewControllerAnimated:YES completion:NULL];
 }

@@ -46,6 +46,11 @@
     [_findList removeObjectAtIndex:indexPath.row];
     [self writeFinds];
 }
+-(void)removeStoreAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_storeList removeObjectAtIndex:indexPath.row];
+    [self writeStores];
+}
 -(Find *)findAtIndexPath:(NSIndexPath *)indexPath
 {
     return [_findList objectAtIndex:[indexPath row]];
@@ -174,7 +179,7 @@
             return s;
         }
     }
-    return s;
+    return nil;
 }
 -(Store *)storeForKey:(NSNumber *)key
 {
