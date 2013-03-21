@@ -117,7 +117,8 @@
     while ( s = [enumerator nextObject])
     {
         NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:s.key, @"key", s.name, @"name", s.city, @"city", nil];
-        [array addObject:tempDictionary];
+        if (s.name != NULL && s.city != NULL)
+            [array addObject:tempDictionary];
     }
     [array writeToFile:plistPath atomically:YES];
 }
@@ -153,6 +154,7 @@
         NSArray *readArray = [NSArray arrayWithContentsOfFile:plistPath];
         NSDictionary *findDictionary = [[NSDictionary alloc] init];
         NSEnumerator *readEnumerator = [readArray objectEnumerator];
+        
         while( findDictionary = [readEnumerator nextObject] )
         {
             Store *storeToAdd = [[Store alloc] initWithDataAndKey:[findDictionary objectForKey:@"name"] city:[findDictionary objectForKey:@"city"] key:[findDictionary objectForKey:@"key"]];

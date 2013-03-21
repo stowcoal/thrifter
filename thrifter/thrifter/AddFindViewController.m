@@ -168,8 +168,9 @@
         _storeKey = [[self dataController] storeAtIndexPath:[storeController.tableView indexPathForSelectedRow]].key;
         Store *storeForFind = [[self dataController] storeForKey:_storeKey];
         if (storeForFind) {
-            self.LabelCity.hidden = NO;
             self.LabelName.hidden = NO;
+            self.LabelCity.hidden = NO;
+            self.LabelStore.hidden = YES;
             self.LabelCity.text = storeForFind.city;
             self.LabelName.text = storeForFind.name;
         }

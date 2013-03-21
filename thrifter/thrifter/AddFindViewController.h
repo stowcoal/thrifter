@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSData *imageData;
 @property (strong, nonatomic) DataController *dataController;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldName;
+@property (weak, nonatomic) IBOutlet UILabel *LabelStore;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldCost;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldDescription;
 @property (weak, nonatomic) IBOutlet UITableViewCell *CellStoreData;
