@@ -30,7 +30,6 @@
 		DEDE61E016D811A300642342 /* AddStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE61DF16D811A300642342 /* AddStoreViewController.m */; };
 		DEE0BA8516DD2FCF00609A0B /* StoreSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE0BA8416DD2FCF00609A0B /* StoreSelectViewController.m */; };
 		DEE4619316CD558400CECA5E /* AddFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE4619216CD558400CECA5E /* AddFindViewController.m */; };
-		DEE4619716CD579A00CECA5E /* FindDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE4619616CD579A00CECA5E /* FindDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,7 +73,6 @@
 		DEE4619116CD558400CECA5E /* AddFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFindViewController.h; sourceTree = "<group>"; };
 		DEE4619216CD558400CECA5E /* AddFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFindViewController.m; sourceTree = "<group>"; };
 		DEE4619516CD579A00CECA5E /* FindDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindDetailViewController.h; sourceTree = "<group>"; };
-		DEE4619616CD579A00CECA5E /* FindDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +133,6 @@
 				DEE4619116CD558400CECA5E /* AddFindViewController.h */,
 				DEE4619216CD558400CECA5E /* AddFindViewController.m */,
 				DEE4619516CD579A00CECA5E /* FindDetailViewController.h */,
-				DEE4619616CD579A00CECA5E /* FindDetailViewController.m */,
 				DEDA7D4D16FCEAE7002BAF1A /* FindDetailViewController.m */,
 				DEB8A93F16D3E9610066DB2A /* Store.h */,
 				DEB8A94016D3E9610066DB2A /* Store.m */,
@@ -243,7 +240,6 @@
 				DE5C3CF816CAB65E006CAE2B /* Find.m in Sources */,
 				DE5C3CFB16CAB83E006CAE2B /* DataController.m in Sources */,
 				DEE4619316CD558400CECA5E /* AddFindViewController.m in Sources */,
-				DEE4619716CD579A00CECA5E /* FindDetailViewController.m in Sources */,
 				DEB8A94116D3E9610066DB2A /* Store.m in Sources */,
 				DEDE61E016D811A300642342 /* AddStoreViewController.m in Sources */,
 				DEE0BA8516DD2FCF00609A0B /* StoreSelectViewController.m in Sources */,
