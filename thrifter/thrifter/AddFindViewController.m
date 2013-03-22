@@ -74,7 +74,7 @@
     if ([[segue identifier] isEqualToString:@"Done"]) {
         NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
         NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
-        Find *findToAdd = [[Find alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:_storeKey description:self.TextFieldDescription.text picture:self.imageData];
+        Find *findToAdd = [[Find alloc] initWithDataAndKey:self.TextFieldName.text cost:cost date:[NSDate date] store:_storeKey description:self.TextFieldDescription.text picture:self.imageData key:[[self dataController] FindKey]];
         self.find = findToAdd;
     }
     if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){

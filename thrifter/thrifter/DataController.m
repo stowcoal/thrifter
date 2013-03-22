@@ -21,6 +21,7 @@
     if (self = [super init]) {
         _findFileString = find;
         [self readFinds];
+        _findKey = [[[self findList] lastObject] key];
         _storeFileString = store;
         [self readStores];
         return self;
@@ -35,9 +36,9 @@
 -(void)addStoreToStoreList:(Store *)storeToAdd
 {
     if ([[self storeList] lastObject])
-        storeToAdd.key = [NSNumber numberWithInteger:((Store *)[_storeList lastObject]).key.integerValue + 1];
+        storeToAdd.key = [self StoreKey];
     else
-        storeToAdd.key = 0;
+        storeToAdd.key = [NSNumber numberWithInteger:0];
     [_storeList addObject:storeToAdd];
     [self writeStores];
 }
@@ -59,43 +60,6 @@
 {
     return [_storeList objectAtIndex:[indexPath row]];
 }
-/*
--(void)writeToPList
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *findsPlistPath = [documentsDirectory stringByAppendingPathComponent:_locationString];
-    NSMutableArray  *array = [[NSMutableArray alloc] init];
-    NSEnumerator *enumerator = [_findList objectEnumerator];
-    Find *f;
-    while ( f = [enumerator nextObject])
-    {
-        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:f.name, @"name", f.cost, @"cost", f.date, @"date", f.store.name, @"store", f.store.city, @"city", f.description, @"description", nil];
-        [array addObject:tempDictionary];
-    }
-    [array writeToFile:plistPath atomically:YES];
-}
--(NSMutableArray *)readFromPList
-{
-    NSMutableArray *returnArray = [[NSMutableArray alloc] init];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:_locationString];
-    if ([fileManager fileExistsAtPath:plistPath] == YES)
-    {
-        NSArray *readArray = [NSArray arrayWithContentsOfFile:plistPath];
-        NSEnumerator *enumerator = [readArray objectEnumerator];
-        NSDictionary *findDictionary = [[NSDictionary alloc] init];
-        while ( findDictionary = [enumerator nextObject])
-        {
-            Find *f = [[Find alloc] initWithData:[findDictionary objectForKey:@"name"] cost:[findDictionary objectForKey:@"cost"] date:[findDictionary objectForKey:@"date"] store:[findDictionary objectForKey:@"store"] city:[findDictionary objectForKey:@"city"] description:[findDictionary objectForKey:@"description"]];
-            [returnArray addObject:f];
-        }
-    }
-    return returnArray;
-}
-*/
 -(void)writeFinds
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -106,7 +70,7 @@
     Find *f;
     while ( f = [enumerator nextObject])
     {
-        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:f.name, @"name", f.cost, @"cost", f.date, @"date", f.storeKey, @"store", f.description, @"description", f.picture, @"picture", nil];
+        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:f.name, @"name", f.cost, @"cost", f.date, @"date", f.storeKey, @"store", f.description, @"description", f.picture, @"picture", f.key, @"key", nil];
         [array addObject:tempDictionary];
     }
     [array writeToFile:plistPath atomically:YES];
@@ -141,7 +105,7 @@
         NSDictionary *findDictionary = [[NSDictionary alloc] init];
         while ( findDictionary = [enumerator nextObject])
         {
-            Find *f = [[Find alloc] initWithData:[findDictionary objectForKey:@"name"] cost:[findDictionary objectForKey:@"cost"] date:[findDictionary objectForKey:@"date"] store:[findDictionary objectForKey:@"store"] description:[findDictionary objectForKey:@"description"] picture:[findDictionary objectForKey:@"picture"]];
+            Find *f = [[Find alloc] initWithDataAndKey:[findDictionary objectForKey:@"name"] cost:[findDictionary objectForKey:@"cost"] date:[findDictionary objectForKey:@"date"] store:[findDictionary objectForKey:@"store"] description:[findDictionary objectForKey:@"description"] picture:[findDictionary objectForKey:@"picture"] key:[findDictionary objectForKey:@"key"]];
             [finds addObject:f];
         }
     }
@@ -193,5 +157,34 @@
         }
     }
     return s;
+}
+-(Find *)findForKey:(NSNumber *)key
+{
+    Find *f = [[Find alloc] init];
+    NSEnumerator *findEnumerator = [[self findList] objectEnumerator];
+    while ( f = [findEnumerator nextObject])
+    {
+        if( f.key == key)
+        {
+            return f;
+        }
+    }
+    return f;
+}
+-(NSNumber *)FindKey
+{
+    if ([[self findList] lastObject])
+        _findKey = [NSNumber numberWithInteger:_findKey.integerValue + 1];
+    else
+        _findKey = [NSNumber numberWithInteger:0];
+    return _findKey;
+}
+-(NSNumber *)StoreKey
+{
+    if ([[self findList] lastObject])
+        _storeKey = [NSNumber numberWithInteger:_storeKey.integerValue + 1];
+    else
+        _storeKey = [NSNumber numberWithInteger:0];
+    return _storeKey;
 }
 @end

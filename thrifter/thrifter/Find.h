@@ -15,10 +15,11 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSNumber *cost;
 @property (nonatomic, strong) NSDate *date;
+@property (nonatomic, copy) NSNumber *key;
 @property (nonatomic, copy) NSNumber *storeKey;
 @property (nonatomic, copy) NSString *description;
 @property (nonatomic, copy) NSData *picture;
+@property (nonatomic, copy) NSString *category;
 -(id)initWithName:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date;
--(id)initWithData:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSNumber *)storeKey description:(NSString *)description picture:(NSData *)picture;
-
+-(id)initWithDataAndKey:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSNumber *)storeKey description:(NSString *)description picture:(NSData *)picture key:(NSNumber *)key;
 @end

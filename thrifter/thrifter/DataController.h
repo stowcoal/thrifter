@@ -14,6 +14,8 @@
 @property (nonatomic, copy)NSMutableArray *storeList;
 @property (nonatomic, copy)NSString *findFileString;
 @property (nonatomic, copy)NSString *storeFileString;
+@property (nonatomic, copy)NSNumber *storeKey;
+@property (nonatomic, copy)NSNumber *findKey;
 
 -(id)initFromPList:(NSString *)findLocationString storeLocationString:(NSString *)storeLocationString;
 
@@ -27,6 +29,10 @@
 
 -(Store *)storeForFind:(Find *)find;
 -(Store *)storeForKey:(NSNumber *)key;
+-(Find *)findForKey:(NSNumber *)key;
+
+-(NSNumber *)FindKey;
+-(NSNumber *)StoreKey;
 
 -(void)readFinds;
 -(void)readStores;

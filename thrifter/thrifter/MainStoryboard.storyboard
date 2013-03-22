@@ -125,7 +125,7 @@
                                 <connections>
                                     <outlet property="LabelStoreCity" destination="A8C-Ct-Pfg" id="SdP-XA-dxw"/>
                                     <outlet property="LabelStoreName" destination="xHd-eQ-fcG" id="HHQ-4O-8Dx"/>
-                                    <segue destination="Bsu-XB-YJS" kind="push" id="AZb-ob-4y6"/>
+                                    <segue destination="Bsu-XB-YJS" kind="push" identifier="SegueStoreDetail" id="AZb-ob-4y6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -142,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="-503" y="-1206"/>
         </scene>
-        <!--Table View Controller - store detail-->
+        <!--Store Detail View Controller - store detail-->
         <scene sceneID="jEb-An-NaE">
             <objects>
-                <tableViewController id="Bsu-XB-YJS" sceneMemberID="viewController">
+                <tableViewController id="Bsu-XB-YJS" customClass="StoreDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YZP-uI-7K7">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,7 +153,7 @@
                         <sections>
                             <tableViewSection id="zzJ-7q-DUa">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="R9q-6Z-y0D">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellStoreName" id="R9q-6Z-y0D">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -184,7 +184,7 @@
                                             <constraint firstItem="eXg-Xa-V2l" firstAttribute="top" secondItem="R9q-6Z-y0D" secondAttribute="top" constant="11" id="xlL-t3-oNC"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="Gep-5j-xj8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellStoreCity" id="Gep-5j-xj8">
                                         <rect key="frame" x="0.0" y="44" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -226,10 +226,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="store detail" id="LC3-RU-oX6"/>
+                    <connections>
+                        <outlet property="LabelStoreCity" destination="Q8B-m1-itV" id="BD6-bP-Yv5"/>
+                        <outlet property="LabelStoreName" destination="UU5-R8-OhU" id="8d1-2n-Uum"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhA-by-P35" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-56" y="-1206"/>
+            <point key="canvasLocation" x="14" y="-1206"/>
         </scene>
         <!--Navigation Controller - stores-->
         <scene sceneID="6qN-Yv-uS5">

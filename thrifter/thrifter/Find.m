@@ -21,7 +21,7 @@
     }
     return nil;
 }
--(id)initWithData:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSNumber *)storeKey description:(NSString *)description picture:(NSData *)picture
+-(id)initWithDataAndKey:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSNumber *)storeKey description:(NSString *)description picture:(NSData *)picture key:(NSNumber *)key
 {
     self = [super init];
     if (self)
@@ -29,6 +29,7 @@
         _name = name;
         _cost = cost;
         _date = date;
+        _key = key;
         _storeKey = storeKey;
         _description = description;
         _picture = picture;
@@ -36,6 +37,5 @@
     }
     return nil;
 }
-
 
 @end

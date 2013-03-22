@@ -10,6 +10,7 @@
 #import "DataController.h"
 #import "StoreCell.h"
 #import "AddStoreViewController.h"
+#import "StoreDetailViewController.h"
 
 @interface StoresViewController : UITableViewController
 @property (nonatomic, strong) DataController *dataController;
