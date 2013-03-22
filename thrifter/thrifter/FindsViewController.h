@@ -10,7 +10,7 @@
 #import "FindCell.h"
 @class DataController;
 
-@interface MasterViewController : UITableViewController
+@interface FindsViewController : UITableViewController
 @property (strong, nonatomic) DataController *dataController;
 - (IBAction)AddDoodad:(UIBarButtonItem *)sender;
 - (IBAction)done:(UIStoryboardSegue *)sender;

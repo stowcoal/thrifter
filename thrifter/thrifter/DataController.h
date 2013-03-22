@@ -30,5 +30,7 @@
 
 -(void)readFinds;
 -(void)readStores;
+-(void)writeFinds;
+-(void)writeStores;
 
 @end

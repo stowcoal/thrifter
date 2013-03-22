@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "FindsViewController.h"
 #import "DataController.h"
 #import "Find.h"
 #import "DetailFindViewController.h"
 #import "AddFindViewController.h"
 
-@interface MasterViewController ()
+@interface FindsViewController ()
 
 @end
 
-@implementation MasterViewController
+@implementation FindsViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -134,9 +134,9 @@
         detailViewController.detailStore = [[self dataController] storeForFind:detailViewController.detailFind];
         detailViewController.dataController = [self dataController];
     }
-    if ([[segue identifier] isEqualToString:@"SegueAdd"])
+    if ([[segue identifier] isEqualToString:@"SegueAddFind"])
     {
-        AddFindViewController *addViewController = (AddFindViewController *)[[[segue destinationViewController] viewControllers] objectAtIndex:0];
+        AddFindViewController *addViewController = [segue destinationViewController];
         addViewController.dataController = self.dataController;
     }
 }

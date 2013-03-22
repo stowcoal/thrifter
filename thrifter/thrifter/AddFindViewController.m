@@ -77,8 +77,7 @@
         Find *findToAdd = [[Find alloc] initWithData:self.TextFieldName.text cost:cost date:[NSDate date] store:_storeKey description:self.TextFieldDescription.text picture:self.imageData];
         self.find = findToAdd;
     }
-    if([[segue identifier] isEqualToString:@"SegueStoreSelect"] ||
-        [[segue identifier] isEqualToString:@"SegueStoreSelectAgain"]){
+    if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){
         StoreSelectViewController *storeSelect = [segue destinationViewController];
         storeSelect.dataController = self.dataController;
     }

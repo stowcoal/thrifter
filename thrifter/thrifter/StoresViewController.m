@@ -1,19 +1,18 @@
 //
-//  DetailDoodadViewController.m
+//  StoresViewController.m
 //  thrifter
 //
-//  Created by CURTIS STOCHL on 2/14/13.
+//  Created by CURTIS STOCHL on 3/21/13.
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-#import "DetailFindViewController.h"
-#import "StoreSelectViewController.h"
+#import "StoresViewController.h"
 
-@interface DetailFindViewController ()
+@interface StoresViewController ()
 
 @end
 
-@implementation DetailFindViewController
+@implementation StoresViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,38 +32,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self configureView];
-}
-
-- (void)configureView
-{
-    static NSDateFormatter *dateFormatter = nil;
-    if (dateFormatter == nil) {
-        dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-    }
-    static NSNumberFormatter *numberFormatter = nil;
-    if (numberFormatter == nil) {
-        numberFormatter = [[NSNumberFormatter alloc] init];
-        [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-        [numberFormatter setCurrencyCode:@"USD"];
-    }
-    [self.TextLabelCost setText:[numberFormatter stringFromNumber:self.detailFind.cost]];
-    [self.TextLabelDate setText:[dateFormatter stringFromDate:self.detailFind.date]];
-    [self.TextLabelFind setText:self.detailFind.name];
-    [self.TextViewDescription setText:self.detailFind.description];
-    [self.PictureFind setImage:[[UIImage alloc] initWithData:self.detailFind.picture]];
-    if ([self detailStore] )
-    {
-        [self.TextLabelCity setText:self.detailStore.city];
-        [self.TextLabelStore setText:self.detailStore.name];
-    }
-    else
-    {
-        [self.TextLabelCity setText:@"not found"];
-        [self.TextLabelStore setText:@"not found"];
-    }
-
+    //self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,44 +40,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"SegueSelectNewStore"]) {
-        StoreSelectViewController *storeSelectViewController = [segue destinationViewController];
-        storeSelectViewController.dataController = [self dataController];
-    }
-}
-- (IBAction)doneSelectStore:(UIStoryboardSegue *)segue
-{
-    if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
-        StoreSelectViewController *storeController = [segue sourceViewController];
-        _detailStore = [[self dataController] storeAtIndexPath:[storeController.tableView indexPathForSelectedRow]];
-        _detailFind.storeKey = _detailStore.key;
-        
-        self.TextLabelCity.text = _detailStore.city;
-        self.TextLabelStore.text = _detailStore.name;
-        [[self dataController] writeFinds];
-    }
-}
-    //[self dismissViewControllerAnimated:YES completion:NULL];
-    
-#pragma mark - Table view data source
 /*
+#pragma mark - Table view data source
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
-*/
-/*
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }
- */
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -118,7 +65,6 @@
     // Configure the cell...
     
     return cell;
-     
 }
 */
 /*
