@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Find.h"
 #import "DataController.h"
+#import "StoreSelectViewController.h"
 
-@interface DetailFindViewController : UITableViewController
+@interface FindDetailViewController : UITableViewController
 @property (strong, nonatomic) Find *detailFind;
 @property (strong, nonatomic) Store *detailStore;
 @property (strong, nonatomic) DataController *dataController;

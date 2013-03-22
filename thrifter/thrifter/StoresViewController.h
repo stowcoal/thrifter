@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "DataController.h"
+#import "StoreCell.h"
+#import "AddStoreViewController.h"
 
 @interface StoresViewController : UITableViewController
-//@property (nonatomic, copy) DataController *dataController;
+@property (nonatomic, strong) DataController *dataController;
+
 
 @end

@@ -22,7 +22,7 @@
     }
     return self;
 }
-
+/*
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,41 +32,69 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    //self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist"];
+     NSLog(@"load");
+    self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist"];
+    [[self tableView] reloadData];
 }
+ */
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSLog(@"appear");
+    self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist"];
+    [[self tableView] reloadData];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-/*
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [[[self dataController] storeList] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"CellStore";
+    StoreCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    cell.LabelStoreName.text = [[self dataController] storeAtIndexPath:indexPath].name;
+    cell.LabelStoreCity.text = [[self dataController] storeAtIndexPath:indexPath].city;
     return cell;
 }
-*/
+- (IBAction)doneAddStore:(UIStoryboardSegue *)segue
+{
+    if ([[segue identifier] isEqualToString:@"UnwindAddStore"]) {
+        AddStoreViewController *addController = [segue sourceViewController];
+        if (addController.TextViewStoreName &&
+            addController.TextViewStoreCity) {
+            [[self dataController] addStoreToStoreList:[[Store alloc] initWithData:addController.TextViewStoreName.text city:addController.TextViewStoreCity.text]];
+            [[self tableView] reloadData];
+        }
+        
+    }
+    //[self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
