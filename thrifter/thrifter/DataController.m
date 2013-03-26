@@ -21,9 +21,10 @@
     if (self = [super init]) {
         _findFileString = find;
         [self readFinds];
-        _findKey = [[[self findList] lastObject] key];
+        _findKey = [[[[self findList] lastObject] key] integerValue];
         _storeFileString = store;
         [self readStores];
+        _storeKey = [[[[self storeList] lastObject] key] integerValue];
         return self;
     }
     return nil;
@@ -35,10 +36,6 @@
 }
 -(void)addStoreToStoreList:(Store *)storeToAdd
 {
-    if ([[self storeList] lastObject])
-        storeToAdd.key = [self StoreKey];
-    else
-        storeToAdd.key = [NSNumber numberWithInteger:0];
     [_storeList addObject:storeToAdd];
     [self writeStores];
 }
@@ -174,17 +171,17 @@
 -(NSNumber *)FindKey
 {
     if ([[self findList] lastObject])
-        _findKey = [NSNumber numberWithInteger:_findKey.integerValue + 1];
+        _findKey = _findKey + 1;
     else
-        _findKey = [NSNumber numberWithInteger:0];
-    return _findKey;
+        _findKey = 0;
+    return [[NSNumber alloc] initWithInteger:_findKey];
 }
 -(NSNumber *)StoreKey
 {
-    if ([[self findList] lastObject])
-        _storeKey = [NSNumber numberWithInteger:_storeKey.integerValue + 1];
+    if ([[self storeList] lastObject])
+        _storeKey = _storeKey + 1;
     else
-        _storeKey = [NSNumber numberWithInteger:0];
-    return _storeKey;
+        _storeKey = 0;
+    return [[NSNumber alloc] initWithInteger:_storeKey];
 }
 @end

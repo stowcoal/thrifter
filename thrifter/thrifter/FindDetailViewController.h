@@ -12,8 +12,7 @@
 #import "StoreSelectViewController.h"
 
 @interface FindDetailViewController : UITableViewController
-@property (strong, nonatomic) Find *detailFind;
-@property (strong, nonatomic) Store *detailStore;
+@property (strong, nonatomic) NSNumber *findKey;
 @property (strong, nonatomic) DataController *dataController;
 
 @property (weak, nonatomic) IBOutlet UILabel *TextLabelStore;

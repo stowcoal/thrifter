@@ -49,22 +49,24 @@
         [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
         [numberFormatter setCurrencyCode:@"USD"];
     }
-    [self.TextLabelCost setText:[numberFormatter stringFromNumber:self.detailFind.cost]];
-    [self.TextLabelDate setText:[dateFormatter stringFromDate:self.detailFind.date]];
-    [self.TextLabelFind setText:self.detailFind.name];
-    [self.TextViewDescription setText:self.detailFind.description];
-    [self.PictureFind setImage:[[UIImage alloc] initWithData:self.detailFind.picture]];
-    if ([self detailStore] )
+    Find *detailFind = [[self dataController] findForKey:[self findKey]];
+    Store *detailStore = [[self dataController] storeForFind:detailFind];
+    
+    [self.TextLabelCost setText:[numberFormatter stringFromNumber:detailFind.cost]];
+    [self.TextLabelDate setText:[dateFormatter stringFromDate:detailFind.date]];
+    [self.TextLabelFind setText:detailFind.name];
+    [self.TextViewDescription setText:detailFind.description];
+    [self.PictureFind setImage:[[UIImage alloc] initWithData:detailFind.picture]];
+    if (detailStore)
     {
-        [self.TextLabelCity setText:self.detailStore.city];
-        [self.TextLabelStore setText:self.detailStore.name];
+        [self.TextLabelCity setText:detailStore.city];
+        [self.TextLabelStore setText:detailStore.name];
     }
     else
     {
         [self.TextLabelCity setText:@"not found"];
         [self.TextLabelStore setText:@"not found"];
     }
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,11 +85,11 @@
     if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
         StoreSelectViewController *storeController = [segue sourceViewController];
         self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist"];
-        _detailStore = [[self dataController] storeAtIndexPath:[storeController.tableView indexPathForSelectedRow]];
-        _detailFind.storeKey = _detailStore.key;
-        
-        self.TextLabelCity.text = _detailStore.city;
-        self.TextLabelStore.text = _detailStore.name;
+        Find *detailFind = [[self dataController] findForKey:[self findKey]];
+        detailFind.storeKey = [[self dataController] storeAtIndexPath:[[storeController tableView] indexPathForSelectedRow]].key;
+        Store *detailStore = [[self dataController] storeForFind:detailFind];
+        self.TextLabelCity.text = detailStore.city;
+        self.TextLabelStore.text = detailStore.name;
         [[self dataController] writeFinds];
     }
 }

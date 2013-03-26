@@ -144,8 +144,7 @@
         FindDetailViewController *detailViewController = [segue destinationViewController];
         NSLog(@"%@", [self.tableView indexPathForSelectedRow]);
         [self.dataController findAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        detailViewController.detailFind = [self.dataController findAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        detailViewController.detailStore = [[self dataController] storeForFind:detailViewController.detailFind];
+        detailViewController.findKey = [self.dataController findAtIndexPath:[self.tableView indexPathForSelectedRow]].key;
         detailViewController.dataController = [self dataController];
     }
     if ([[segue identifier] isEqualToString:@"SegueAddFind"])
@@ -160,6 +159,7 @@
         AddFindViewController *addController = [segue sourceViewController];
         if (addController.find) {
             [self.dataController addFindToFindList:addController.find];
+            NSLog(@"%d",[[self dataController] findKey]);
             [[self tableView] reloadData];
         }
     }

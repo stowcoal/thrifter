@@ -95,7 +95,7 @@
         AddStoreViewController *addController = [segue sourceViewController];
         if (addController.TextViewStoreName &&
             addController.TextViewStoreCity) {
-            [[self dataController] addStoreToStoreList:[[Store alloc] initWithData:addController.TextViewStoreName.text city:addController.TextViewStoreCity.text]];
+            [[self dataController] addStoreToStoreList:[[Store alloc] initWithDataAndKey:addController.TextViewStoreName.text city:addController.TextViewStoreCity.text key:[[self dataController] StoreKey]]];
             [[self tableView] reloadData];
         }
         
