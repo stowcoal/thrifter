@@ -16,7 +16,7 @@
     }
     return nil;
 }
--(id)initFromPList:(NSString *)find storeLocationString:(NSString *)store
+-(id)initFromPList:(NSString *)find storeLocationString:(NSString *)store categoryLocationString:(NSString *)category
 {
     if (self = [super init]) {
         _findFileString = find;
@@ -25,9 +25,21 @@
         _storeFileString = store;
         [self readStores];
         _storeKey = [[[[self storeList] lastObject] key] integerValue];
+        _categoryFileString = category;
+        [self readCategory];
+        _categoryKey = [[[[self storeList] lastObject] key] integerValue];
         return self;
     }
     return nil;
+}
+-(void)refresh
+{
+    [self readFinds];
+    _findKey = [[[[self findList] lastObject] key] integerValue];
+    [self readStores];
+    _storeKey = [[[[self storeList] lastObject] key] integerValue];
+    [self readCategory];
+    _categoryKey = [[[[self storeList] lastObject] key] integerValue];
 }
 -(void)addFindToFindList:(Find *)findToAdd
 {
@@ -38,6 +50,11 @@
 {
     [_storeList addObject:storeToAdd];
     [self writeStores];
+}
+-(void)addCategoryToCategoryList:(Category *)categoryToAdd
+{
+    [_categoryList addObject:categoryToAdd];
+    [self categoryList];
 }
 -(void)removeFindAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -56,6 +73,10 @@
 -(Store *)storeAtIndexPath:(NSIndexPath *)indexPath
 {
     return [_storeList objectAtIndex:[indexPath row]];
+}
+-(Category *)categoryAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [_categoryList objectAtIndex:[indexPath row]];
 }
 -(void)writeFinds
 {
@@ -85,6 +106,21 @@
         NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:s.key, @"key", s.name, @"name", s.city, @"city", nil];
         if (s.name != NULL && s.city != NULL)
             [array addObject:tempDictionary];
+    }
+    [array writeToFile:plistPath atomically:YES];
+}
+-(void)writeCategory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:_categoryFileString];
+    NSMutableArray  *array = [[NSMutableArray alloc] init];
+    NSEnumerator *enumerator = [_categoryList objectEnumerator];
+    Category *c;
+    while ( c = [enumerator nextObject])
+    {
+        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:c.key, @"key", c.name, @"name", nil];
+        [array addObject:tempDictionary];
     }
     [array writeToFile:plistPath atomically:YES];
 }
@@ -128,6 +164,26 @@
         }
     }
     _storeList = stores;
+}
+-(void)readCategory
+{
+    NSMutableArray *categories = [[NSMutableArray alloc] init];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:_categoryFileString];
+    if ([fileManager fileExistsAtPath:plistPath] == YES)
+    {
+        NSArray *readArray = [NSArray arrayWithContentsOfFile:plistPath];
+        NSEnumerator *enumerator = [readArray objectEnumerator];
+        NSDictionary *findDictionary = [[NSDictionary alloc] init];
+        while ( findDictionary = [enumerator nextObject])
+        {
+            Category *c = [[Category alloc] initWithDataAndKey:[findDictionary objectForKey:@"name"] key:[findDictionary objectForKey:@"key"]];
+            [categories addObject:c];
+        }
+    }
+    _categoryList = categories;
 }
 -(Store *)storeForFind:(Find *)find
 {
@@ -183,5 +239,13 @@
     else
         _storeKey = 0;
     return [[NSNumber alloc] initWithInteger:_storeKey];
+}
+-(NSNumber *)CategoryKey
+{
+    if ([[self categoryList] lastObject])
+        _categoryKey = _categoryKey + 1;
+    else
+        _categoryKey = 0;
+    return [[NSNumber alloc] initWithInteger:_categoryKey];
 }
 @end

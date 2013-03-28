@@ -22,7 +22,7 @@
     }
     return self;
 }
-/*
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,10 +33,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
      NSLog(@"load");
-    self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist"];
+    self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist" categoryLocationString:@"category.plist"];
     [[self tableView] reloadData];
 }
- */
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -47,7 +47,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSLog(@"appear");
-    self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist"];
+    [self.dataController refresh];
     [[self tableView] reloadData];
 }
 

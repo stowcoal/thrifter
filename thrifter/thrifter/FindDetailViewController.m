@@ -84,7 +84,7 @@
 {
     if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
         StoreSelectViewController *storeController = [segue sourceViewController];
-        self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist"];
+        [self.dataController refresh];
         Find *detailFind = [[self dataController] findForKey:[self findKey]];
         detailFind.storeKey = [[self dataController] storeAtIndexPath:[[storeController tableView] indexPathForSelectedRow]].key;
         Store *detailStore = [[self dataController] storeForFind:detailFind];
