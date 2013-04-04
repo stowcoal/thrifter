@@ -1,18 +1,18 @@
 //
-//  CategoriesViewController.m
+//  CategorySelectViewController.m
 //  thrifter
 //
-//  Created by CURTIS STOCHL on 3/28/13.
+//  Created by CURTIS STOCHL on 4/3/13.
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-#import "CategoriesViewController.h"
+#import "CategorySelectViewController.h"
 
-@interface CategoriesViewController ()
+@interface CategorySelectViewController ()
 
 @end
 
-@implementation CategoriesViewController
+@implementation CategorySelectViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,7 +32,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist" categoryLocationString:@"category.plist"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,7 +40,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -63,19 +61,6 @@
     [cell.customLabel setText:[[self dataController] categoryAtIndexPath:indexPath].name];
     
     return cell;
-}
-- (IBAction)doneAddCategory:(UIStoryboardSegue *)segue
-{
-    if ([[segue identifier] isEqualToString:@"UnwindAddCategory"]) {
-        AddCategoryViewController *addController = [segue sourceViewController];
-        if (addController.TextFieldCategoryName) {
-            [[self dataController] addCategoryToCategoryList:[[Category alloc] initWithDataAndKey:addController.TextFieldCategoryName.text key:[[self dataController] CategoryKey]]];
-            [[self tableView] reloadData];
-        }
-        
-    }
-     
-    //[self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 /*

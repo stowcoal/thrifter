@@ -26,7 +26,7 @@
         [self readStores];
         _storeKey = [[[[self storeList] lastObject] key] integerValue];
         _categoryFileString = category;
-        [self readCategory];
+        [self readCategories];
         _categoryKey = [[[[self storeList] lastObject] key] integerValue];
         return self;
     }
@@ -38,7 +38,7 @@
     _findKey = [[[[self findList] lastObject] key] integerValue];
     [self readStores];
     _storeKey = [[[[self storeList] lastObject] key] integerValue];
-    [self readCategory];
+    [self readCategories];
     _categoryKey = [[[[self storeList] lastObject] key] integerValue];
 }
 -(void)addFindToFindList:(Find *)findToAdd
@@ -54,7 +54,7 @@
 -(void)addCategoryToCategoryList:(Category *)categoryToAdd
 {
     [_categoryList addObject:categoryToAdd];
-    [self categoryList];
+    [self writeCategories];
 }
 -(void)removeFindAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -109,7 +109,7 @@
     }
     [array writeToFile:plistPath atomically:YES];
 }
--(void)writeCategory
+-(void)writeCategories
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -165,7 +165,7 @@
     }
     _storeList = stores;
 }
--(void)readCategory
+-(void)readCategories
 {
     NSMutableArray *categories = [[NSMutableArray alloc] init];
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -223,6 +223,19 @@
         }
     }
     return f;
+}
+-(Category *)categoryForKey:(NSNumber *)key
+{
+    Category *c = [[Category alloc] init];
+    NSEnumerator *categoryEnumerator = [[self categoryList] objectEnumerator];
+    while ( c = [categoryEnumerator nextObject])
+    {
+        if( c.key == key)
+        {
+            return c;
+        }
+    }
+    return c;
 }
 -(NSNumber *)FindKey
 {

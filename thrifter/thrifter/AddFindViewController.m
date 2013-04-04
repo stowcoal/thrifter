@@ -74,11 +74,16 @@
         NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
         NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
         Find *findToAdd = [[Find alloc] initWithDataAndKey:self.TextFieldName.text cost:cost date:[NSDate date] store:_storeKey description:self.TextFieldDescription.text picture:self.imageData key:[[self dataController] FindKey]];
+        findToAdd.categoryKey = [self categoryKey];
         self.find = findToAdd;
     }
     if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){
         StoreSelectViewController *storeSelect = [segue destinationViewController];
         storeSelect.dataController = self.dataController;
+    }
+    if([[segue identifier] isEqualToString:@"SegueSelectCategory"]){
+        CategorySelectViewController *categorySelect = [segue destinationViewController];
+        categorySelect.dataController = self.dataController;
     }
 }
 /*
@@ -170,6 +175,22 @@
         if (storeForFind) {
             self.LabelCity.text = storeForFind.city;
             self.LabelName.text = storeForFind.name;
+        }
+    }
+    //[self dismissViewControllerAnimated:YES completion:NULL];
+    
+    NSLog(@"done");
+}
+- (IBAction)doneSelectCategory:(UIStoryboardSegue *)segue
+{
+    if ([[segue identifier] isEqualToString:@"UnwindSelectCategory"]) {
+        CategorySelectViewController *categoryController = [segue sourceViewController];
+        [self.dataController  refresh];
+        _categoryKey = [[self dataController] storeAtIndexPath:[categoryController.tableView indexPathForSelectedRow]].key;
+        Category *categoryForFind = [[self dataController] categoryForKey:_categoryKey];
+        if (categoryForFind) {
+            self.LabelCategory.text = categoryForFind.name;
+            self.LabelCategory.hidden = NO;
         }
     }
     //[self dismissViewControllerAnimated:YES completion:NULL];

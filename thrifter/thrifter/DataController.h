@@ -35,18 +35,19 @@
 
 -(Store *)storeForFind:(Find *)find;
 -(Store *)storeForKey:(NSNumber *)key;
+-(Category *)categoryForKey:(NSNumber *)key;
 -(Find *)findForKey:(NSNumber *)key;
 
 -(NSNumber *)FindKey;
 -(NSNumber *)StoreKey;
 -(NSNumber *)CategoryKey;
 
--(void)readCategory;
+-(void)readCategories;
 -(void)readFinds;
 -(void)readStores;
 -(void)writeFinds;
 -(void)writeStores;
--(void)writeCategory;
+-(void)writeCategories;
 -(void)refresh;
 
 @end

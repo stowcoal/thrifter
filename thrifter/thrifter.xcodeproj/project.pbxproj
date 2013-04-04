@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE1A1078170D1CBE00927D0A /* CategorySelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1A1077170D1CBE00927D0A /* CategorySelectViewController.m */; };
 		DE5C3CD116CAAFCD006CAE2B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C3CD016CAAFCD006CAE2B /* UIKit.framework */; };
 		DE5C3CD316CAAFCD006CAE2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C3CD216CAAFCD006CAE2B /* Foundation.framework */; };
 		DE5C3CD516CAAFCD006CAE2B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5C3CD416CAAFCD006CAE2B /* CoreGraphics.framework */; };
@@ -37,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		DE03654316CDE19D0083B2D6 /* Find.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Find.h; sourceTree = "<group>"; };
+		DE1A1076170D1CBE00927D0A /* CategorySelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorySelectViewController.h; sourceTree = "<group>"; };
+		DE1A1077170D1CBE00927D0A /* CategorySelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorySelectViewController.m; sourceTree = "<group>"; };
 		DE5C3CCC16CAAFCD006CAE2B /* thrifter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thrifter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5C3CD016CAAFCD006CAE2B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DE5C3CD216CAAFCD006CAE2B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -157,6 +160,8 @@
 				DEFDBCE71704AF0F006A1D2E /* CategoriesViewController.m */,
 				DEFDBCE91704B14E006A1D2E /* AddCategoryViewController.h */,
 				DEFDBCEA1704B14E006A1D2E /* AddCategoryViewController.m */,
+				DE1A1076170D1CBE00927D0A /* CategorySelectViewController.h */,
+				DE1A1077170D1CBE00927D0A /* CategorySelectViewController.m */,
 				DEFDBCE21704AA10006A1D2E /* Category.h */,
 				DEFDBCE31704AA10006A1D2E /* Category.m */,
 				DE5C3CDF16CAAFCD006CAE2B /* thrifterAppDelegate.h */,
@@ -267,6 +272,7 @@
 				DEFDBCE41704AA10006A1D2E /* Category.m in Sources */,
 				DEFDBCE81704AF0F006A1D2E /* CategoriesViewController.m in Sources */,
 				DEFDBCEB1704B14F006A1D2E /* AddCategoryViewController.m in Sources */,
+				DE1A1078170D1CBE00927D0A /* CategorySelectViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
