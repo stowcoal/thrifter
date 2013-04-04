@@ -80,12 +80,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CellFind";
-    FindCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    CustomDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     Find *findForCell = [self.dataController findAtIndexPath:indexPath];
     NSLog(@"%@",findForCell.name);
-    [cell.customLabel setText:findForCell.name];
-    // Configure the cell...
-    
+    Category *detailCategory = [self.dataController categoryForKey:findForCell.categoryKey];
+    [cell.mainLabel setText:findForCell.name];
+    [cell.secondaryLabel setText:detailCategory.name];
+    cell.findKey = findForCell.key;
     return cell;
 }
 
@@ -143,8 +144,9 @@
     if ([[segue identifier] isEqualToString:@"SegueDetail"]) {
         FindDetailViewController *detailViewController = [segue destinationViewController];
         NSLog(@"%@", [self.tableView indexPathForSelectedRow]);
-        [self.dataController findAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        detailViewController.findKey = [self.dataController findAtIndexPath:[self.tableView indexPathForSelectedRow]].key;
+        //[self.dataController findAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        //detailViewController.findKey = [self.dataController findAtIndexPath:[self.tableView indexPathForSelectedRow]].key;
+        detailViewController.findKey = ((CustomDynamicCell *)[[self tableView] cellForRowAtIndexPath:[[self tableView] indexPathForSelectedRow]]).findKey;
         detailViewController.dataController = [self dataController];
     }
     if ([[segue identifier] isEqualToString:@"SegueAddFind"])

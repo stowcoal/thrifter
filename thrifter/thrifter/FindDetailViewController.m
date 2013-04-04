@@ -51,7 +51,7 @@
     }
     Find *detailFind = [[self dataController] findForKey:[self findKey]];
     Store *detailStore = [[self dataController] storeForFind:detailFind];
-    
+    Category *detailCategory = [[self dataController] categoryForKey:detailFind.categoryKey];
     [self.TextLabelCost setText:[numberFormatter stringFromNumber:detailFind.cost]];
     [self.TextLabelDate setText:[dateFormatter stringFromDate:detailFind.date]];
     [self.TextLabelFind setText:detailFind.name];
@@ -67,6 +67,14 @@
         [self.TextLabelCity setText:@"not found"];
         [self.TextLabelStore setText:@"not found"];
     }
+    if (detailCategory)
+    {
+        [self.TextLabelCategory setText:detailCategory.name];
+    }
+    else
+    {
+        [self.TextLabelCategory setText:@"not found"];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,8 +87,12 @@
         StoreSelectViewController *storeSelectViewController = [segue destinationViewController];
         storeSelectViewController.dataController = [self dataController];
     }
+    if ([[segue identifier] isEqualToString:@"SegueSelectNewCategory"]) {
+        CategorySelectViewController *categorySelectViewController = [segue destinationViewController];
+        categorySelectViewController.dataController = [self dataController];
+    }
 }
-- (IBAction)doneSelectStore:(UIStoryboardSegue *)segue
+- (IBAction)done:(UIStoryboardSegue *)segue
 {
     if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
         StoreSelectViewController *storeController = [segue sourceViewController];
@@ -92,6 +104,16 @@
         self.TextLabelStore.text = detailStore.name;
         [[self dataController] writeFinds];
     }
+    if ([[segue identifier] isEqualToString:@"UnwindSelectCategory"]) {
+        CategorySelectViewController *categoryController = [segue sourceViewController];
+        [self.dataController refresh];
+        Find *detailFind = [[self dataController] findForKey:[self findKey]];
+        detailFind.categoryKey = [[self dataController] categoryAtIndexPath:[[categoryController tableView] indexPathForSelectedRow]].key;
+        Category *detailCategory = [[self dataController] categoryForKey:detailFind.categoryKey];
+        self.TextLabelCategory.text = detailCategory.name;
+        [[self dataController] writeFinds];
+    }
+    
 }
     //[self dismissViewControllerAnimated:YES completion:NULL];
     

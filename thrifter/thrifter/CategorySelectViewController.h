@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DataController.h"
-#import "FindCell.h"
+#import "CustomDynamicCell.h"
 
 @interface CategorySelectViewController : UITableViewController
 @property (nonatomic, strong) DataController *dataController;

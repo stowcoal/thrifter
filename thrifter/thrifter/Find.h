@@ -22,5 +22,5 @@
 @property (nonatomic, copy) NSNumber *storeKey;
 @property (nonatomic, copy) NSNumber *categoryKey;
 -(id)initWithName:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date;
--(id)initWithDataAndKey:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSNumber *)storeKey description:(NSString *)description picture:(NSData *)picture key:(NSNumber *)key;
+-(id)initWithDataAndKey:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSNumber *)storeKey description:(NSString *)description picture:(NSData *)picture key:(NSNumber *)key category:(NSNumber *)categoryKey;
 @end

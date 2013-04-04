@@ -75,18 +75,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CellStore";
-    StoreCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    CustomDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.LabelStoreName.text = [[self dataController] storeAtIndexPath:indexPath].name;
-    cell.LabelStoreCity.text = [[self dataController] storeAtIndexPath:indexPath].city;
+    cell.mainLabel.text = [[self dataController] storeAtIndexPath:indexPath].name;
+    cell.secondaryLabel.text = [[self dataController] storeAtIndexPath:indexPath].city;
+    cell.storeKey = [[self dataController] storeAtIndexPath:indexPath].key;
     return cell;
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"SegueStoreDetail"]) {
         StoreDetailViewController *detailViewController = [segue destinationViewController];
-        Store *detailStore = [self.dataController storeAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        detailViewController.detailStore = detailStore;
+        //Store *detailStore = [self.dataController storeAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        detailViewController.storeKey = ((CustomDynamicCell *)[[self tableView] cellForRowAtIndexPath:[[self tableView] indexPathForSelectedRow]]).storeKey;
+        detailViewController.dataController = [self dataController];
     }
 }
 - (IBAction)doneAddStore:(UIStoryboardSegue *)segue

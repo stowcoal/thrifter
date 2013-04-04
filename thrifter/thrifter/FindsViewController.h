@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FindCell.h"
+#import "CustomDynamicCell.h"
 @class DataController;
 
 @interface FindsViewController : UITableViewController

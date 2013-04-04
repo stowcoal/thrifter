@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Store.h"
+#import "DataController.h"
 
 @interface StoreDetailViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UILabel *LabelStoreName;
 @property (weak, nonatomic) IBOutlet UILabel *LabelStoreCity;
-@property (weak, nonatomic) Store *detailStore;
+@property (strong, nonatomic) DataController *dataController;
+@property (weak, nonatomic) NSNumber *storeKey;
 @end

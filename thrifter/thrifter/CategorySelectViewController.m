@@ -33,6 +33,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    [self.dataController refresh];
+    [[self tableView] reloadData];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -56,10 +62,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CellCategory";
-    FindCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    CustomDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    [cell.customLabel setText:[[self dataController] categoryAtIndexPath:indexPath].name];
-    
+    [cell.mainLabel setText:[[self dataController] categoryAtIndexPath:indexPath].name];
+    cell.categoryKey = [[self dataController] categoryAtIndexPath:indexPath].key;
     return cell;
 }
 

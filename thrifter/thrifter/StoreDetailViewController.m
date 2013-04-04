@@ -32,8 +32,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [[self LabelStoreCity] setText:[self detailStore].city];
-    [[self LabelStoreName] setText:[self detailStore].name];
+    Store *detailStore = [[self dataController] storeForKey:[self storeKey]];
+    [[self LabelStoreCity] setText:detailStore.city];
+    [[self LabelStoreName] setText:detailStore.name];
 }
 
 - (void)didReceiveMemoryWarning

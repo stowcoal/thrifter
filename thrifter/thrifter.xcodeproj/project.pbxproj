@@ -21,8 +21,8 @@
 		DE5C3CF516CAB386006CAE2B /* FindsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CF416CAB386006CAE2B /* FindsViewController.m */; };
 		DE5C3CF816CAB65E006CAE2B /* Find.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CF716CAB65E006CAE2B /* Find.m */; };
 		DE5C3CFB16CAB83E006CAE2B /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5C3CFA16CAB83E006CAE2B /* DataController.m */; };
+		DEA959AC170DE35B007EE576 /* CustomDynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA959AB170DE35B007EE576 /* CustomDynamicCell.m */; };
 		DEB8A94116D3E9610066DB2A /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = DEB8A94016D3E9610066DB2A /* Store.m */; };
-		DEBF17CA16FB6DE800800975 /* FindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBF17C916FB6DE800800975 /* FindCell.m */; };
 		DEBF17CE16FB6FEB00800975 /* StoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBF17CD16FB6FEB00800975 /* StoreCell.m */; };
 		DED5657E16FC09ED0064ABE8 /* thrifterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED5657D16FC09ED0064ABE8 /* thrifterViewController.m */; };
 		DED5658116FC114C0064ABE8 /* StoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED5658016FC114C0064ABE8 /* StoresViewController.m */; };
@@ -58,10 +58,10 @@
 		DE5C3CF416CAB386006CAE2B /* FindsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindsViewController.m; sourceTree = "<group>"; };
 		DE5C3CF716CAB65E006CAE2B /* Find.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Find.m; sourceTree = "<group>"; };
 		DE5C3CFA16CAB83E006CAE2B /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
+		DEA959AB170DE35B007EE576 /* CustomDynamicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDynamicCell.m; sourceTree = "<group>"; };
 		DEB8A93F16D3E9610066DB2A /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
 		DEB8A94016D3E9610066DB2A /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
-		DEBF17C816FB6DE800800975 /* FindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindCell.h; sourceTree = "<group>"; };
-		DEBF17C916FB6DE800800975 /* FindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindCell.m; sourceTree = "<group>"; };
+		DEBF17C816FB6DE800800975 /* CustomDynamicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDynamicCell.h; sourceTree = "<group>"; };
 		DEBF17CC16FB6FEB00800975 /* StoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreCell.h; sourceTree = "<group>"; };
 		DEBF17CD16FB6FEB00800975 /* StoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreCell.m; sourceTree = "<group>"; };
 		DED5657C16FC09ED0064ABE8 /* thrifterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thrifterViewController.h; sourceTree = "<group>"; };
@@ -138,8 +138,8 @@
 				DE5C3CF416CAB386006CAE2B /* FindsViewController.m */,
 				DE03654316CDE19D0083B2D6 /* Find.h */,
 				DE5C3CF716CAB65E006CAE2B /* Find.m */,
-				DEBF17C816FB6DE800800975 /* FindCell.h */,
-				DEBF17C916FB6DE800800975 /* FindCell.m */,
+				DEBF17C816FB6DE800800975 /* CustomDynamicCell.h */,
+				DEA959AB170DE35B007EE576 /* CustomDynamicCell.m */,
 				DEE4619116CD558400CECA5E /* AddFindViewController.h */,
 				DEE4619216CD558400CECA5E /* AddFindViewController.m */,
 				DEE4619516CD579A00CECA5E /* FindDetailViewController.h */,
@@ -263,7 +263,6 @@
 				DEB8A94116D3E9610066DB2A /* Store.m in Sources */,
 				DEDE61E016D811A300642342 /* AddStoreViewController.m in Sources */,
 				DEE0BA8516DD2FCF00609A0B /* StoreSelectViewController.m in Sources */,
-				DEBF17CA16FB6DE800800975 /* FindCell.m in Sources */,
 				DEBF17CE16FB6FEB00800975 /* StoreCell.m in Sources */,
 				DED5657E16FC09ED0064ABE8 /* thrifterViewController.m in Sources */,
 				DED5658116FC114C0064ABE8 /* StoresViewController.m in Sources */,
@@ -273,6 +272,7 @@
 				DEFDBCE81704AF0F006A1D2E /* CategoriesViewController.m in Sources */,
 				DEFDBCEB1704B14F006A1D2E /* AddCategoryViewController.m in Sources */,
 				DE1A1078170D1CBE00927D0A /* CategorySelectViewController.m in Sources */,
+				DEA959AC170DE35B007EE576 /* CustomDynamicCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

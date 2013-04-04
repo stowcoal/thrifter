@@ -65,11 +65,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CellStore";
-    StoreCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    CustomDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.LabelStoreName.text = [[self dataController] storeAtIndexPath:indexPath].name;
-    cell.LabelStoreCity.text = [[self dataController] storeAtIndexPath:indexPath].city;
-    
+    cell.mainLabel.text = [[self dataController] storeAtIndexPath:indexPath].name;
+    cell.secondaryLabel.text = [[self dataController] storeAtIndexPath:indexPath].city;
+    cell.storeKey = [[self dataController] storeAtIndexPath:indexPath].key;
     return cell;
 }
 

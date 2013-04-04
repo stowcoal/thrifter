@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DataController.h"
-#import "StoreCell.h"
+#import "CustomDynamicCell.h"
 #import "AddStoreViewController.h"
 #import "StoreDetailViewController.h"
 

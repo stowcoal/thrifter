@@ -29,7 +29,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellFind" id="zZO-xJ-I2V" customClass="FindCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellFind" id="zZO-xJ-I2V" customClass="CustomDynamicCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -37,13 +37,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81p-ho-7mf">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="230" id="U4n-cp-cDw"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAM-rq-D7b">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAM-rq-D7b">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="42" id="2Xg-Of-rU2"/>
+                                                <constraint firstAttribute="width" constant="100" id="AV1-pj-MBu"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,12 +59,11 @@
                                     <constraint firstItem="81p-ho-7mf" firstAttribute="top" secondItem="zZO-xJ-I2V" secondAttribute="top" constant="11" id="6Xv-r5-xkT"/>
                                     <constraint firstItem="kAM-rq-D7b" firstAttribute="baseline" secondItem="81p-ho-7mf" secondAttribute="baseline" type="default" id="NdV-KJ-Y8e"/>
                                     <constraint firstItem="81p-ho-7mf" firstAttribute="leading" secondItem="zZO-xJ-I2V" secondAttribute="leading" constant="20" type="default" id="bux-YQ-KXD"/>
-                                    <constraint firstItem="kAM-rq-D7b" firstAttribute="leading" secondItem="81p-ho-7mf" secondAttribute="trailing" constant="8" type="user" id="eow-We-a0Y"/>
-                                    <constraint firstItem="kAM-rq-D7b" firstAttribute="leading" secondItem="81p-ho-7mf" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="gd9-aJ-oKM"/>
                                     <constraint firstAttribute="trailing" secondItem="kAM-rq-D7b" secondAttribute="trailing" constant="20" type="default" id="tFa-yi-M4a"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="customLabel" destination="81p-ho-7mf" id="E0n-kB-cIb"/>
+                                    <outlet property="mainLabel" destination="81p-ho-7mf" id="6pV-Cx-BuE"/>
+                                    <outlet property="secondaryLabel" destination="kAM-rq-D7b" id="Ngk-pG-32Q"/>
                                     <segue destination="TTR-x3-Y6g" kind="push" identifier="SegueDetail" id="xEw-wT-xiE"/>
                                 </connections>
                             </tableViewCell>
@@ -91,7 +93,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellStore" rowHeight="44" id="Cra-pp-XkW" customClass="StoreCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellStore" rowHeight="44" id="Cra-pp-XkW" customClass="CustomDynamicCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -123,8 +125,8 @@
                                     <constraint firstAttribute="trailing" secondItem="xHd-eQ-fcG" secondAttribute="trailing" constant="20" type="user" id="Zkg-e0-wnd"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="LabelStoreCity" destination="A8C-Ct-Pfg" id="SdP-XA-dxw"/>
-                                    <outlet property="LabelStoreName" destination="xHd-eQ-fcG" id="HHQ-4O-8Dx"/>
+                                    <outlet property="mainLabel" destination="A8C-Ct-Pfg" id="Jjt-58-un3"/>
+                                    <outlet property="secondaryLabel" destination="xHd-eQ-fcG" id="IxJ-7G-ArF"/>
                                     <segue destination="Bsu-XB-YJS" kind="push" identifier="SegueStoreDetail" id="AZb-ob-4y6"/>
                                 </connections>
                             </tableViewCell>
@@ -151,7 +153,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellCategory" id="7ID-GW-DHK" customClass="FindCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellCategory" id="7ID-GW-DHK" customClass="CustomDynamicCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -184,7 +186,7 @@
                                     <constraint firstItem="hn7-Yw-OzK" firstAttribute="leading" secondItem="7ID-GW-DHK" secondAttribute="leading" constant="20" type="default" id="ztp-y4-ozr"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="customLabel" destination="hn7-Yw-OzK" id="vuj-5P-xon"/>
+                                    <outlet property="mainLabel" destination="hn7-Yw-OzK" id="M5a-pP-IEx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -378,7 +380,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhA-by-P35" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="218" y="-522"/>
+            <point key="canvasLocation" x="30" y="-530"/>
         </scene>
         <!--Navigation Controller - stores-->
         <scene sceneID="6qN-Yv-uS5">
@@ -684,7 +686,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pyc-Xa-Axo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="btn-mM-kpM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="234" y="-2423"/>
+            <point key="canvasLocation" x="46" y="-2431"/>
         </scene>
         <!--Category Select View Controller - select category-->
         <scene sceneID="NMQ-lQ-FGq">
@@ -695,7 +697,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellCategory" id="iCP-jX-0JG" customClass="FindCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellCategory" id="iCP-jX-0JG" customClass="CustomDynamicCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -718,8 +720,8 @@
                                     <constraint firstItem="zvC-E7-uh8" firstAttribute="leading" secondItem="iCP-jX-0JG" secondAttribute="leading" constant="20" type="default" id="88f-qN-2Fl"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="customLabel" destination="zvC-E7-uh8" id="bpT-I9-qma"/>
-                                    <segue destination="Jca-0P-Lff" kind="unwind" identifier="UnwindSelectCategory" unwindAction="doneSelectCategory:" id="VAk-J5-PIu"/>
+                                    <outlet property="mainLabel" destination="zvC-E7-uh8" id="xx1-aS-7kB"/>
+                                    <segue destination="Jca-0P-Lff" kind="unwind" identifier="UnwindSelectCategory" unwindAction="done:" id="x5F-Id-mzb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -733,7 +735,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ul-QG-goD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Jca-0P-Lff" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="-2798"/>
+            <point key="canvasLocation" x="826" y="-2431"/>
         </scene>
         <!--Store Select View Controller - store select-->
         <scene sceneID="EsM-Vb-Ln2">
@@ -744,7 +746,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellStore" rowHeight="44" id="WWo-A5-FAR" customClass="StoreCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellStore" rowHeight="44" id="WWo-A5-FAR" customClass="CustomDynamicCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -753,7 +755,7 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouG-cy-9Gd">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="125" id="Hwc-bA-EAf"/>
+                                                <constraint firstAttribute="width" constant="158" id="17Q-SR-g12"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -776,9 +778,9 @@
                                     <constraint firstItem="920-qn-7jr" firstAttribute="baseline" secondItem="ouG-cy-9Gd" secondAttribute="baseline" type="default" id="lJu-9n-Zco"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="LabelStoreCity" destination="ouG-cy-9Gd" id="QfN-rK-kPe"/>
-                                    <outlet property="LabelStoreName" destination="920-qn-7jr" id="rn7-4i-GWI"/>
-                                    <segue destination="S9F-Kl-EFG" kind="unwind" identifier="UnwindSelectStore" unwindAction="doneSelectStore:" id="1Xh-j8-Gr4"/>
+                                    <outlet property="mainLabel" destination="ouG-cy-9Gd" id="Y6P-wd-Iyb"/>
+                                    <outlet property="secondaryLabel" destination="920-qn-7jr" id="thd-il-0HB"/>
+                                    <segue destination="S9F-Kl-EFG" kind="unwind" identifier="UnwindSelectStore" unwindAction="done:" id="1Xh-j8-Gr4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -793,7 +795,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uH6-3a-tXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="S9F-Kl-EFG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="988" y="-2167"/>
+            <point key="canvasLocation" x="834" y="-1848"/>
         </scene>
         <!--Add Store View Controller - add store-->
         <scene sceneID="CV0-s9-wDZ">
@@ -894,7 +896,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Txr-GT-RtH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="B4w-sF-I0N" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="218" y="-1157"/>
+            <point key="canvasLocation" x="30" y="-1165"/>
         </scene>
         <!--Find Detail View Controller - find detail-->
         <scene sceneID="Q1n-5o-L6q">
@@ -937,8 +939,41 @@
                                             <constraint firstItem="lMJ-JF-nmF" firstAttribute="top" secondItem="q6M-DF-0DK" secondAttribute="top" constant="11" id="mKc-ST-qfl"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="z50-Yu-FDs">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="9JD-W4-lLL">
                                         <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63D-yM-pcH">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="74" id="CaM-yD-0wG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adz-og-H5a">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.18982012409999999" green="0.29278096100000001" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="63D-yM-pcH" firstAttribute="leading" secondItem="9JD-W4-lLL" secondAttribute="leading" constant="20" type="default" id="1FV-bN-xV8"/>
+                                            <constraint firstAttribute="trailing" secondItem="adz-og-H5a" secondAttribute="trailing" constant="20" type="default" id="Vyw-UL-6YZ"/>
+                                            <constraint firstItem="63D-yM-pcH" firstAttribute="top" secondItem="9JD-W4-lLL" secondAttribute="top" constant="11" id="enR-qV-rf9"/>
+                                            <constraint firstItem="63D-yM-pcH" firstAttribute="baseline" secondItem="adz-og-H5a" secondAttribute="baseline" type="default" id="mEQ-9D-vfp"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="kBg-SV-qQo" kind="push" identifier="SegueSelectNewCategory" id="Oe7-W8-9h1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="z50-Yu-FDs">
+                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -968,7 +1003,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="Ufl-3F-D66">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -998,7 +1033,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="LIt-Q0-IoU">
-                                        <rect key="frame" x="0.0" y="132" width="320" height="70"/>
+                                        <rect key="frame" x="0.0" y="176" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="69"/>
@@ -1038,7 +1073,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" rowHeight="125" id="fe1-XQ-HaQ">
-                                        <rect key="frame" x="0.0" y="202" width="320" height="125"/>
+                                        <rect key="frame" x="0.0" y="246" width="320" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
@@ -1059,7 +1094,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" rowHeight="102" id="wXx-IF-H9S">
-                                        <rect key="frame" x="0.0" y="327" width="320" height="102"/>
+                                        <rect key="frame" x="0.0" y="371" width="320" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
@@ -1104,6 +1139,7 @@
                     <navigationItem key="navigationItem" title="find detail" id="mlj-2k-YAR"/>
                     <connections>
                         <outlet property="PictureFind" destination="4bf-WY-OFh" id="nTt-su-FjO"/>
+                        <outlet property="TextLabelCategory" destination="adz-og-H5a" id="JfE-gY-rGz"/>
                         <outlet property="TextLabelCity" destination="EoC-MV-KhJ" id="rSJ-Pq-t1p"/>
                         <outlet property="TextLabelCost" destination="0Bo-IR-eQ5" id="peG-Mr-OYA"/>
                         <outlet property="TextLabelDate" destination="QMW-E4-r74" id="HW9-kB-ExQ"/>
@@ -1114,7 +1150,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtI-No-YJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="-1840"/>
+            <point key="canvasLocation" x="46" y="-1848"/>
         </scene>
         <!--Thrifter View Controller - thrifter-->
         <scene sceneID="4g9-1a-eqQ">
@@ -1140,12 +1176,110 @@
             <point key="canvasLocation" x="-1601" y="-2136"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AddCategoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCategoryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="TextFieldCategoryName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="AddFindViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddFindViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ClickSelectPicture:" candidateClass="UIButton"/>
+                <relationship kind="action" name="ClickTakePicture:" candidateClass="UIButton"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="ButtonSelectPicture" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonTakePicture" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="CellStoreData" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="CellStoreSelect" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="ImageFind" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="LabelCategory" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelStore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextFieldCost" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextFieldDescription" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextFieldName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="AddStoreViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddStoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ButtonDoneClick:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="TextViewStoreCity" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewStoreName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CategoriesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoriesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneAddCategory:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="CategorySelectViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategorySelectViewController.h"/>
+        </class>
+        <class className="CustomDynamicCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomDynamicCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mainLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="secondaryLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FindDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="PictureFind" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="TextLabelCategory" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelCost" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelFind" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelStore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextViewDescription" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="FindsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="StoreDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="LabelStoreCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelStoreName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StoreSelectViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreSelectViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneAddStore:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="StoresViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoresViewController.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+        <class className="thrifterViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/thrifterViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wQz-9C-CY6"/>
+        <segue reference="XZi-GR-KwM"/>
+        <segue reference="Oe7-W8-9h1"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -27,7 +27,7 @@
         _storeKey = [[[[self storeList] lastObject] key] integerValue];
         _categoryFileString = category;
         [self readCategories];
-        _categoryKey = [[[[self storeList] lastObject] key] integerValue];
+        _categoryKey = [[[[self categoryList] lastObject] key] integerValue];
         return self;
     }
     return nil;
@@ -66,6 +66,11 @@
     [_storeList removeObjectAtIndex:indexPath.row];
     [self writeStores];
 }
+-(void)removeCategoryAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_categoryList removeObjectAtIndex:indexPath.row];
+    [self writeCategories];
+}
 -(Find *)findAtIndexPath:(NSIndexPath *)indexPath
 {
     return [_findList objectAtIndex:[indexPath row]];
@@ -88,7 +93,7 @@
     Find *f;
     while ( f = [enumerator nextObject])
     {
-        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:f.name, @"name", f.cost, @"cost", f.date, @"date", f.storeKey, @"store", f.description, @"description", f.picture, @"picture", f.key, @"key", nil];
+        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:f.name, @"name", f.cost, @"cost", f.date, @"date", f.storeKey, @"store", f.description, @"description", f.picture, @"picture", f.key, @"key", f.categoryKey, @"category", nil];
         [array addObject:tempDictionary];
     }
     [array writeToFile:plistPath atomically:YES];
@@ -138,7 +143,7 @@
         NSDictionary *findDictionary = [[NSDictionary alloc] init];
         while ( findDictionary = [enumerator nextObject])
         {
-            Find *f = [[Find alloc] initWithDataAndKey:[findDictionary objectForKey:@"name"] cost:[findDictionary objectForKey:@"cost"] date:[findDictionary objectForKey:@"date"] store:[findDictionary objectForKey:@"store"] description:[findDictionary objectForKey:@"description"] picture:[findDictionary objectForKey:@"picture"] key:[findDictionary objectForKey:@"key"]];
+            Find *f = [[Find alloc] initWithDataAndKey:[findDictionary objectForKey:@"name"] cost:[findDictionary objectForKey:@"cost"] date:[findDictionary objectForKey:@"date"] store:[findDictionary objectForKey:@"store"] description:[findDictionary objectForKey:@"description"] picture:[findDictionary objectForKey:@"picture"] key:[findDictionary objectForKey:@"key"] category:[findDictionary objectForKey:@"category"]];
             [finds addObject:f];
         }
     }

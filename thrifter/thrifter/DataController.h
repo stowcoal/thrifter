@@ -28,6 +28,7 @@
 
 -(void)removeFindAtIndexPath:(NSIndexPath *)indexPath;
 -(void)removeStoreAtIndexPath:(NSIndexPath *)indexPath;
+-(void)removeCategoryAtIndexPath:(NSIndexPath *)indexPath;
 
 -(Find *)findAtIndexPath:(NSIndexPath *)indexPath;
 -(Store *)storeAtIndexPath:(NSIndexPath *)indexPath;

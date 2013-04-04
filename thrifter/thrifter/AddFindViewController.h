@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSNumber *categoryKey;
 @property (strong, nonatomic) NSData *imageData;
 @property (strong, nonatomic) DataController *dataController;
+
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldName;
 @property (weak, nonatomic) IBOutlet UILabel *LabelStore;
 @property (weak, nonatomic) IBOutlet UITextField *TextFieldCost;
@@ -30,8 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *ButtonSelectPicture;
 @property (weak, nonatomic) IBOutlet UIImageView *ImageFind;
 - (IBAction)ClickTakePicture:(UIButton *)sender;
-- (IBAction)doneSelectStore:(UIStoryboardSegue *)segue;
-- (IBAction)doneSelectCategory:(UIStoryboardSegue *)segue;
+- (IBAction)done:(UIStoryboardSegue *)segue;
 - (IBAction)ClickSelectPicture:(UIButton *)sender;
 
 @end
