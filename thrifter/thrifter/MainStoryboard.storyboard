@@ -18,7 +18,84 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bF-XS-upa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-971" y="-2136"/>
+            <point key="canvasLocation" x="-979" y="-1996"/>
+        </scene>
+        <!--Filter View Controller - filter select-->
+        <scene sceneID="SSw-lS-uyK">
+            <objects>
+                <tableViewController id="mDN-Ic-mXq" customClass="FilterViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="M2D-IE-d33">
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="PO0-WO-awK">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8GQ-VI-PG2">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="stores" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bg1-A6-6EZ">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="62" id="jz9-FR-Fa8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Bg1-A6-6EZ" firstAttribute="leading" secondItem="8GQ-VI-PG2" secondAttribute="leading" constant="20" type="default" id="e1i-CC-o8s"/>
+                                            <constraint firstItem="Bg1-A6-6EZ" firstAttribute="top" secondItem="8GQ-VI-PG2" secondAttribute="top" constant="11" id="fgB-b9-If9"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="6oX-yB-X0n" kind="push" identifier="SegueFilterStoreSelect" id="P2B-a5-pv3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Fm9-ah-5aN">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="categories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="use-P1-SlZ">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="88" id="xwd-DT-zaR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="use-P1-SlZ" firstAttribute="top" secondItem="Fm9-ah-5aN" secondAttribute="top" constant="11" id="LWg-0v-sdx"/>
+                                            <constraint firstItem="use-P1-SlZ" firstAttribute="leading" secondItem="Fm9-ah-5aN" secondAttribute="leading" constant="20" type="default" id="toy-Oj-ynz"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="kBg-SV-qQo" kind="push" identifier="SegueFilterCategorySelect" id="bjK-t0-h4E"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="mDN-Ic-mXq" id="JxR-Uh-vFq"/>
+                            <outlet property="delegate" destination="mDN-Ic-mXq" id="Kfp-xf-XYP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="filter select" id="nq1-MY-l3p"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ezq-mo-82G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="-1996"/>
         </scene>
         <!--Finds View Controller - thrifter-->
         <scene sceneID="DXI-3x-vfM">
@@ -72,6 +149,12 @@
                     <tabBarItem key="tabBarItem" title="finds" id="Jle-xj-F3n"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="thrifter" id="JKt-Yj-grR">
+                        <barButtonItem key="leftBarButtonItem" title="filter" id="RlG-s0-tlc">
+                            <connections>
+                                <action selector="ButtonSortClick:" destination="5ym-bw-R8d" id="Q9B-Xn-4tt"/>
+                                <segue destination="mDN-Ic-mXq" kind="push" identifier="SegueSelectFilter" id="8fQ-sL-yqg"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="e1i-1H-pJv">
                             <connections>
                                 <segue destination="EqX-gz-gD0" kind="push" identifier="SegueAddFind" id="Ja9-yA-ApO"/>
@@ -82,7 +165,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJb-xs-uqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-503" y="-2136"/>
+            <point key="canvasLocation" x="-511" y="-1996"/>
         </scene>
         <!--Stores View Controller - stores-->
         <scene sceneID="FjH-qM-FGK">
@@ -142,7 +225,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JP5-D8-0Yv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-519" y="-874"/>
+            <point key="canvasLocation" x="-527" y="-490"/>
         </scene>
         <!--Categories View Controller - categories-->
         <scene sceneID="hVP-Fi-O7g">
@@ -380,7 +463,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhA-by-P35" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="-530"/>
+            <point key="canvasLocation" x="22" y="-146"/>
         </scene>
         <!--Navigation Controller - stores-->
         <scene sceneID="6qN-Yv-uS5">
@@ -396,7 +479,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4q-dj-8bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-987" y="-874"/>
+            <point key="canvasLocation" x="-995" y="-490"/>
         </scene>
         <!--Add Find View Controller - add find-->
         <scene sceneID="x1n-4b-sFy">
@@ -686,7 +769,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pyc-Xa-Axo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="btn-mM-kpM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="46" y="-2431"/>
+            <point key="canvasLocation" x="38" y="-2575"/>
         </scene>
         <!--Category Select View Controller - select category-->
         <scene sceneID="NMQ-lQ-FGq">
@@ -735,7 +818,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ul-QG-goD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Jca-0P-Lff" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="826" y="-2431"/>
+            <point key="canvasLocation" x="834" y="-2383"/>
         </scene>
         <!--Store Select View Controller - store select-->
         <scene sceneID="EsM-Vb-Ln2">
@@ -795,7 +878,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uH6-3a-tXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="S9F-Kl-EFG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="834" y="-1848"/>
+            <point key="canvasLocation" x="842" y="-1728"/>
         </scene>
         <!--Add Store View Controller - add store-->
         <scene sceneID="CV0-s9-wDZ">
@@ -896,7 +979,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Txr-GT-RtH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="B4w-sF-I0N" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="30" y="-1165"/>
+            <point key="canvasLocation" x="22" y="-781"/>
         </scene>
         <!--Find Detail View Controller - find detail-->
         <scene sceneID="Q1n-5o-L6q">
@@ -1150,7 +1233,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtI-No-YJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46" y="-1848"/>
+            <point key="canvasLocation" x="38" y="-1400"/>
         </scene>
         <!--Thrifter View Controller - thrifter-->
         <scene sceneID="4g9-1a-eqQ">
@@ -1173,113 +1256,16 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3p-Qa-8hH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1601" y="-2136"/>
+            <point key="canvasLocation" x="-1609" y="-1996"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AddCategoryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCategoryViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="TextFieldCategoryName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="AddFindViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddFindViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="ClickSelectPicture:" candidateClass="UIButton"/>
-                <relationship kind="action" name="ClickTakePicture:" candidateClass="UIButton"/>
-                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="outlet" name="ButtonSelectPicture" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="ButtonTakePicture" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="CellStoreData" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="CellStoreSelect" candidateClass="UITableViewCell"/>
-                <relationship kind="outlet" name="ImageFind" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="LabelCategory" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="LabelCity" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="LabelName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="LabelStore" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextFieldCost" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="TextFieldDescription" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="TextFieldName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="AddStoreViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddStoreViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="ButtonDoneClick:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="TextViewStoreCity" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="TextViewStoreName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="CategoriesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoriesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneAddCategory:" candidateClass="UIStoryboardSegue"/>
-            </relationships>
-        </class>
-        <class className="CategorySelectViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategorySelectViewController.h"/>
-        </class>
-        <class className="CustomDynamicCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomDynamicCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mainLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="secondaryLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="FindDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="PictureFind" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="TextLabelCategory" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextLabelCity" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextLabelCost" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextLabelDate" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextLabelFind" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextLabelStore" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="TextViewDescription" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="FindsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="StoreDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="LabelStoreCity" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="LabelStoreName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="StoreSelectViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreSelectViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneAddStore:" candidateClass="UIStoryboardSegue"/>
-            </relationships>
-        </class>
-        <class className="StoresViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoresViewController.h"/>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
-        <class className="thrifterViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/thrifterViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XZi-GR-KwM"/>
-        <segue reference="Oe7-W8-9h1"/>
+        <segue reference="P2B-a5-pv3"/>
+        <segue reference="bjK-t0-h4E"/>
     </inferredMetricsTieBreakers>
 </document>

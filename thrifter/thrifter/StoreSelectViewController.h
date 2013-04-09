@@ -17,5 +17,5 @@
 @property (strong, nonatomic) DataController *dataController;
 @property (strong, nonatomic) NSNumber *storeKey;
 
-- (IBAction)doneAddStore:(UIStoryboardSegue *)segue;
+
 @end

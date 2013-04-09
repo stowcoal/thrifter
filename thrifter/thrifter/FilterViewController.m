@@ -1,23 +1,26 @@
 //
-//  storeSelectViewController.m
+//  FilterViewController.m
 //  thrifter
 //
-//  Created by CURTIS STOCHL on 2/21/13.
+//  Created by CURTIS STOCHL on 4/9/13.
 //  Copyright (c) 2013 CURTIS STOCHL. All rights reserved.
 //
 
-
+#import "FilterViewController.h"
 #import "StoreSelectViewController.h"
-@interface StoreSelectViewController ()
+#import "CategorySelectViewController.h"
+
+@interface FilterViewController ()
 
 @end
 
-@implementation StoreSelectViewController
+@implementation FilterViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
+        // Custom initialization
     }
     return self;
 }
@@ -31,13 +34,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    // self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist"];
-}
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:YES];
-    [self.dataController refresh];
-    [[self tableView] reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,34 +41,46 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-//#pragma mark - Table view data source
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"SegueFilterStoreSelect"])
+    {
+        StoreSelectViewController *storeController = [segue destinationViewController];
+        storeController.dataController = self.dataController;
+    }
+    if ([[segue identifier] isEqualToString:@"SegueFilterCategorySelect"])
+    {
+        CategorySelectViewController *categoryController = [segue destinationViewController];
+        categoryController.dataController = self.dataController;
+    }
+}
+/*
+#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-//#warning Potentially incomplete method implementation.
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//#warning Incomplete method implementation.
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [[[self dataController] storeList] count];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"CellStore";
-    CustomDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.mainLabel.text = [[self dataController] storeAtIndexPath:indexPath].name;
-    cell.secondaryLabel.text = [[self dataController] storeAtIndexPath:indexPath].city;
-    cell.storeKey = [[self dataController] storeAtIndexPath:indexPath].key;
+    // Configure the cell...
+    
     return cell;
 }
-
+*/
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,16 +88,15 @@
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
+*/
 
-
-
+/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [[self dataController] removeStoreAtIndexPath:indexPath];
-        [[self tableView] reloadData];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -117,9 +124,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self dismissViewControllerAnimated:YES completion:NULL];
-
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
 }
-
 
 @end

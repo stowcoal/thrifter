@@ -26,6 +26,7 @@
 		DEBF17CE16FB6FEB00800975 /* StoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEBF17CD16FB6FEB00800975 /* StoreCell.m */; };
 		DED5657E16FC09ED0064ABE8 /* thrifterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED5657D16FC09ED0064ABE8 /* thrifterViewController.m */; };
 		DED5658116FC114C0064ABE8 /* StoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED5658016FC114C0064ABE8 /* StoresViewController.m */; };
+		DED917AF17147AF300B2BD3A /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED917AE17147AF300B2BD3A /* FilterViewController.m */; };
 		DEDA7D4B16FCEA58002BAF1A /* StoreDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDA7D4A16FCEA58002BAF1A /* StoreDetailViewController.m */; };
 		DEDA7D4E16FCEAE7002BAF1A /* FindDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDA7D4D16FCEAE7002BAF1A /* FindDetailViewController.m */; };
 		DEDE61E016D811A300642342 /* AddStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE61DF16D811A300642342 /* AddStoreViewController.m */; };
@@ -68,6 +69,8 @@
 		DED5657D16FC09ED0064ABE8 /* thrifterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = thrifterViewController.m; sourceTree = "<group>"; };
 		DED5657F16FC114B0064ABE8 /* StoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoresViewController.h; sourceTree = "<group>"; };
 		DED5658016FC114C0064ABE8 /* StoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoresViewController.m; sourceTree = "<group>"; };
+		DED917AD17147AF300B2BD3A /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		DED917AE17147AF300B2BD3A /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
 		DEDA7D4916FCEA58002BAF1A /* StoreDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreDetailViewController.h; sourceTree = "<group>"; };
 		DEDA7D4A16FCEA58002BAF1A /* StoreDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreDetailViewController.m; sourceTree = "<group>"; };
 		DEDA7D4D16FCEAE7002BAF1A /* FindDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindDetailViewController.m; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				DE5C3CED16CAAFF9006CAE2B /* MainStoryboard.storyboard */,
+				DED917AD17147AF300B2BD3A /* FilterViewController.h */,
+				DED917AE17147AF300B2BD3A /* FilterViewController.m */,
 				DEE0BA8916DD31A900609A0B /* DataController.h */,
 				DE5C3CFA16CAB83E006CAE2B /* DataController.m */,
 				DE5C3CF316CAB386006CAE2B /* FindsViewController.h */,
@@ -273,6 +278,7 @@
 				DEFDBCEB1704B14F006A1D2E /* AddCategoryViewController.m in Sources */,
 				DE1A1078170D1CBE00927D0A /* CategorySelectViewController.m in Sources */,
 				DEA959AC170DE35B007EE576 /* CustomDynamicCell.m in Sources */,
+				DED917AF17147AF300B2BD3A /* FilterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

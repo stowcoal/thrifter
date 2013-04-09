@@ -22,7 +22,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.dataController = [[DataController alloc] init];
     }
     return self;
 }
@@ -38,7 +37,10 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSSortDescriptor *categorySort = [[NSSortDescriptor alloc] initWithKey:@"categoryKey" ascending:YES];
+    NSSortDescriptor *nameSort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist" categoryLocationString:@"category.plist"];
+    self.findArray = [[[self dataController] findList] sortedArrayUsingDescriptors:[NSArray arrayWithObject:categorySort]];
     [[self tableView] reloadData];
 }
 
@@ -74,14 +76,14 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.dataController.findList count];
+    return [[self findArray] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CellFind";
     CustomDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    Find *findForCell = [self.dataController findAtIndexPath:indexPath];
+    Find *findForCell = [[self findArray] objectAtIndex:indexPath.row];
     NSLog(@"%@",findForCell.name);
     Category *detailCategory = [self.dataController categoryForKey:findForCell.categoryKey];
     [cell.mainLabel setText:findForCell.name];
@@ -154,7 +156,16 @@
         AddFindViewController *addViewController = [segue destinationViewController];
         addViewController.dataController = self.dataController;
     }
+    if ([[segue identifier] isEqualToString:@"SegueSelectFilter"])
+    {
+        FilterViewController *filterViewController = [segue destinationViewController];
+        filterViewController.dataController = self.dataController;
+    }
 }
+- (IBAction)ButtonSortClick:(UIBarButtonItem *)sender {
+    
+}
+
 - (IBAction)done:(UIStoryboardSegue *)segue
 {
     if ([[segue identifier] isEqualToString:@"Done"]) {
@@ -163,11 +174,18 @@
             [self.dataController addFindToFindList:addController.find];
             NSLog(@"%d",[[self dataController] findKey]);
             [[self tableView] reloadData];
+            NSLog(@"done");
         }
+    }
+    if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
+        NSLog(@"FilterByStore");
+    }
+    if ([[segue identifier] isEqualToString:@"UnwindSelectCategory"]) {
+        NSLog(@"FilterByCategory");
     }
     [self dismissViewControllerAnimated:YES completion:NULL];
 
-    NSLog(@"done");
+    
 }
 - (IBAction)cancel:(UIStoryboardSegue *)sender
 {
