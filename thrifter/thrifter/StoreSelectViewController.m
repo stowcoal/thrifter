@@ -33,10 +33,18 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     // self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist"];
 }
--(void)viewDidAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidAppear:YES];
+    [super viewDidAppear:animated];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSLog(@"appear");
     [self.dataController refresh];
+    [[self dataController] sortStores];
     [[self tableView] reloadData];
 }
 
@@ -67,12 +75,11 @@
     static NSString *CellIdentifier = @"CellStore";
     CustomDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.mainLabel.text = [[self dataController] storeAtIndexPath:indexPath].name;
-    cell.secondaryLabel.text = [[self dataController] storeAtIndexPath:indexPath].city;
-    cell.storeKey = [[self dataController] storeAtIndexPath:indexPath].key;
+    [cell.mainLabel setText:[[self dataController] storeAtIndexPath:indexPath].name];
+    [cell.secondaryLabel setText:[[self dataController] storeAtIndexPath:indexPath].city];
+    cell.categoryKey = [[self dataController] storeAtIndexPath:indexPath].key;
     return cell;
 }
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

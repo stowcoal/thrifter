@@ -14,6 +14,6 @@
 
 @interface StoresViewController : UITableViewController
 @property (nonatomic, strong) DataController *dataController;
-
+@property (strong, nonatomic) NSArray *sortedStores;
 
 @end

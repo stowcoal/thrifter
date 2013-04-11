@@ -48,6 +48,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSLog(@"appear");
     [self.dataController refresh];
+    [[self dataController] sortStores];
     [[self tableView] reloadData];
 }
 
@@ -68,6 +69,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    //#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [[[self dataController] storeList] count];
 }
@@ -77,9 +79,9 @@
     static NSString *CellIdentifier = @"CellStore";
     CustomDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.mainLabel.text = [[self dataController] storeAtIndexPath:indexPath].name;
-    cell.secondaryLabel.text = [[self dataController] storeAtIndexPath:indexPath].city;
-    cell.storeKey = [[self dataController] storeAtIndexPath:indexPath].key;
+    [cell.mainLabel setText:[[self dataController] storeAtIndexPath:indexPath].name];
+    [cell.secondaryLabel setText:[[self dataController] storeAtIndexPath:indexPath].city];
+    cell.categoryKey = [[self dataController] storeAtIndexPath:indexPath].key;
     return cell;
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -18,6 +18,8 @@
 
 @implementation FindsViewController
 
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -37,11 +39,12 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSSortDescriptor *categorySort = [[NSSortDescriptor alloc] initWithKey:@"categoryKey" ascending:YES];
-    NSSortDescriptor *nameSort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    //NSSortDescriptor *categorySort = [[NSSortDescriptor alloc] initWithKey:@"categoryKey" ascending:YES];
+    //NSSortDescriptor *nameSort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist" categoryLocationString:@"category.plist"];
-    self.findArray = [[[self dataController] findList] sortedArrayUsingDescriptors:[NSArray arrayWithObject:categorySort]];
-    [[self tableView] reloadData];
+    //self.sortedFinds = [[[self dataController] findList] sortedArrayUsingDescriptors:[NSArray arrayWithObjects:categorySort, nameSort, nil]];
+    //self.sortedFinds = [[[self dataController] findList] sortedArrayUsingFunction:categorySort context:(__bridge void *)(self.dataController)];
+    //[[self tableView] reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -55,8 +58,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSLog(@"appear");
     [self.dataController refresh];
+    [[self dataController] sortFinds];
     [[self tableView] reloadData];
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -76,14 +81,14 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [[self findArray] count];
+    return [[[self dataController] findList] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CellFind";
     CustomDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    Find *findForCell = [[self findArray] objectAtIndex:indexPath.row];
+    Find *findForCell = [[[self dataController] findList] objectAtIndex:indexPath.row];
     NSLog(@"%@",findForCell.name);
     Category *detailCategory = [self.dataController categoryForKey:findForCell.categoryKey];
     [cell.mainLabel setText:findForCell.name];

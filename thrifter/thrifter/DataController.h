@@ -39,6 +39,10 @@
 -(Category *)categoryForKey:(NSNumber *)key;
 -(Find *)findForKey:(NSNumber *)key;
 
+-(void)sortFinds;
+-(void)sortStores;
+-(void)sortCategories;
+
 -(NSNumber *)FindKey;
 -(NSNumber *)StoreKey;
 -(NSNumber *)CategoryKey;

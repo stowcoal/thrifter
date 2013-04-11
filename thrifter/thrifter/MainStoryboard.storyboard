@@ -824,12 +824,12 @@
         <scene sceneID="EsM-Vb-Ln2">
             <objects>
                 <tableViewController id="6oX-yB-X0n" customClass="StoreSelectViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="42" sectionHeaderHeight="22" sectionFooterHeight="22" id="ecI-MM-bbE">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ecI-MM-bbE">
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellStore" rowHeight="44" id="WWo-A5-FAR" customClass="CustomDynamicCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellStore" id="WWo-A5-FAR" customClass="CustomDynamicCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1259,6 +1259,107 @@
             <point key="canvasLocation" x="-1609" y="-1996"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AddCategoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCategoryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="TextFieldCategoryName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="AddFindViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddFindViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ClickSelectPicture:" candidateClass="UIButton"/>
+                <relationship kind="action" name="ClickTakePicture:" candidateClass="UIButton"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="ButtonSelectPicture" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonTakePicture" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="CellStoreData" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="CellStoreSelect" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="ImageFind" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="LabelCategory" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelStore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextFieldCost" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextFieldDescription" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextFieldName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="AddStoreViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddStoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ButtonDoneClick:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="TextViewStoreCity" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewStoreName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CategoriesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoriesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneAddCategory:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="CategorySelectViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategorySelectViewController.h"/>
+        </class>
+        <class className="CustomDynamicCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomDynamicCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mainLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="secondaryLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FilterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FilterViewController.h"/>
+        </class>
+        <class className="FindDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="PictureFind" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="TextLabelCategory" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelCost" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelFind" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelStore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextViewDescription" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="FindsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ButtonSortClick:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="StoreDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="LabelStoreCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelStoreName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StoreSelectViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreSelectViewController.h"/>
+        </class>
+        <class className="StoresViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoresViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneAddStore:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+        <class className="thrifterViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/thrifterViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

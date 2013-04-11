@@ -14,7 +14,6 @@
 
 @interface FindsViewController : UITableViewController
 @property (strong, nonatomic) DataController *dataController;
-@property (strong, nonatomic) NSArray *findArray;
 - (IBAction)ButtonSortClick:(UIBarButtonItem *)sender;
 - (IBAction)done:(UIStoryboardSegue *)sender;
 - (IBAction)cancel:(UIStoryboardSegue *)sender;

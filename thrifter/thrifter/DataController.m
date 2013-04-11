@@ -266,4 +266,36 @@
         _categoryKey = 0;
     return [[NSNumber alloc] initWithInteger:_categoryKey];
 }
+NSInteger categorySort(id f1, id f2, void *context)
+{
+    Find *find1 = (Find *)f1;
+    Find *find2 = (Find *)f2;
+    DataController *dc = (__bridge DataController *)context;
+    
+    if ([[dc categoryForKey:[find1 categoryKey]].name compare:[dc categoryForKey:[find2 categoryKey]].name] == NSOrderedSame)
+    {
+        return [[find1 name] compare:[find2 name]];
+    }
+    else
+        return [[dc categoryForKey:[find1 categoryKey]].name compare:[dc categoryForKey:[find2 categoryKey]].name];
+}
+-(void)sortFinds
+{
+    [[self findList] sortUsingFunction:categorySort context:(__bridge void *)(self)];
+    [self writeFinds];
+}
+-(void)sortStores
+{
+    NSSortDescriptor *citySort = [[NSSortDescriptor alloc] initWithKey:@"city" ascending:YES];
+    NSSortDescriptor *nameSort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [[self storeList] sortUsingDescriptors:[[NSArray alloc] initWithObjects:citySort, nameSort, nil]];
+    [self writeStores];
+
+}
+-(void)sortCategories
+{
+    NSSortDescriptor *nameSort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [[self categoryList] sortUsingDescriptors:[[NSArray alloc] initWithObjects:nameSort, nil]];
+    [self writeCategories];
+}
 @end
