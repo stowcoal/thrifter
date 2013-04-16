@@ -77,7 +77,7 @@
     
     [cell.mainLabel setText:[[self dataController] storeAtIndexPath:indexPath].name];
     [cell.secondaryLabel setText:[[self dataController] storeAtIndexPath:indexPath].city];
-    cell.categoryKey = [[self dataController] storeAtIndexPath:indexPath].key;
+    cell.storeKey = [[self dataController] storeAtIndexPath:indexPath].key;
     return cell;
 }
 /*

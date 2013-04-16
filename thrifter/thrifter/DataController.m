@@ -21,13 +21,10 @@
     if (self = [super init]) {
         _findFileString = find;
         [self readFinds];
-        _findKey = [[[[self findList] lastObject] key] integerValue];
         _storeFileString = store;
         [self readStores];
-        _storeKey = [[[[self storeList] lastObject] key] integerValue];
         _categoryFileString = category;
         [self readCategories];
-        _categoryKey = [[[[self categoryList] lastObject] key] integerValue];
         return self;
     }
     return nil;
@@ -35,11 +32,8 @@
 -(void)refresh
 {
     [self readFinds];
-    _findKey = [[[[self findList] lastObject] key] integerValue];
     [self readStores];
-    _storeKey = [[[[self storeList] lastObject] key] integerValue];
     [self readCategories];
-    _categoryKey = [[[[self storeList] lastObject] key] integerValue];
 }
 -(void)addFindToFindList:(Find *)findToAdd
 {
@@ -144,6 +138,8 @@
         while ( findDictionary = [enumerator nextObject])
         {
             Find *f = [[Find alloc] initWithDataAndKey:[findDictionary objectForKey:@"name"] cost:[findDictionary objectForKey:@"cost"] date:[findDictionary objectForKey:@"date"] store:[findDictionary objectForKey:@"store"] description:[findDictionary objectForKey:@"description"] picture:[findDictionary objectForKey:@"picture"] key:[findDictionary objectForKey:@"key"] category:[findDictionary objectForKey:@"category"]];
+            if ( [f.key integerValue] > [self findKey])
+                self.findKey = [f.key integerValue];
             [finds addObject:f];
         }
     }
@@ -164,8 +160,10 @@
         
         while( findDictionary = [readEnumerator nextObject] )
         {
-            Store *storeToAdd = [[Store alloc] initWithDataAndKey:[findDictionary objectForKey:@"name"] city:[findDictionary objectForKey:@"city"] key:[findDictionary objectForKey:@"key"]];
-            [stores addObject:storeToAdd];
+            Store *s = [[Store alloc] initWithDataAndKey:[findDictionary objectForKey:@"name"] city:[findDictionary objectForKey:@"city"] key:[findDictionary objectForKey:@"key"]];
+            if ( [s.key integerValue] > [self storeKey])
+                self.storeKey = [s.key integerValue];
+            [stores addObject:s];
         }
     }
     _storeList = stores;
@@ -185,6 +183,8 @@
         while ( findDictionary = [enumerator nextObject])
         {
             Category *c = [[Category alloc] initWithDataAndKey:[findDictionary objectForKey:@"name"] key:[findDictionary objectForKey:@"key"]];
+            if ( [c.key integerValue] > [self categoryKey])
+                self.categoryKey = [c.key integerValue];
             [categories addObject:c];
         }
     }

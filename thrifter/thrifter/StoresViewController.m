@@ -34,7 +34,6 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
      NSLog(@"load");
     self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist" categoryLocationString:@"category.plist"];
-    [[self tableView] reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -81,7 +80,7 @@
     
     [cell.mainLabel setText:[[self dataController] storeAtIndexPath:indexPath].name];
     [cell.secondaryLabel setText:[[self dataController] storeAtIndexPath:indexPath].city];
-    cell.categoryKey = [[self dataController] storeAtIndexPath:indexPath].key;
+    cell.storeKey = [[self dataController] storeAtIndexPath:indexPath].key;
     return cell;
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
