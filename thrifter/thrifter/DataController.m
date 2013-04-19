@@ -102,9 +102,8 @@
     Store *s;
     while ( s = [enumerator nextObject])
     {
-        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:s.key, @"key", s.name, @"name", s.city, @"city", nil];
-        if (s.name != NULL && s.city != NULL)
-            [array addObject:tempDictionary];
+        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:s.key, @"key", s.name, @"name", s.city, @"city", s.mondayTime, @"monday", s.tuesdayTime, @"tuesday", s.wednesdayTime, @"wednesday", s.thursdayTime, @"thursday", s.fridayTime, @"friday", s.saturdayTime, @"saturday", s.sundayTime, @"sunday", nil];
+        [array addObject:tempDictionary];
     }
     [array writeToFile:plistPath atomically:YES];
 }
@@ -160,7 +159,7 @@
         
         while( findDictionary = [readEnumerator nextObject] )
         {
-            Store *s = [[Store alloc] initWithDataAndKey:[findDictionary objectForKey:@"name"] city:[findDictionary objectForKey:@"city"] key:[findDictionary objectForKey:@"key"]];
+            Store *s = [[Store alloc] initWithDataAndKeyAndHours:[findDictionary objectForKey:@"name"] city:[findDictionary objectForKey:@"city"] key:[findDictionary objectForKey:@"key"] mondayTime:[findDictionary objectForKey:@"monday"] tuesdayTime:[findDictionary objectForKey:@"tuesday"] wednesdayTime:[findDictionary objectForKey:@"wednesday"] thursdayTime:[findDictionary objectForKey:@"thursday"] fridayTime:[findDictionary objectForKey:@"friday"] saturdayTime:[findDictionary objectForKey:@"saturday"] sundayTime:[findDictionary objectForKey:@"sunday"]];
             if ( [s.key integerValue] > [self storeKey])
                 self.storeKey = [s.key integerValue];
             [stores addObject:s];
@@ -290,7 +289,6 @@ NSInteger categorySort(id f1, id f2, void *context)
     NSSortDescriptor *nameSort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     [[self storeList] sortUsingDescriptors:[[NSArray alloc] initWithObjects:citySort, nameSort, nil]];
     [self writeStores];
-
 }
 -(void)sortCategories
 {

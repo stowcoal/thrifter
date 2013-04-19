@@ -98,7 +98,73 @@
         AddStoreViewController *addController = [segue sourceViewController];
         if (addController.TextViewStoreName &&
             addController.TextViewStoreCity) {
-            [[self dataController] addStoreToStoreList:[[Store alloc] initWithDataAndKey:addController.TextViewStoreName.text city:addController.TextViewStoreCity.text key:[[self dataController] StoreKey]]];
+            NSString *mondayString = [[NSString alloc] init];
+            NSString *tuesdayString = [[NSString alloc] init];
+            NSString *wednesdayString = [[NSString alloc] init];
+            NSString *thursdayString = [[NSString alloc] init];
+            NSString *fridayString = [[NSString alloc] init];
+            NSString *saturdayString = [[NSString alloc] init];
+            NSString *sundayString = [[NSString alloc] init];
+            
+            if( [[[addController ButtonMondayClosed] titleLabel].text isEqual:@"open"])
+            {
+                mondayString = [[NSString alloc] initWithFormat:@"%@%@ - %@%@", [[addController TextViewMondayOpen].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonMondayFirst].titleLabel.text, [[addController TextViewMondayClose].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonMondaySecond].titleLabel.text];
+            }
+            else
+            {
+                mondayString = @"closed";
+            }
+            if( [[[addController ButtonTuesdayClosed] titleLabel].text isEqual:@"open"])
+            {
+                tuesdayString = [[NSString alloc] initWithFormat:@"%@%@ - %@%@", [[addController TextViewTuesdayOpen].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonTuesdayFirst].titleLabel.text, [[addController TextViewTuesdayClose].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonTuesdaySecond].titleLabel.text];
+            }
+            else
+            {
+                tuesdayString = @"closed";
+            }
+            if( [[[addController ButtonWednesdayClosed] titleLabel].text isEqual:@"open"])
+            {
+                wednesdayString = [[NSString alloc] initWithFormat:@"%@%@ - %@%@", [[addController TextViewWednesdayOpen].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonWednesdayFirst].titleLabel.text, [[addController TextViewWednesdayClose].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonWednesdaySecond].titleLabel.text];
+            }
+            else
+            {
+                wednesdayString = @"closed";
+            }
+            if( [[[addController ButtonThursdayClosed] titleLabel].text isEqual:@"open"])
+            {
+                thursdayString = [[NSString alloc] initWithFormat:@"%@%@ - %@%@", [[addController TextViewThursdayOpen].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonThursdayFirst].titleLabel.text, [[addController TextViewThursdayClose].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonThursdaySecond].titleLabel.text];
+            }
+            else
+            {
+                thursdayString = @"closed";
+            }
+            if( [[[addController ButtonFridayClosed] titleLabel].text isEqual:@"open"])
+            {
+                fridayString = [[NSString alloc] initWithFormat:@"%@%@ - %@%@", [[addController TextViewFridayOpen].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonFridayFirst].titleLabel.text, [[addController TextViewFridayClose].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonFridaySecond].titleLabel.text];
+            }
+            else
+            {
+                fridayString = @"closed";
+            }
+            if( [[[addController ButtonSaturdayClosed] titleLabel].text isEqual:@"open"])
+            {
+                saturdayString = [[NSString alloc] initWithFormat:@"%@%@ - %@%@", [[addController TextViewSaturdayOpen].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonSaturdayFirst].titleLabel.text, [[addController TextViewSaturdayClose].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonSaturdaySecond].titleLabel.text];
+            }
+            else
+            {
+                saturdayString = @"closed";
+            }
+            if( [[[addController ButtonSundayClosed] titleLabel].text isEqual:@"open"])
+            {
+                sundayString = [[NSString alloc] initWithFormat:@"%@%@ - %@%@", [[addController TextViewSundayOpen].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonSundayFirst].titleLabel.text, [[addController TextViewSundayClose].text stringByPaddingToLength:1 withString:@"?" startingAtIndex:0], [addController ButtonSundaySecond].titleLabel.text];
+            }
+            else
+            {
+                sundayString = @"closed";
+            }
+            
+            Store *storeToAdd = [[Store alloc] initWithDataAndKeyAndHours:addController.TextViewStoreName.text city:addController.TextViewStoreCity.text key:[[self dataController] StoreKey] mondayTime:mondayString  tuesdayTime:tuesdayString wednesdayTime:wednesdayString thursdayTime:thursdayString fridayTime:fridayString saturdayTime:saturdayString sundayTime:sundayString];
+            [[self dataController] addStoreToStoreList:storeToAdd];
             [[self tableView] reloadData];
         }
         

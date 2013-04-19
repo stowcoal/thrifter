@@ -35,6 +35,63 @@
     Store *detailStore = [[self dataController] storeForKey:[self storeKey]];
     [[self LabelStoreCity] setText:detailStore.city];
     [[self LabelStoreName] setText:detailStore.name];
+    if(detailStore.mondayTime)
+    {
+        [[self LabelMondayTime] setText:detailStore.mondayTime];
+    }
+    else
+    {
+        [[self LabelMondayTime] setText:@"missing data"];
+    }
+    if(detailStore.tuesdayTime)
+    {
+        [[self LabelTuesdayTime] setText:detailStore.tuesdayTime];
+    }
+    else
+    {
+        [[self LabelTuesdayTime] setText:@"missing data"];
+    }
+    if(detailStore.wednesdayTime)
+    {
+        [[self LabelWednesdayTime] setText:detailStore.wednesdayTime];
+    }
+    else
+    {
+        [[self LabelWednesdayTime] setText:@"missing data"];
+    }
+    if(detailStore.thursdayTime)
+    {
+        [[self LabelThursdayTime] setText:detailStore.thursdayTime];
+    }
+    else
+    {
+        [[self LabelThursdayTime] setText:@"missing data"];
+    }
+    if(detailStore.fridayTime)
+    {
+        [[self LabelFridayTime] setText:detailStore.fridayTime];
+    }
+    else
+    {
+        [[self LabelFridayTime] setText:@"missing data"];
+    }
+    if(detailStore.saturdayTime)
+    {
+        [[self LabelSaturdayTime] setText:detailStore.saturdayTime];
+    }
+    else
+    {
+        [[self LabelSaturdayTime] setText:@"missing data"];
+    }
+    if(detailStore.sundayTime)
+    {
+        [[self LabelSundayTime] setText:detailStore.sundayTime];
+    }
+    else
+    {
+        [[self LabelSundayTime] setText:@"missing data"];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
