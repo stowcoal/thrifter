@@ -14,6 +14,9 @@
 
 @interface FindsViewController : UITableViewController
 @property (strong, nonatomic) DataController *dataController;
+@property (strong, nonatomic) NSMutableArray *findsList;
+@property (strong, nonatomic) NSString *filterType;
+@property (strong, nonatomic) NSNumber *filterKey;
 - (IBAction)ButtonSortClick:(UIBarButtonItem *)sender;
 - (IBAction)done:(UIStoryboardSegue *)sender;
 - (IBAction)cancel:(UIStoryboardSegue *)sender;

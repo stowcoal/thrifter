@@ -32,19 +32,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    //NSSortDescriptor *categorySort = [[NSSortDescriptor alloc] initWithKey:@"categoryKey" ascending:YES];
-    //NSSortDescriptor *nameSort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    self.filterKey = [[NSNumber alloc] initWithInt:-1];
+    self.filterType = @"store";
     self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist" categoryLocationString:@"category.plist"];
-    //self.sortedFinds = [[[self dataController] findList] sortedArrayUsingDescriptors:[NSArray arrayWithObjects:categorySort, nameSort, nil]];
-    //self.sortedFinds = [[[self dataController] findList] sortedArrayUsingFunction:categorySort context:(__bridge void *)(self.dataController)];
-    //[[self tableView] reloadData];
+    self.findsList = self.dataController.findList;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -59,6 +50,7 @@
     NSLog(@"appear");
     [self.dataController refresh];
     [[self dataController] sortFinds];
+    self.findsList = [[self dataController] filterBy:[self filterType] key:[self filterKey]];
     [[self tableView] reloadData];
 }
 
@@ -81,14 +73,14 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [[[self dataController] findList] count];
+    return [[self findsList] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CellFind";
     CustomDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    Find *findForCell = [[[self dataController] findList] objectAtIndex:indexPath.row];
+    Find *findForCell = [[self findsList] objectAtIndex:indexPath.row];
     NSLog(@"%@",findForCell.name);
     Category *detailCategory = [self.dataController categoryForKey:findForCell.categoryKey];
     [cell.mainLabel setText:findForCell.name];

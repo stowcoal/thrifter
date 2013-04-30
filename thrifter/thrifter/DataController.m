@@ -296,4 +296,30 @@ NSInteger categorySort(id f1, id f2, void *context)
     [[self categoryList] sortUsingDescriptors:[[NSArray alloc] initWithObjects:nameSort, nil]];
     [self writeCategories];
 }
+-(NSMutableArray *)filterBy:(NSString *)type key:(NSNumber *)key
+{
+    NSMutableArray *returnArray = [[NSMutableArray alloc] init];
+    Find *f = [[Find alloc] init];
+    NSEnumerator *findEnumerator = [[self findList] objectEnumerator];
+    if ([type isEqualToString:@"both"])
+        return [self findList];
+    else
+    {
+        while ( f = [findEnumerator nextObject])
+        {
+            if([type isEqualToString:@"store"])
+            {
+                if (f.storeKey == key || key == [[NSNumber alloc] initWithInt:-1])
+                    [returnArray addObject:f];
+            }
+            else
+            {
+                if (f.categoryKey == key || key == [[NSNumber alloc] initWithInt:-1])
+                    [returnArray addObject:f];
+            }
+        }
+        return returnArray;
+    }
+
+}
 @end
