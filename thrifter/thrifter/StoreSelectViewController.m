@@ -32,6 +32,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     // self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist"];
+    //self.storeKey = [[NSNumber alloc] initWithInt:1];
 }
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -124,6 +125,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //self.storeKey = ((CustomDynamicCell *)[tableView cellForRowAtIndexPath:indexPath]).storeKey;
     [self dismissViewControllerAnimated:YES completion:NULL];
 
 }

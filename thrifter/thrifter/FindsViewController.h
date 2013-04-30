@@ -8,14 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomDynamicCell.h"
+#import "StoreSelectViewController.h"
+#import "CategorySelectViewController.h"
 #import "FilterViewController.h"
+#import "DataController.h"
+#import "Find.h"
+#import "FindDetailViewController.h"
+#import "AddFindViewController.h"
 
 @class DataController;
 
 @interface FindsViewController : UITableViewController
 @property (strong, nonatomic) DataController *dataController;
 @property (strong, nonatomic) NSMutableArray *findsList;
-@property (strong, nonatomic) NSString *filterType;
+@property (strong, nonatomic) NSString *filterDomain;
 @property (strong, nonatomic) NSNumber *filterKey;
 - (IBAction)ButtonSortClick:(UIBarButtonItem *)sender;
 - (IBAction)done:(UIStoryboardSegue *)sender;

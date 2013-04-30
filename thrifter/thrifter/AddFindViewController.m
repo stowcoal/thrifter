@@ -34,6 +34,10 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.categoryKey = [[NSNumber alloc] initWithInt:-1];
+    self.storeKey = [[NSNumber alloc] initWithInt:-1];
+    self.imageData = [[NSData alloc] init];
+
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
         [[self ButtonTakePicture] setEnabled:NO];
@@ -73,7 +77,13 @@
     if ([[segue identifier] isEqualToString:@"Done"]) {
         NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
         NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
-        Find *findToAdd = [[Find alloc] initWithDataAndKey:self.TextFieldName.text cost:cost date:[NSDate date] store:_storeKey description:self.TextFieldDescription.text picture:self.imageData key:[[self dataController] FindKey] category:[self categoryKey]];
+        NSString *findName = self.TextFieldName.text;
+        NSNumber *storeKey = [self storeKey];
+        NSNumber *categoryKey = [self categoryKey];
+        NSString *description = self.TextFieldDescription.text;
+        NSData *image = self.imageData;
+        
+        Find *findToAdd = [[Find alloc] initWithDataAndKey:findName cost:cost date:[NSDate date] store:storeKey description:description picture:image key:[[self dataController] FindKey] category:categoryKey];
         //findToAdd.categoryKey = [self categoryKey];
         self.find = findToAdd;
     }

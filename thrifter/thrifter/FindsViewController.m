@@ -7,10 +7,7 @@
 //
 
 #import "FindsViewController.h"
-#import "DataController.h"
-#import "Find.h"
-#import "FindDetailViewController.h"
-#import "AddFindViewController.h"
+
 
 @interface FindsViewController ()
 
@@ -32,8 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.filterKey = [[NSNumber alloc] initWithInt:-1];
-    self.filterType = @"store";
+    self.filterDomain = @"all";
     self.dataController = [[DataController alloc] initFromPList:@"find.plist" storeLocationString:@"store.plist" categoryLocationString:@"category.plist"];
     self.findsList = self.dataController.findList;
 }
@@ -50,7 +46,7 @@
     NSLog(@"appear");
     [self.dataController refresh];
     [[self dataController] sortFinds];
-    self.findsList = [[self dataController] filterBy:[self filterType] key:[self filterKey]];
+    self.findsList = [[self dataController] filterBy:[self filterDomain] key:[self filterKey]];
     [[self tableView] reloadData];
 }
 
@@ -176,9 +172,21 @@
     }
     if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
         NSLog(@"FilterByStore");
+        self.filterDomain = @"store";
+        StoreSelectViewController *selectController = [segue sourceViewController];
+        self.filterKey = ((CustomDynamicCell *)[[selectController tableView] cellForRowAtIndexPath:[[selectController tableView] indexPathForSelectedRow]]).storeKey;
+        
     }
     if ([[segue identifier] isEqualToString:@"UnwindSelectCategory"]) {
         NSLog(@"FilterByCategory");
+        self.filterDomain = @"category";
+        CategorySelectViewController *categoryController = [segue sourceViewController];
+        self.filterKey = ((CustomDynamicCell *)[[categoryController tableView] cellForRowAtIndexPath:[[categoryController tableView] indexPathForSelectedRow]]).categoryKey;
+    }
+    if ([[segue identifier] isEqualToString:@"UnwindFilterAll"]) {
+        NSLog(@"FilterByCategory");
+        self.filterDomain = @"all";
+        self.filterKey = [[NSNumber alloc] initWithInt:-1];
     }
     [self dismissViewControllerAnimated:YES completion:NULL];
 

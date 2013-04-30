@@ -16,5 +16,4 @@
 @interface StoreSelectViewController : UITableViewController
 @property (strong, nonatomic) DataController *dataController;
 @property (strong, nonatomic) NSNumber *storeKey;
-
 @end
