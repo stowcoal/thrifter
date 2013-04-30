@@ -31,6 +31,9 @@
 		DEDA7D4E16FCEAE7002BAF1A /* FindDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDA7D4D16FCEAE7002BAF1A /* FindDetailViewController.m */; };
 		DEDE61E016D811A300642342 /* AddStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE61DF16D811A300642342 /* AddStoreViewController.m */; };
 		DEE0BA8516DD2FCF00609A0B /* StoreSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE0BA8416DD2FCF00609A0B /* StoreSelectViewController.m */; };
+		DEE3F3A617301BE300452FF2 /* HoursClosedOpenButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F3A517301BE300452FF2 /* HoursClosedOpenButton.m */; };
+		DEE3F3A817301E9B00452FF2 /* IphoneBarButton_Black.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE3F3A717301E9B00452FF2 /* IphoneBarButton_Black.png */; };
+		DEE3F3AA17301F0300452FF2 /* IphoneBarButton_Light.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE3F3A917301F0300452FF2 /* IphoneBarButton_Light.png */; };
 		DEE4619316CD558400CECA5E /* AddFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE4619216CD558400CECA5E /* AddFindViewController.m */; };
 		DEFDBCE41704AA10006A1D2E /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFDBCE31704AA10006A1D2E /* Category.m */; };
 		DEFDBCE81704AF0F006A1D2E /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFDBCE71704AF0F006A1D2E /* CategoriesViewController.m */; };
@@ -79,6 +82,10 @@
 		DEE0BA8316DD2FCF00609A0B /* StoreSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreSelectViewController.h; sourceTree = "<group>"; };
 		DEE0BA8416DD2FCF00609A0B /* StoreSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreSelectViewController.m; sourceTree = "<group>"; };
 		DEE0BA8916DD31A900609A0B /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
+		DEE3F3A417301BE300452FF2 /* HoursClosedOpenButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoursClosedOpenButton.h; sourceTree = "<group>"; };
+		DEE3F3A517301BE300452FF2 /* HoursClosedOpenButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoursClosedOpenButton.m; sourceTree = "<group>"; };
+		DEE3F3A717301E9B00452FF2 /* IphoneBarButton_Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IphoneBarButton_Black.png; sourceTree = "<group>"; };
+		DEE3F3A917301F0300452FF2 /* IphoneBarButton_Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IphoneBarButton_Light.png; sourceTree = "<group>"; };
 		DEE4619116CD558400CECA5E /* AddFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFindViewController.h; sourceTree = "<group>"; };
 		DEE4619216CD558400CECA5E /* AddFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFindViewController.m; sourceTree = "<group>"; };
 		DEE4619516CD579A00CECA5E /* FindDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindDetailViewController.h; sourceTree = "<group>"; };
@@ -134,7 +141,9 @@
 		DE5C3CD616CAAFCD006CAE2B /* thrifter */ = {
 			isa = PBXGroup;
 			children = (
+				DEE3F3A717301E9B00452FF2 /* IphoneBarButton_Black.png */,
 				DE5C3CED16CAAFF9006CAE2B /* MainStoryboard.storyboard */,
+				DEE3F3A917301F0300452FF2 /* IphoneBarButton_Light.png */,
 				DED917AD17147AF300B2BD3A /* FilterViewController.h */,
 				DED917AE17147AF300B2BD3A /* FilterViewController.m */,
 				DEE0BA8916DD31A900609A0B /* DataController.h */,
@@ -145,6 +154,8 @@
 				DE5C3CF716CAB65E006CAE2B /* Find.m */,
 				DEBF17C816FB6DE800800975 /* CustomDynamicCell.h */,
 				DEA959AB170DE35B007EE576 /* CustomDynamicCell.m */,
+				DEE3F3A417301BE300452FF2 /* HoursClosedOpenButton.h */,
+				DEE3F3A517301BE300452FF2 /* HoursClosedOpenButton.m */,
 				DEE4619116CD558400CECA5E /* AddFindViewController.h */,
 				DEE4619216CD558400CECA5E /* AddFindViewController.m */,
 				DEE4619516CD579A00CECA5E /* FindDetailViewController.h */,
@@ -249,6 +260,8 @@
 				DE5C3CE516CAAFCD006CAE2B /* Default@2x.png in Resources */,
 				DE5C3CE716CAAFCD006CAE2B /* Default-568h@2x.png in Resources */,
 				DE5C3CEE16CAAFF9006CAE2B /* MainStoryboard.storyboard in Resources */,
+				DEE3F3A817301E9B00452FF2 /* IphoneBarButton_Black.png in Resources */,
+				DEE3F3AA17301F0300452FF2 /* IphoneBarButton_Light.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +292,7 @@
 				DE1A1078170D1CBE00927D0A /* CategorySelectViewController.m in Sources */,
 				DEA959AC170DE35B007EE576 /* CustomDynamicCell.m in Sources */,
 				DED917AF17147AF300B2BD3A /* FilterViewController.m in Sources */,
+				DEE3F3A617301BE300452FF2 /* HoursClosedOpenButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
