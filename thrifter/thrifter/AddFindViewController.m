@@ -76,6 +76,18 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"Done"]) {
         NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
+        if (![[self TextFieldCost] hasText])
+        {
+            [[self TextFieldCost] setText:@"0.00"];
+        }
+        if (![[self TextFieldName] hasText])
+        {
+            [[self TextFieldName] setText:@"unnamed"];
+        }
+        if (![[self TextFieldDescription] hasText])
+        {
+            [[self TextFieldDescription] setText:@"uninteresting"];
+        }
         NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
         NSString *findName = self.TextFieldName.text;
         NSNumber *storeKey = [self storeKey];
