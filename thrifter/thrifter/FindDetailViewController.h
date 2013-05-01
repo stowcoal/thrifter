@@ -24,5 +24,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *TextLabelCategory;
 @property (weak, nonatomic) IBOutlet UITextView *TextViewDescription;
 @property (weak, nonatomic) IBOutlet UIImageView *PictureFind;
-
+- (IBAction)ClickTakePicture:(UIButton *)sender;
+- (IBAction)ClickSelectPicture:(UIButton *)sender;
 @end

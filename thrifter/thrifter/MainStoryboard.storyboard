@@ -8,7 +8,7 @@
         <scene sceneID="lE6-m2-wLR">
             <objects>
                 <navigationController definesPresentationContext="YES" id="SzQ-Bp-HFC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="finds" id="nio-g9-Suz"/>
+                    <tabBarItem key="tabBarItem" title="finds" image="logofind.png" id="nio-g9-Suz"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KP2-KZ-AQN">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -387,7 +387,7 @@
         <scene sceneID="adX-zQ-cTZ">
             <objects>
                 <navigationController definesPresentationContext="YES" id="7wh-9B-PjE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="categories" id="y82-uc-Qg2"/>
+                    <tabBarItem key="tabBarItem" title="categories" image="logocategory.png" id="y82-uc-Qg2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KFL-zp-ICg">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -734,7 +734,7 @@
         <scene sceneID="6qN-Yv-uS5">
             <objects>
                 <navigationController definesPresentationContext="YES" id="8DY-9f-xnh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="stores" id="lo9-Me-3eU"/>
+                    <tabBarItem key="tabBarItem" title="stores" image="logostore.png" id="lo9-Me-3eU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="brE-mF-00n">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2201,12 +2201,52 @@
                                                         <constraint firstAttribute="height" constant="128" id="tw1-8a-2dj"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ea-OQ-eei">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="105" id="It2-y0-6aN"/>
+                                                        <constraint firstAttribute="height" constant="38" id="dAJ-DW-lRL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="select picture" backgroundImage="IphoneBarButton_Light.png">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="ClickSelectPicture:" destination="EqX-gz-gD0" eventType="touchUpInside" id="YMX-KS-ezm"/>
+                                                        <action selector="ClickSelectPicture:" destination="TTR-x3-Y6g" eventType="touchUpInside" id="seb-ug-dmV"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZi-gQ-uql">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="38" id="QN5-PS-E1n"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="take picture" backgroundImage="IphoneBarButton_Light.png">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="ClickTakePicture:" destination="EqX-gz-gD0" eventType="touchUpInside" id="Qpj-jU-8GN"/>
+                                                        <action selector="ClickTakePicture:" destination="TTR-x3-Y6g" eventType="touchUpInside" id="mxG-mV-TIR"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="4bf-WY-OFh" firstAttribute="centerX" secondItem="fe1-XQ-HaQ" secondAttribute="centerX" type="default" id="SYl-CA-ZXg"/>
-                                            <constraint firstItem="4bf-WY-OFh" firstAttribute="top" secondItem="fe1-XQ-HaQ" secondAttribute="top" constant="-7" id="VOe-Mt-VFP"/>
+                                            <constraint firstItem="4bf-WY-OFh" firstAttribute="leading" secondItem="fe1-XQ-HaQ" secondAttribute="leading" constant="20" type="default" id="3Kx-m4-CmS"/>
+                                            <constraint firstItem="pZi-gQ-uql" firstAttribute="leading" secondItem="7Ea-OQ-eei" secondAttribute="leading" type="default" id="Ia6-sK-OyA"/>
+                                            <constraint firstItem="4bf-WY-OFh" firstAttribute="top" secondItem="fe1-XQ-HaQ" secondAttribute="top" type="default" id="Q3b-fa-SG4"/>
+                                            <constraint firstAttribute="trailing" secondItem="pZi-gQ-uql" secondAttribute="trailing" constant="20" type="default" id="ZAZ-Nq-5Uv"/>
+                                            <constraint firstAttribute="trailing" secondItem="7Ea-OQ-eei" secondAttribute="trailing" constant="20" type="default" id="ZiY-4u-QoZ"/>
+                                            <constraint firstItem="pZi-gQ-uql" firstAttribute="top" secondItem="7Ea-OQ-eei" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="g38-Cn-dY0"/>
+                                            <constraint firstItem="7Ea-OQ-eei" firstAttribute="top" secondItem="fe1-XQ-HaQ" secondAttribute="top" constant="20" type="default" id="mPD-iL-o7d"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" rowHeight="102" id="wXx-IF-H9S">
@@ -2294,15 +2334,171 @@
     </scenes>
     <resources>
         <image name="IphoneBarButton_Light.png" width="73" height="32"/>
+        <image name="logocategory.png" width="30" height="30"/>
+        <image name="logofind.png" width="30" height="30"/>
+        <image name="logostore.png" width="30" height="30"/>
         <image name="questionmark.jpg" width="225" height="225"/>
     </resources>
+    <classes>
+        <class className="AddCategoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCategoryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="TextFieldCategoryName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="AddFindViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddFindViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ClickSelectPicture:" candidateClass="UIButton"/>
+                <relationship kind="action" name="ClickTakePicture:" candidateClass="UIButton"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="ButtonSelectPicture" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonTakePicture" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="CellStoreData" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="CellStoreSelect" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="ImageFind" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="LabelCategory" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelStore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextFieldCost" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextFieldDescription" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextFieldName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="AddStoreViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddStoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ButtonAMPMClick:" candidateClass="UIButton"/>
+                <relationship kind="action" name="ButtonClosedClick:" candidateClass="HoursClosedOpenButton"/>
+                <relationship kind="action" name="ButtonDoneClick:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="ButtonFridayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonFridayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonFridaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonMondayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonMondayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonMondaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonSaturdayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonSaturdayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonSaturdaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonSundayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonSundayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonSundaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonThursdayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonThursdayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonThursdaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonTuesdayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonTuesdayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonTuesdaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonWednesdayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonWednesdayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonWednesdaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="TextViewFridayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewFridayOpen" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewMondayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewMondayOpen" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewSaturdayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewSaturdayOpen" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewStoreCity" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewStoreName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewSundayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewSundayOpen" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewThursdayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewThursdayOpen" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewTuesdayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewTuesdayOpen" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewWednesdayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewWednesdayOpen" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CategoriesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoriesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneAddCategory:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="CategorySelectViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategorySelectViewController.h"/>
+        </class>
+        <class className="CustomDynamicCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomDynamicCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mainLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="secondaryLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FilterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FilterViewController.h"/>
+        </class>
+        <class className="FindDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ClickSelectPicture:" candidateClass="UIButton"/>
+                <relationship kind="action" name="ClickTakePicture:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="PictureFind" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="TextLabelCategory" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelCost" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelFind" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelStore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextViewDescription" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="FindsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ButtonSortClick:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="HoursClosedOpenButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HoursClosedOpenButton.h"/>
+            <relationships>
+                <relationship kind="outlet" name="closedTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="openTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="secondButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="StoreDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="LabelFridayTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelMondayTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelSaturdayTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelStoreCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelStoreName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelSundayTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelThursdayTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelTuesdayTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelWednesdayTime" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StoreSelectViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreSelectViewController.h"/>
+        </class>
+        <class className="StoresViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoresViewController.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+        <class className="thrifterViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/thrifterViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="L5w-M7-tDz"/>
-        <segue reference="wQz-9C-CY6"/>
+        <segue reference="XZi-GR-KwM"/>
+        <segue reference="Oe7-W8-9h1"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -31,6 +31,9 @@
 		DEDA7D4B16FCEA58002BAF1A /* StoreDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDA7D4A16FCEA58002BAF1A /* StoreDetailViewController.m */; };
 		DEDA7D4E16FCEAE7002BAF1A /* FindDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDA7D4D16FCEAE7002BAF1A /* FindDetailViewController.m */; };
 		DEDE61E016D811A300642342 /* AddStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDE61DF16D811A300642342 /* AddStoreViewController.m */; };
+		DEE052C81731A8F0008B232F /* logocategory.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE052C51731A8F0008B232F /* logocategory.png */; };
+		DEE052C91731A8F0008B232F /* logofind.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE052C61731A8F0008B232F /* logofind.png */; };
+		DEE052CA1731A8F0008B232F /* logostore.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE052C71731A8F0008B232F /* logostore.png */; };
 		DEE0BA8516DD2FCF00609A0B /* StoreSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE0BA8416DD2FCF00609A0B /* StoreSelectViewController.m */; };
 		DEE3F3A617301BE300452FF2 /* HoursClosedOpenButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE3F3A517301BE300452FF2 /* HoursClosedOpenButton.m */; };
 		DEE3F3A817301E9B00452FF2 /* IphoneBarButton_Black.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE3F3A717301E9B00452FF2 /* IphoneBarButton_Black.png */; };
@@ -81,6 +84,9 @@
 		DEDA7D4D16FCEAE7002BAF1A /* FindDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindDetailViewController.m; sourceTree = "<group>"; };
 		DEDE61DE16D811A300642342 /* AddStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddStoreViewController.h; sourceTree = "<group>"; };
 		DEDE61DF16D811A300642342 /* AddStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStoreViewController.m; sourceTree = "<group>"; };
+		DEE052C51731A8F0008B232F /* logocategory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logocategory.png; sourceTree = "<group>"; };
+		DEE052C61731A8F0008B232F /* logofind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logofind.png; sourceTree = "<group>"; };
+		DEE052C71731A8F0008B232F /* logostore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logostore.png; sourceTree = "<group>"; };
 		DEE0BA8316DD2FCF00609A0B /* StoreSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreSelectViewController.h; sourceTree = "<group>"; };
 		DEE0BA8416DD2FCF00609A0B /* StoreSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreSelectViewController.m; sourceTree = "<group>"; };
 		DEE0BA8916DD31A900609A0B /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
@@ -147,6 +153,9 @@
 				DEE3F3A717301E9B00452FF2 /* IphoneBarButton_Black.png */,
 				DE5C3CED16CAAFF9006CAE2B /* MainStoryboard.storyboard */,
 				DEE3F3A917301F0300452FF2 /* IphoneBarButton_Light.png */,
+				DEE052C51731A8F0008B232F /* logocategory.png */,
+				DEE052C61731A8F0008B232F /* logofind.png */,
+				DEE052C71731A8F0008B232F /* logostore.png */,
 				DED917AD17147AF300B2BD3A /* FilterViewController.h */,
 				DED917AE17147AF300B2BD3A /* FilterViewController.m */,
 				DEE0BA8916DD31A900609A0B /* DataController.h */,
@@ -266,6 +275,9 @@
 				DEE3F3A817301E9B00452FF2 /* IphoneBarButton_Black.png in Resources */,
 				DEE3F3AA17301F0300452FF2 /* IphoneBarButton_Light.png in Resources */,
 				DE2E6DDF17307952007B26F0 /* questionmark.jpg in Resources */,
+				DEE052C81731A8F0008B232F /* logocategory.png in Resources */,
+				DEE052C91731A8F0008B232F /* logofind.png in Resources */,
+				DEE052CA1731A8F0008B232F /* logostore.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

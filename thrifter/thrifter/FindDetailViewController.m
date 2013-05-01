@@ -197,5 +197,38 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+- (IBAction)ClickTakePicture:(UIButton *)sender {
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        
+        imagePicker.sourceType =  UIImagePickerControllerSourceTypeCamera;
+        
+        imagePicker.delegate = (id)self;
+        
+        [self presentViewController:imagePicker animated:YES completion:NULL];
+    }
+}
+- (IBAction)ClickSelectPicture:(UIButton *)sender {
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        
+        imagePicker.sourceType =  UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        
+        imagePicker.delegate = (id)self;
+        
+        [self presentViewController:imagePicker animated:YES completion:NULL];
+    }
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    Find *detailFind = [[self dataController] findForKey:[self findKey]];
+    detailFind.picture = UIImagePNGRepresentation(image);
+    [[self dataController] writeFinds];
+    
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    [[self PictureFind] setImage:[[UIImage alloc] initWithData:UIImagePNGRepresentation(image)]];
+}
 
 @end
