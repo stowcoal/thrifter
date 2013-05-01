@@ -74,13 +74,13 @@
 }
  */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"Done"]) {
-        NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
-        if (![[self TextFieldCost] hasText])
+    if ([[segue identifier] isEqualToString:@"UnwindAddSegue"]) {
+        //NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
+        if ([[[self TextFieldCost] text] length] == 0)
         {
             [[self TextFieldCost] setText:@"0.00"];
         }
-        if (![[self TextFieldName] hasText])
+        if ([[[self TextFieldName] text] length] == 0)
         {
             [[self TextFieldName] setText:@"unnamed"];
         }
@@ -88,16 +88,16 @@
         {
             [[self TextFieldDescription] setText:@"uninteresting"];
         }
-        NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
-        NSString *findName = self.TextFieldName.text;
-        NSNumber *storeKey = [self storeKey];
-        NSNumber *categoryKey = [self categoryKey];
-        NSString *description = self.TextFieldDescription.text;
-        NSData *image = self.imageData;
+        //NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
+        //NSString *findName = self.TextFieldName.text;
+        //NSNumber *storeKey = [self storeKey];
+        //NSNumber *categoryKey = [self categoryKey];
+       // NSString *description = self.TextFieldDescription.text;
+       // NSData *image = self.imageData;
         
-        Find *findToAdd = [[Find alloc] initWithDataAndKey:findName cost:cost date:[NSDate date] store:storeKey description:description picture:image key:[[self dataController] FindKey] category:categoryKey];
+        //Find *findToAdd = [[Find alloc] initWithDataAndKey:findName cost:cost date:[NSDate date] store:storeKey description:description picture:image key:[[self dataController] FindKey] category:categoryKey];
         //findToAdd.categoryKey = [self categoryKey];
-        self.find = findToAdd;
+        //self.find = findToAdd;
     }
     if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){
         StoreSelectViewController *storeSelect = [segue destinationViewController];

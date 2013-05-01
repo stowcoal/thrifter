@@ -1012,7 +1012,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="hHl-pc-RIr">
                             <connections>
-                                <segue destination="btn-mM-kpM" kind="unwind" identifier="Done" unwindAction="done:" id="Uzv-Jm-DkJ"/>
+                                <segue destination="btn-mM-kpM" kind="unwind" identifier="UnwindAddSegue" unwindAction="done:" id="Uzv-Jm-DkJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2055,11 +2055,11 @@
                                             <constraint firstItem="lMJ-JF-nmF" firstAttribute="top" secondItem="q6M-DF-0DK" secondAttribute="top" constant="11" id="mKc-ST-qfl"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="9JD-W4-lLL">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="9JD-W4-lLL">
                                         <rect key="frame" x="0.0" y="44" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63D-yM-pcH">
@@ -2084,9 +2084,6 @@
                                             <constraint firstItem="63D-yM-pcH" firstAttribute="top" secondItem="9JD-W4-lLL" secondAttribute="top" constant="11" id="enR-qV-rf9"/>
                                             <constraint firstItem="63D-yM-pcH" firstAttribute="baseline" secondItem="adz-og-H5a" secondAttribute="baseline" type="default" id="mEQ-9D-vfp"/>
                                         </constraints>
-                                        <connections>
-                                            <segue destination="kBg-SV-qQo" kind="push" identifier="SegueSelectNewCategory" id="Oe7-W8-9h1"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="z50-Yu-FDs">
                                         <rect key="frame" x="0.0" y="88" width="320" height="44"/>
@@ -2148,11 +2145,11 @@
                                             <constraint firstItem="luC-8X-yT4" firstAttribute="leading" secondItem="Ufl-3F-D66" secondAttribute="leading" constant="20" type="default" id="78z-Q9-mSu"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="LIt-Q0-IoU">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="LIt-Q0-IoU">
                                         <rect key="frame" x="0.0" y="176" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXc-lK-dff">
@@ -2184,9 +2181,6 @@
                                             <constraint firstItem="gXc-lK-dff" firstAttribute="top" secondItem="LIt-Q0-IoU" secondAttribute="top" constant="10" id="yj4-TJ-nPw"/>
                                             <constraint firstItem="NG8-bE-m7Z" firstAttribute="baseline" secondItem="gXc-lK-dff" secondAttribute="baseline" type="default" id="zmQ-w3-feN"/>
                                         </constraints>
-                                        <connections>
-                                            <segue destination="6oX-yB-X0n" kind="push" identifier="SegueSelectNewStore" id="XZi-GR-KwM"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" rowHeight="125" id="fe1-XQ-HaQ">
                                         <rect key="frame" x="0.0" y="246" width="320" height="125"/>
@@ -2201,52 +2195,12 @@
                                                         <constraint firstAttribute="height" constant="128" id="tw1-8a-2dj"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ea-OQ-eei">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="105" id="It2-y0-6aN"/>
-                                                        <constraint firstAttribute="height" constant="38" id="dAJ-DW-lRL"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="select picture" backgroundImage="IphoneBarButton_Light.png">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="ClickSelectPicture:" destination="EqX-gz-gD0" eventType="touchUpInside" id="YMX-KS-ezm"/>
-                                                        <action selector="ClickSelectPicture:" destination="TTR-x3-Y6g" eventType="touchUpInside" id="seb-ug-dmV"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZi-gQ-uql">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="38" id="QN5-PS-E1n"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="take picture" backgroundImage="IphoneBarButton_Light.png">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="ClickTakePicture:" destination="EqX-gz-gD0" eventType="touchUpInside" id="Qpj-jU-8GN"/>
-                                                        <action selector="ClickTakePicture:" destination="TTR-x3-Y6g" eventType="touchUpInside" id="mxG-mV-TIR"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="4bf-WY-OFh" firstAttribute="leading" secondItem="fe1-XQ-HaQ" secondAttribute="leading" constant="20" type="default" id="3Kx-m4-CmS"/>
-                                            <constraint firstItem="pZi-gQ-uql" firstAttribute="leading" secondItem="7Ea-OQ-eei" secondAttribute="leading" type="default" id="Ia6-sK-OyA"/>
                                             <constraint firstItem="4bf-WY-OFh" firstAttribute="top" secondItem="fe1-XQ-HaQ" secondAttribute="top" type="default" id="Q3b-fa-SG4"/>
-                                            <constraint firstAttribute="trailing" secondItem="pZi-gQ-uql" secondAttribute="trailing" constant="20" type="default" id="ZAZ-Nq-5Uv"/>
-                                            <constraint firstAttribute="trailing" secondItem="7Ea-OQ-eei" secondAttribute="trailing" constant="20" type="default" id="ZiY-4u-QoZ"/>
-                                            <constraint firstItem="pZi-gQ-uql" firstAttribute="top" secondItem="7Ea-OQ-eei" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="g38-Cn-dY0"/>
-                                            <constraint firstItem="7Ea-OQ-eei" firstAttribute="top" secondItem="fe1-XQ-HaQ" secondAttribute="top" constant="20" type="default" id="mPD-iL-o7d"/>
+                                            <constraint firstItem="4bf-WY-OFh" firstAttribute="centerX" secondItem="fe1-XQ-HaQ" secondAttribute="centerX" type="default" id="b5O-7F-TU5"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" rowHeight="102" id="wXx-IF-H9S">
@@ -2292,7 +2246,13 @@
                             <outlet property="delegate" destination="TTR-x3-Y6g" id="7km-vL-UGW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="find detail" id="mlj-2k-YAR"/>
+                    <navigationItem key="navigationItem" title="find detail" id="mlj-2k-YAR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Rpr-od-T2K">
+                            <connections>
+                                <segue destination="EqX-gz-gD0" kind="push" id="JwQ-f0-8XX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="PictureFind" destination="4bf-WY-OFh" id="nTt-su-FjO"/>
                         <outlet property="TextLabelCategory" destination="adz-og-H5a" id="JfE-gY-rGz"/>
@@ -2345,6 +2305,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="JwQ-f0-8XX"/>
         <segue reference="L5w-M7-tDz"/>
         <segue reference="wQz-9C-CY6"/>
     </inferredMetricsTieBreakers>

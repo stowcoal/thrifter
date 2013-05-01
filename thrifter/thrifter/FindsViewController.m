@@ -161,14 +161,16 @@
 
 - (IBAction)done:(UIStoryboardSegue *)segue
 {
-    if ([[segue identifier] isEqualToString:@"Done"]) {
+    if ([[segue identifier] isEqualToString:@"UnwindAddSegue"]) {
         AddFindViewController *addController = [segue sourceViewController];
-        if (addController.find) {
-            [self.dataController addFindToFindList:addController.find];
-            NSLog(@"%d",[[self dataController] findKey]);
-            [[self tableView] reloadData];
-            NSLog(@"done");
-        }
+        NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
+        NSNumber *cost = [numberFormater numberFromString:[[addController TextFieldCost] text]];
+        Find *findToAdd = [[Find alloc] initWithDataAndKey:[[addController TextFieldName] text] cost:cost date:[NSDate date] store:[addController storeKey] description:[[addController TextFieldDescription] text] picture:[addController imageData] key:[[self dataController] FindKey] category:[addController categoryKey]];
+        [self.dataController addFindToFindList:findToAdd];
+        NSLog(@"%d",[[self dataController] findKey]);
+        [[self tableView] reloadData];
+        NSLog(@"done");
+        
     }
     if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
         NSLog(@"FilterByStore");
