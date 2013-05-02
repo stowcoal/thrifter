@@ -51,7 +51,6 @@
     }
     Find *detailFind = [[self dataController] findForKey:[self findKey]];
     Store *detailStore = [[self dataController] storeForFind:detailFind];
-    Category *detailCategory = [[self dataController] categoryForKey:detailFind.categoryKey];
     [self.TextLabelCost setText:[numberFormatter stringFromNumber:detailFind.cost]];
     [self.TextLabelDate setText:[dateFormatter stringFromDate:detailFind.date]];
     [self.TextLabelFind setText:detailFind.name];
@@ -79,14 +78,6 @@
     }
     NSLog(@"%@", categoryList);
     [[self TextViewCategories] setText:categoryList];
-    if (detailCategory)
-    {
-        [self.TextLabelCategory setText:detailCategory.name];
-    }
-    else
-    {
-        [self.TextLabelCategory setText:@"not found"];
-    }
 }
 
 - (void)didReceiveMemoryWarning

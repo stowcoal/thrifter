@@ -12,5 +12,5 @@
 
 @interface CategorySelectViewController : UITableViewController
 @property (nonatomic, strong) DataController *dataController;
-
+@property (nonatomic, strong) NSMutableArray *selections;
 @end

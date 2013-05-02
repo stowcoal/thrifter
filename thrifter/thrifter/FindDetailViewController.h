@@ -22,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *TextLabelDate;
 @property (weak, nonatomic) IBOutlet UILabel *TextLabelCost;
 @property (weak, nonatomic) IBOutlet UILabel *TextLabelFind;
-@property (weak, nonatomic) IBOutlet UILabel *TextLabelCategory;
 @property (weak, nonatomic) IBOutlet UITextView *TextViewCategories;
 @property (weak, nonatomic) IBOutlet UITextView *TextViewDescription;
 @property (weak, nonatomic) IBOutlet UIImageView *PictureFind;

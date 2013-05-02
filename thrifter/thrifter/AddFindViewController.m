@@ -45,10 +45,7 @@
         [[self TextFieldDescription] setText:[[self find] description]];
         [[self ImageFind] setImage:[[UIImage alloc] initWithData:[self imageData]]];
         Store *s = [[self dataController] storeForKey:[self storeKey]];
-        Category *c = [[self dataController] categoryForKey:[[self categoryKeys] objectAtIndex:0]];
         [[self LabelCity] setText:[s city]];
-        [[self LabelCategory] setText:[c name]];
-        [[self LabelCategory] setHidden:NO];
         [[self LabelName] setText:[s name]];
     }
     
@@ -201,22 +198,29 @@
 {
     if ([[segue identifier] isEqualToString:@"UnwindSelectCategory"]) {
         CategorySelectViewController *categoryController = [segue sourceViewController];
-        [self.dataController  refresh];
-        NSArray *selectedRows = [[categoryController tableView] indexPathsForSelectedRows];
+        [self.dataController refresh];
+        /*NSArray *selectedRows = [[categoryController tableView] indexPathsForSelectedRows];
         NSEnumerator *row = [selectedRows objectEnumerator];
         NSIndexPath *indexPath = [[NSIndexPath alloc] init];
         NSMutableArray *tempCategoryArray = [[NSMutableArray alloc] init];
         while ( indexPath = [row nextObject])
         {
-            [tempCategoryArray addObject:((CustomDynamicCell *)[[categoryController tableView] cellForRowAtIndexPath:indexPath]).categoryKey];
+            CustomDynamicCell *cdc = [[categoryController tableView] cellForRowAtIndexPath:indexPath];
+            if (cdc.categoryKey != nil)
+            {
+                [tempCategoryArray addObject:cdc.categoryKey];
+            }
         }
-        _categoryKeys = [[NSArray alloc] initWithArray:tempCategoryArray];
+         */
+        //_categoryKeys = [[NSArray alloc] initWithArray:tempCategoryArray];
+        _categoryKeys = [[NSArray alloc] initWithArray:[categoryController selections]];
         _categoryKey = [[self categoryKeys] objectAtIndex:0];
-        Category *categoryForFind = [[self dataController] categoryForKey:_categoryKey];
+        //Category *categoryForFind = [[self dataController] categoryForKey:_categoryKey];
         NSEnumerator *categories = [_categoryKeys objectEnumerator];
         NSNumber *c = [[NSNumber alloc] init];
         NSString *categoryList = [[NSString alloc] init];
         c = [categories nextObject];
+        //Category *cat = [[self dataController] categoryForKey:c];
         categoryList = [categoryList stringByAppendingString:[[[self dataController] categoryForKey:c] name]];
         while ( c = [categories nextObject] )
         {

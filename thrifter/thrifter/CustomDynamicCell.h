@@ -11,7 +11,7 @@
 @interface CustomDynamicCell : UITableViewCell
 @property (nonatomic) IBOutlet UILabel* mainLabel;
 @property (nonatomic) IBOutlet UILabel* secondaryLabel;
-@property (nonatomic) NSNumber *findKey;
-@property (nonatomic) NSNumber *storeKey;
-@property (nonatomic) NSNumber *categoryKey;
+@property (strong, nonatomic) NSNumber *findKey;
+@property (strong, nonatomic) NSNumber *storeKey;
+@property (strong, nonatomic) NSNumber *categoryKey;
 @end

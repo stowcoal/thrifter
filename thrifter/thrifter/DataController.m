@@ -208,7 +208,7 @@
     NSEnumerator *storeEnumerator = [[self storeList] objectEnumerator];
     while ( s = [storeEnumerator nextObject])
     {
-        if( s.key == key)
+        if( [s.key isEqualToNumber:key] )
         {
             return s;
         }
@@ -221,7 +221,7 @@
     NSEnumerator *findEnumerator = [[self findList] objectEnumerator];
     while ( f = [findEnumerator nextObject])
     {
-        if( f.key == key)
+        if( [f.key isEqualToNumber:key])
         {
             return f;
         }
@@ -234,7 +234,7 @@
     NSEnumerator *categoryEnumerator = [[self categoryList] objectEnumerator];
     while ( c = [categoryEnumerator nextObject])
     {
-        if( c.key == key)
+        if( [c.key isEqualToNumber:key])
         {
             return c;
         }

@@ -43,6 +43,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSLog(@"appear");
+    self.selections = [[NSMutableArray alloc] init];
     [self.dataController refresh];
     [[self dataController] sortCategories];
     [[self tableView] reloadData];
@@ -73,6 +74,7 @@
     
     [cell.mainLabel setText:[[self dataController] categoryAtIndexPath:indexPath].name];
     cell.categoryKey = [[self dataController] categoryAtIndexPath:indexPath].key;
+    //NSLog(@"%n", [[self dataController] categoryAtIndexPath:indexPath].key);
     return cell;
 }
 /*
@@ -118,6 +120,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //CustomDynamicCell *cdc = [[self tableView] cellForRowAtIndexPath:indexPath];
+    [[self selections] addObject:((CustomDynamicCell*)[[self tableView] cellForRowAtIndexPath:indexPath]).categoryKey];
+    //@NSLog(@"%n", [[self tableView] cellForRowAtIndexPath:indexPath].categoryKey)
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
