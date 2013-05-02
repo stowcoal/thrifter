@@ -167,7 +167,7 @@
         AddFindViewController *addController = [segue sourceViewController];
         NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
         NSNumber *cost = [numberFormater numberFromString:[[addController TextFieldCost] text]];
-        Find *findToAdd = [[Find alloc] initWithDataAndKey:[[addController TextFieldName] text] cost:cost date:[NSDate date] store:[addController storeKey] description:[[addController TextFieldDescription] text] picture:[addController imageData] key:[[self dataController] FindKey] category:[addController categoryKey]];
+        Find *findToAdd = [[Find alloc] initWithDataAndKey:[[addController TextFieldName] text] cost:cost date:[NSDate date] store:[addController storeKey] description:[[addController TextFieldDescription] text] picture:[addController imageData] key:[[self dataController] FindKey] category:[addController categoryKey] categoryKeys:[addController categoryKeys]];
         [self.dataController addFindToFindList:findToAdd];
         NSLog(@"%d",[[self dataController] findKey]);
         [[self tableView] reloadData];

@@ -52,6 +52,7 @@
     {
         CategorySelectViewController *categoryController = [segue destinationViewController];
         categoryController.dataController = self.dataController;
+        categoryController.tableView.allowsMultipleSelection = NO;
     }
 }
 /*

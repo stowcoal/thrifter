@@ -67,6 +67,18 @@
         [self.TextLabelCity setText:@"not found"];
         [self.TextLabelStore setText:@"not found"];
     }
+    NSEnumerator *categories = [[detailFind categoryKeys] objectEnumerator];
+    NSNumber *c = [[NSNumber alloc] init];
+    NSString *categoryList = [[NSString alloc] init];
+    c = [categories nextObject];
+    categoryList = [categoryList stringByAppendingString:[[[self dataController] categoryForKey:c] name]];
+    while ( c = [categories nextObject] )
+    {
+        categoryList = [categoryList stringByAppendingString:@", "];
+        categoryList = [categoryList stringByAppendingString:[[[self dataController] categoryForKey:c] name]];
+    }
+    NSLog(@"%@", categoryList);
+    [[self TextViewCategories] setText:categoryList];
     if (detailCategory)
     {
         [self.TextLabelCategory setText:detailCategory.name];
@@ -83,14 +95,14 @@
     // Dispose of any resources that can be recreated.
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"SegueSelectNewStore"]) {
+    /*if ([[segue identifier] isEqualToString:@"SegueSelectNewStore"]) {
         StoreSelectViewController *storeSelectViewController = [segue destinationViewController];
         storeSelectViewController.dataController = [self dataController];
     }
     if ([[segue identifier] isEqualToString:@"SegueSelectNewCategory"]) {
         CategorySelectViewController *categorySelectViewController = [segue destinationViewController];
         categorySelectViewController.dataController = [self dataController];
-    }
+    }*/
     if ([[segue identifier] isEqualToString:@"SegueEditFind"]) {
         AddFindViewController *editViewController = [segue destinationViewController];
         editViewController.dataController = [self dataController];
@@ -101,7 +113,7 @@
 }
 - (IBAction)done:(UIStoryboardSegue *)segue
 {
-    if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
+    /*if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
         StoreSelectViewController *storeController = [segue sourceViewController];
         [self.dataController refresh];
         Find *detailFind = [[self dataController] findForKey:[self findKey]];
@@ -119,7 +131,7 @@
         Category *detailCategory = [[self dataController] categoryForKey:detailFind.categoryKey];
         self.TextLabelCategory.text = detailCategory.name;
         [[self dataController] writeFinds];
-    }
+    }*/
     if ([[segue identifier] isEqualToString:@"UnwindAddFind"])
     {
         AddFindViewController *editController = [segue sourceViewController];
@@ -129,7 +141,8 @@
         detailFind.name = [[editController TextFieldName] text];
         detailFind.cost = [numberFormater numberFromString:[[editController TextFieldCost] text]];
         detailFind.storeKey = [editController storeKey];
-        detailFind.categoryKey = [editController categoryKey];
+        detailFind.categoryKey = [[editController categoryKeys] objectAtIndex:0];
+        detailFind.categoryKeys = [editController categoryKeys];
         detailFind.picture = [editController imageData];
         detailFind.description = [[editController TextFieldDescription] text];
         [[self dataController] writeFinds];

@@ -14,6 +14,7 @@
 @interface AddFindViewController : UITableViewController
 @property (strong, nonatomic) Find *find;
 @property (strong, nonatomic) NSNumber *storeKey;
+@property (strong, nonatomic) NSArray *categoryKeys;
 @property (strong, nonatomic) NSNumber *categoryKey;
 @property (strong, nonatomic) NSData *imageData;
 @property (strong, nonatomic) DataController *dataController;
@@ -27,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *LabelCity;
 @property (weak, nonatomic) IBOutlet UILabel *LabelName;
 @property (weak, nonatomic) IBOutlet UILabel *LabelCategory;
+@property (weak, nonatomic) IBOutlet UITextView *TextViewCategories;
 @property (weak, nonatomic) IBOutlet UIButton *ButtonTakePicture;
 @property (weak, nonatomic) IBOutlet UIButton *ButtonSelectPicture;
 @property (weak, nonatomic) IBOutlet UIImageView *ImageFind;

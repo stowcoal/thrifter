@@ -790,16 +790,16 @@
                                             <constraint firstItem="r0R-7b-Hej" firstAttribute="centerY" secondItem="vku-SV-lpW" secondAttribute="centerY" type="default" id="kbk-6u-ULt"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellCategory" id="87T-ez-aRr">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellCategory" rowHeight="64" id="87T-ez-aRr">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4l-lU-6kj">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="89" id="LtB-XQ-iYx"/>
+                                                        <constraint firstAttribute="width" constant="89" id="A3D-sh-FTW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -810,13 +810,25 @@
                                                     <color key="textColor" red="0.18982012409999999" green="0.29278096100000001" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="jcg-0t-qCX">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="206" id="iGx-2b-Pqn"/>
+                                                        <constraint firstAttribute="height" constant="63" id="n5G-1t-66K"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="j4l-lU-6kj" firstAttribute="top" secondItem="87T-ez-aRr" secondAttribute="top" constant="11" id="Ww2-My-jCl"/>
-                                            <constraint firstAttribute="trailing" secondItem="7qo-fM-Ytp" secondAttribute="trailing" constant="20" type="default" id="fAe-Zt-cn7"/>
-                                            <constraint firstItem="7qo-fM-Ytp" firstAttribute="baseline" secondItem="j4l-lU-6kj" secondAttribute="baseline" type="default" id="u0s-MT-WkG"/>
+                                            <constraint firstItem="7qo-fM-Ytp" firstAttribute="leading" secondItem="87T-ez-aRr" secondAttribute="leading" constant="20" type="default" id="G1s-Mu-NXp"/>
+                                            <constraint firstItem="j4l-lU-6kj" firstAttribute="top" secondItem="87T-ez-aRr" secondAttribute="top" constant="7" id="Iiv-b7-aCc"/>
+                                            <constraint firstItem="jcg-0t-qCX" firstAttribute="top" secondItem="87T-ez-aRr" secondAttribute="top" type="default" id="VHZ-bJ-Iq6"/>
+                                            <constraint firstItem="7qo-fM-Ytp" firstAttribute="top" secondItem="j4l-lU-6kj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="e5A-mA-PSV"/>
+                                            <constraint firstItem="jcg-0t-qCX" firstAttribute="leading" secondItem="87T-ez-aRr" secondAttribute="leading" constant="99" id="k7n-Qi-E1X"/>
                                             <constraint firstItem="j4l-lU-6kj" firstAttribute="leading" secondItem="87T-ez-aRr" secondAttribute="leading" constant="20" type="default" id="xVM-7w-b6J"/>
                                         </constraints>
                                         <connections>
@@ -824,7 +836,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pgh-4v-hTl">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="108" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -859,7 +871,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="hza-19-tXd">
-                                        <rect key="frame" x="0.0" y="132" width="320" height="64"/>
+                                        <rect key="frame" x="0.0" y="152" width="320" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="63"/>
@@ -905,7 +917,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="Zjj-Yc-2Ij">
-                                        <rect key="frame" x="0.0" y="196" width="320" height="80"/>
+                                        <rect key="frame" x="0.0" y="216" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
@@ -939,7 +951,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="125" id="Zfz-W3-M56">
-                                        <rect key="frame" x="0.0" y="276" width="320" height="125"/>
+                                        <rect key="frame" x="0.0" y="296" width="320" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
@@ -1022,6 +1034,7 @@
                         <outlet property="TextFieldCost" destination="tQZ-T1-jkd" id="Jlq-Cs-a0P"/>
                         <outlet property="TextFieldDescription" destination="oBI-Dw-gsq" id="Xhj-sx-b0v"/>
                         <outlet property="TextFieldName" destination="r0R-7b-Hej" id="WII-4O-i7W"/>
+                        <outlet property="TextViewCategories" destination="jcg-0t-qCX" id="peh-3K-e29"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pyc-Xa-Axo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1033,7 +1046,7 @@
         <scene sceneID="NMQ-lQ-FGq">
             <objects>
                 <tableViewController id="kBg-SV-qQo" customClass="CategorySelectViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="nOs-lZ-cd6">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="nOs-lZ-cd6">
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1062,7 +1075,6 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="mainLabel" destination="zvC-E7-uh8" id="xx1-aS-7kB"/>
-                                    <segue destination="Jca-0P-Lff" kind="unwind" identifier="UnwindSelectCategory" unwindAction="done:" id="x5F-Id-mzb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1071,7 +1083,13 @@
                             <outlet property="delegate" destination="kBg-SV-qQo" id="rPy-nC-kax"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="select category" id="MAx-nM-r5b"/>
+                    <navigationItem key="navigationItem" title="select category" id="MAx-nM-r5b">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="TkW-NE-dkc">
+                            <connections>
+                                <segue destination="Jca-0P-Lff" kind="unwind" identifier="UnwindSelectCategory" unwindAction="done:" id="zYX-X5-Dtq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ul-QG-goD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Jca-0P-Lff" userLabel="Exit" sceneMemberID="exit"/>
@@ -1121,7 +1139,6 @@
                                 <connections>
                                     <outlet property="mainLabel" destination="ouG-cy-9Gd" id="Y6P-wd-Iyb"/>
                                     <outlet property="secondaryLabel" destination="920-qn-7jr" id="thd-il-0HB"/>
-                                    <segue destination="S9F-Kl-EFG" kind="unwind" identifier="UnwindSelectStore" unwindAction="done:" id="1Xh-j8-Gr4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1131,7 +1148,13 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="stores" id="eEm-L0-mBh"/>
-                    <navigationItem key="navigationItem" title="store select" id="L7t-zH-AgS"/>
+                    <navigationItem key="navigationItem" title="store select" id="L7t-zH-AgS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lD4-oc-RQq">
+                            <connections>
+                                <segue destination="S9F-Kl-EFG" kind="unwind" identifier="UnwindSelectStore" unwindAction="done:" id="1y0-e4-xmP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uH6-3a-tXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="S9F-Kl-EFG" userLabel="Exit" sceneMemberID="exit"/>
@@ -2048,11 +2071,11 @@
                                             <constraint firstItem="lMJ-JF-nmF" firstAttribute="top" secondItem="q6M-DF-0DK" secondAttribute="top" constant="11" id="mKc-ST-qfl"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="9JD-W4-lLL">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" rowHeight="64" id="9JD-W4-lLL">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63D-yM-pcH">
@@ -2063,23 +2086,35 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adz-og-H5a">
+                                                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adz-og-H5a">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.18982012409999999" green="0.29278096100000001" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="cPJ-FS-jfC">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="211" id="Xd3-P7-2Ay"/>
+                                                        <constraint firstAttribute="height" constant="63" id="vg8-ab-Ebi"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="63D-yM-pcH" firstAttribute="leading" secondItem="9JD-W4-lLL" secondAttribute="leading" constant="20" type="default" id="1FV-bN-xV8"/>
-                                            <constraint firstAttribute="trailing" secondItem="adz-og-H5a" secondAttribute="trailing" constant="20" type="default" id="Vyw-UL-6YZ"/>
-                                            <constraint firstItem="63D-yM-pcH" firstAttribute="top" secondItem="9JD-W4-lLL" secondAttribute="top" constant="11" id="enR-qV-rf9"/>
-                                            <constraint firstItem="63D-yM-pcH" firstAttribute="baseline" secondItem="adz-og-H5a" secondAttribute="baseline" type="default" id="mEQ-9D-vfp"/>
+                                            <constraint firstItem="cPJ-FS-jfC" firstAttribute="top" secondItem="9JD-W4-lLL" secondAttribute="top" type="default" id="2pe-cP-6zy"/>
+                                            <constraint firstItem="adz-og-H5a" firstAttribute="leading" secondItem="9JD-W4-lLL" secondAttribute="leading" constant="20" type="default" id="5lZ-OM-zW3"/>
+                                            <constraint firstItem="adz-og-H5a" firstAttribute="bottom" secondItem="cPJ-FS-jfC" secondAttribute="bottom" type="default" id="I3O-4Y-sHG"/>
+                                            <constraint firstItem="cPJ-FS-jfC" firstAttribute="leading" secondItem="9JD-W4-lLL" secondAttribute="leading" constant="96" id="M3J-Dl-LHJ"/>
+                                            <constraint firstItem="63D-yM-pcH" firstAttribute="top" secondItem="9JD-W4-lLL" secondAttribute="top" constant="8" id="ucp-r5-S3T"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="z50-Yu-FDs">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="108" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -2109,7 +2144,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" id="Ufl-3F-D66">
-                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="152" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -2139,7 +2174,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="LIt-Q0-IoU">
-                                        <rect key="frame" x="0.0" y="176" width="320" height="70"/>
+                                        <rect key="frame" x="0.0" y="196" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
@@ -2176,7 +2211,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" rowHeight="125" id="fe1-XQ-HaQ">
-                                        <rect key="frame" x="0.0" y="246" width="320" height="125"/>
+                                        <rect key="frame" x="0.0" y="266" width="320" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
@@ -2197,7 +2232,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Date" rowHeight="102" id="wXx-IF-H9S">
-                                        <rect key="frame" x="0.0" y="371" width="320" height="102"/>
+                                        <rect key="frame" x="0.0" y="391" width="320" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
@@ -2254,6 +2289,7 @@
                         <outlet property="TextLabelDate" destination="QMW-E4-r74" id="HW9-kB-ExQ"/>
                         <outlet property="TextLabelFind" destination="0fN-Y9-b5c" id="umE-vI-Mb9"/>
                         <outlet property="TextLabelStore" destination="NG8-bE-m7Z" id="Cu8-fF-c6k"/>
+                        <outlet property="TextViewCategories" destination="cPJ-FS-jfC" id="dwM-tn-1hR"/>
                         <outlet property="TextViewDescription" destination="Az4-bE-gSk" id="bv8-Bs-8Ll"/>
                     </connections>
                 </tableViewController>
@@ -2292,14 +2328,169 @@
         <image name="logostore.png" width="30" height="30"/>
         <image name="questionmark.jpg" width="225" height="225"/>
     </resources>
+    <classes>
+        <class className="AddCategoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCategoryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="TextFieldCategoryName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="AddFindViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddFindViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ClickSelectPicture:" candidateClass="UIButton"/>
+                <relationship kind="action" name="ClickTakePicture:" candidateClass="UIButton"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="ButtonSelectPicture" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonTakePicture" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="CellStoreData" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="CellStoreSelect" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="ImageFind" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="LabelCategory" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelStore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextFieldCost" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextFieldDescription" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextFieldName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewCategories" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="AddStoreViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddStoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ButtonAMPMClick:" candidateClass="UIButton"/>
+                <relationship kind="action" name="ButtonClosedClick:" candidateClass="HoursClosedOpenButton"/>
+                <relationship kind="action" name="ButtonDoneClick:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="ButtonFridayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonFridayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonFridaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonMondayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonMondayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonMondaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonSaturdayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonSaturdayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonSaturdaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonSundayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonSundayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonSundaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonThursdayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonThursdayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonThursdaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonTuesdayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonTuesdayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonTuesdaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonWednesdayClosed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonWednesdayFirst" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ButtonWednesdaySecond" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="TextViewFridayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewFridayOpen" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewMondayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewMondayOpen" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewSaturdayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewSaturdayOpen" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewStoreCity" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewStoreName" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewSundayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewSundayOpen" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewThursdayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewThursdayOpen" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewTuesdayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewTuesdayOpen" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewWednesdayClose" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="TextViewWednesdayOpen" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CategoriesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategoriesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneAddCategory:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="CategorySelectViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CategorySelectViewController.h"/>
+        </class>
+        <class className="CustomDynamicCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomDynamicCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mainLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="secondaryLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FilterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FilterViewController.h"/>
+        </class>
+        <class className="FindDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ClickSelectPicture:" candidateClass="UIButton"/>
+                <relationship kind="action" name="ClickTakePicture:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="PictureFind" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="TextLabelCategory" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelCost" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelFind" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextLabelStore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TextViewCategories" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="TextViewDescription" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="FindsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FindsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ButtonSortClick:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="HoursClosedOpenButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HoursClosedOpenButton.h"/>
+            <relationships>
+                <relationship kind="outlet" name="closedTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="openTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="secondButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="StoreDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="LabelFridayTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelMondayTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelSaturdayTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelStoreCity" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelStoreName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelSundayTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelThursdayTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelTuesdayTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="LabelWednesdayTime" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StoreSelectViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreSelectViewController.h"/>
+        </class>
+        <class className="StoresViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoresViewController.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+        <class className="thrifterViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/thrifterViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ja9-yA-ApO"/>
-        <segue reference="L5w-M7-tDz"/>
+        <segue reference="JwQ-f0-8XX"/>
         <segue reference="wQz-9C-CY6"/>
+        <segue reference="L5w-M7-tDz"/>
     </inferredMetricsTieBreakers>
 </document>
