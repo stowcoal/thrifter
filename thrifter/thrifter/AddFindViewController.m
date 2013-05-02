@@ -34,10 +34,24 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.categoryKey = [[NSNumber alloc] initWithInt:-1];
-    self.storeKey = [[NSNumber alloc] initWithInt:-1];
-    self.imageData = [[NSData alloc] init];
-
+    if ([[self find] key] != nil)
+    {
+        self.storeKey = [[self find] storeKey];
+        self.categoryKey = [[self find] categoryKey];
+        self.imageData = [[self find] picture];
+        [self setTitle:@"edit find"];
+        [[self TextFieldName] setText:[[self find] name]];
+        [[self TextFieldCost] setText:[[[self find] cost] stringValue]];
+        [[self TextFieldDescription] setText:[[self find] description]];
+        [[self ImageFind] setImage:[[UIImage alloc] initWithData:[self imageData]]];
+        Store *s = [[self dataController] storeForKey:[self storeKey]];
+        Category *c = [[self dataController] categoryForKey:[self categoryKey]];
+        [[self LabelCity] setText:[s city]];
+        [[self LabelCategory] setText:[c name]];
+        [[self LabelCategory] setHidden:NO];
+        [[self LabelStore] setText:[s name]];
+    }
+    
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
         [[self ButtonTakePicture] setEnabled:NO];
@@ -64,18 +78,9 @@
     return YES;
     
 }
-/*
-- (BOOL)textViewShouldReturn:(UITextView *)textView {
-    if (textView == self.TextFieldDescription)
-    {
-        [textView resignFirstResponder];
-    }
-    return YES;
-}
- */
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"UnwindAddSegue"]) {
-        //NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
         if ([[[self TextFieldCost] text] length] == 0)
         {
             [[self TextFieldCost] setText:@"0.00"];
@@ -88,16 +93,6 @@
         {
             [[self TextFieldDescription] setText:@"uninteresting"];
         }
-        //NSNumber *cost = [numberFormater numberFromString:self.TextFieldCost.text];
-        //NSString *findName = self.TextFieldName.text;
-        //NSNumber *storeKey = [self storeKey];
-        //NSNumber *categoryKey = [self categoryKey];
-       // NSString *description = self.TextFieldDescription.text;
-       // NSData *image = self.imageData;
-        
-        //Find *findToAdd = [[Find alloc] initWithDataAndKey:findName cost:cost date:[NSDate date] store:storeKey description:description picture:image key:[[self dataController] FindKey] category:categoryKey];
-        //findToAdd.categoryKey = [self categoryKey];
-        //self.find = findToAdd;
     }
     if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){
         StoreSelectViewController *storeSelect = [segue destinationViewController];

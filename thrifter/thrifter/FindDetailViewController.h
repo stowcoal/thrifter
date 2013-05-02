@@ -11,6 +11,7 @@
 #import "DataController.h"
 #import "StoreSelectViewController.h"
 #import "CategorySelectViewController.h"
+#import "AddFindViewController.h"
 
 @interface FindDetailViewController : UITableViewController
 @property (strong, nonatomic) NSNumber *findKey;

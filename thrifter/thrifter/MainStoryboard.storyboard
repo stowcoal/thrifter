@@ -141,14 +141,11 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81p-ho-7mf">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="230" id="U4n-cp-cDw"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAM-rq-D7b">
+                                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAM-rq-D7b">
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="AV1-pj-MBu"/>
                                             </constraints>
@@ -164,6 +161,7 @@
                                     <constraint firstItem="kAM-rq-D7b" firstAttribute="baseline" secondItem="81p-ho-7mf" secondAttribute="baseline" type="default" id="NdV-KJ-Y8e"/>
                                     <constraint firstItem="81p-ho-7mf" firstAttribute="leading" secondItem="zZO-xJ-I2V" secondAttribute="leading" constant="20" type="default" id="bux-YQ-KXD"/>
                                     <constraint firstAttribute="trailing" secondItem="kAM-rq-D7b" secondAttribute="trailing" constant="20" type="default" id="tFa-yi-M4a"/>
+                                    <constraint firstAttribute="trailing" secondItem="81p-ho-7mf" secondAttribute="trailing" constant="20" type="default" id="wCd-fM-Ege"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="mainLabel" destination="81p-ho-7mf" id="6pV-Cx-BuE"/>
@@ -1005,14 +1003,9 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="add find" id="RFY-zY-vow">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rmD-lJ-5is">
-                            <connections>
-                                <segue destination="btn-mM-kpM" kind="unwind" identifier="Cancel" unwindAction="cancel:" id="zEe-cb-sgO"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="hHl-pc-RIr">
                             <connections>
-                                <segue destination="btn-mM-kpM" kind="unwind" identifier="UnwindAddSegue" unwindAction="done:" id="Uzv-Jm-DkJ"/>
+                                <segue destination="btn-mM-kpM" kind="unwind" identifier="UnwindAddFind" unwindAction="done:" id="Uzv-Jm-DkJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2249,7 +2242,7 @@
                     <navigationItem key="navigationItem" title="find detail" id="mlj-2k-YAR">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Rpr-od-T2K">
                             <connections>
-                                <segue destination="EqX-gz-gD0" kind="push" id="JwQ-f0-8XX"/>
+                                <segue destination="EqX-gz-gD0" kind="push" identifier="SegueEditFind" id="JwQ-f0-8XX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2305,7 +2298,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="JwQ-f0-8XX"/>
+        <segue reference="Ja9-yA-ApO"/>
         <segue reference="L5w-M7-tDz"/>
         <segue reference="wQz-9C-CY6"/>
     </inferredMetricsTieBreakers>

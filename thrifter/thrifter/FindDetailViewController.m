@@ -91,6 +91,13 @@
         CategorySelectViewController *categorySelectViewController = [segue destinationViewController];
         categorySelectViewController.dataController = [self dataController];
     }
+    if ([[segue identifier] isEqualToString:@"SegueEditFind"]) {
+        AddFindViewController *editViewController = [segue destinationViewController];
+        editViewController.dataController = [self dataController];
+        Find *f = [[self dataController] findForKey:[self findKey]];
+        editViewController.find = f;
+        
+    }
 }
 - (IBAction)done:(UIStoryboardSegue *)segue
 {
@@ -112,6 +119,21 @@
         Category *detailCategory = [[self dataController] categoryForKey:detailFind.categoryKey];
         self.TextLabelCategory.text = detailCategory.name;
         [[self dataController] writeFinds];
+    }
+    if ([[segue identifier] isEqualToString:@"UnwindAddFind"])
+    {
+        AddFindViewController *editController = [segue sourceViewController];
+        [self.dataController refresh];
+        NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
+        Find *detailFind = [[self dataController] findForKey:[self findKey]];
+        detailFind.name = [[editController TextFieldName] text];
+        detailFind.cost = [numberFormater numberFromString:[[editController TextFieldCost] text]];
+        detailFind.storeKey = [editController storeKey];
+        detailFind.categoryKey = [editController categoryKey];
+        detailFind.picture = [editController imageData];
+        detailFind.description = [[editController TextFieldDescription] text];
+        [[self dataController] writeFinds];
+        [self configureView];
     }
     
 }

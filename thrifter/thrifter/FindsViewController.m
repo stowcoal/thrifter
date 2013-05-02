@@ -78,9 +78,11 @@
     CustomDynamicCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     Find *findForCell = [[self findsList] objectAtIndex:indexPath.row];
     NSLog(@"%@",findForCell.name);
-    Category *detailCategory = [self.dataController categoryForKey:findForCell.categoryKey];
+    //Category *detailCategory = [self.dataController categoryForKey:findForCell.categoryKey];
     [cell.mainLabel setText:findForCell.name];
-    [cell.secondaryLabel setText:detailCategory.name];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    //[cell.secondaryLabel setText:[dateFormatter stringFromDate:[findForCell date]]];
     cell.findKey = findForCell.key;
     return cell;
 }
@@ -161,7 +163,7 @@
 
 - (IBAction)done:(UIStoryboardSegue *)segue
 {
-    if ([[segue identifier] isEqualToString:@"UnwindAddSegue"]) {
+    if ([[segue identifier] isEqualToString:@"UnwindAddFind"]) {
         AddFindViewController *addController = [segue sourceViewController];
         NSNumberFormatter *numberFormater = [[NSNumberFormatter alloc] init];
         NSNumber *cost = [numberFormater numberFromString:[[addController TextFieldCost] text]];
