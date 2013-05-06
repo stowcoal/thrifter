@@ -96,8 +96,8 @@
 {
     if ([[segue identifier] isEqualToString:@"UnwindAddStore"]) {
         AddStoreViewController *addController = [segue sourceViewController];
-        if (addController.TextViewStoreName &&
-            addController.TextViewStoreCity) {
+        if (![[[addController TextViewStoreCity] text] isEqualToString:@""] && ![[[addController TextViewStoreName] text] isEqualToString:@""])
+        {
             NSString *mondayString = [[NSString alloc] init];
             NSString *tuesdayString = [[NSString alloc] init];
             NSString *wednesdayString = [[NSString alloc] init];
@@ -167,7 +167,6 @@
             [[self dataController] addStoreToStoreList:storeToAdd];
             [[self tableView] reloadData];
         }
-        
     }
     //[self dismissViewControllerAnimated:YES completion:NULL];
 }

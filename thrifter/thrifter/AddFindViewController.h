@@ -15,7 +15,7 @@
 @property (strong, nonatomic) Find *find;
 @property (strong, nonatomic) NSNumber *storeKey;
 @property (strong, nonatomic) NSArray *categoryKeys;
-@property (strong, nonatomic) NSNumber *categoryKey;
+//@property (strong, nonatomic) NSNumber *categoryKey;
 @property (strong, nonatomic) NSData *imageData;
 @property (strong, nonatomic) DataController *dataController;
 

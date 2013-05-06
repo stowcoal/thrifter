@@ -81,7 +81,7 @@
 {
     if ([[segue identifier] isEqualToString:@"UnwindAddCategory"]) {
         AddCategoryViewController *addController = [segue sourceViewController];
-        if (addController.TextFieldCategoryName) {
+        if (![addController.TextFieldCategoryName.text isEqualToString:@""]) {
             [[self dataController] addCategoryToCategoryList:[[Category alloc] initWithDataAndKey:addController.TextFieldCategoryName.text key:[[self dataController] CategoryKey]]];
             [[self tableView] reloadData];
         }

@@ -87,7 +87,7 @@
     Find *f;
     while ( f = [enumerator nextObject])
     {
-        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:f.name, @"name", f.cost, @"cost", f.date, @"date", f.storeKey, @"store", f.description, @"description", f.picture, @"picture", f.key, @"key", f.categoryKey, @"category", f.categoryKeys, @"categories", nil];
+        NSMutableDictionary *tempDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:f.name, @"name", f.cost, @"cost", f.date, @"date", f.storeKey, @"store", f.description, @"description", f.picture, @"picture", f.key, @"key", f.categoryKeys, @"categories", nil];
         [array addObject:tempDictionary];
     }
     [array writeToFile:plistPath atomically:YES];
@@ -136,7 +136,7 @@
         NSDictionary *findDictionary = [[NSDictionary alloc] init];
         while ( findDictionary = [enumerator nextObject])
         {
-            Find *f = [[Find alloc] initWithDataAndKey:[findDictionary objectForKey:@"name"] cost:[findDictionary objectForKey:@"cost"] date:[findDictionary objectForKey:@"date"] store:[findDictionary objectForKey:@"store"] description:[findDictionary objectForKey:@"description"] picture:[findDictionary objectForKey:@"picture"] key:[findDictionary objectForKey:@"key"] category:[findDictionary objectForKey:@"category"] categoryKeys:[findDictionary objectForKey:@"categories"]];
+            Find *f = [[Find alloc] initWithDataAndKey:[findDictionary objectForKey:@"name"] cost:[findDictionary objectForKey:@"cost"] date:[findDictionary objectForKey:@"date"] store:[findDictionary objectForKey:@"store"] description:[findDictionary objectForKey:@"description"] picture:[findDictionary objectForKey:@"picture"] key:[findDictionary objectForKey:@"key"] categoryKeys:[findDictionary objectForKey:@"categories"]];
             if ( [f.key integerValue] > [self findKey])
                 self.findKey = [f.key integerValue];
             [finds addObject:f];
@@ -265,7 +265,7 @@
         _categoryKey = 0;
     return [[NSNumber alloc] initWithInteger:_categoryKey];
 }
-NSInteger categorySort(id f1, id f2, void *context)
+/*NSInteger categorySort(id f1, id f2, void *context)
 {
     Find *find1 = (Find *)f1;
     Find *find2 = (Find *)f2;
@@ -278,6 +278,7 @@ NSInteger categorySort(id f1, id f2, void *context)
     else
         return [[dc categoryForKey:[find1 categoryKey]].name compare:[dc categoryForKey:[find2 categoryKey]].name];
 }
+ */
 -(void)sortFinds
 {
     NSSortDescriptor *nameSort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];

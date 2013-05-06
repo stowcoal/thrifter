@@ -20,9 +20,9 @@
 @property (nonatomic, copy) NSString *description;
 @property (nonatomic, copy) NSData *picture;
 @property (nonatomic, copy) NSNumber *storeKey;
-@property (nonatomic, copy) NSNumber *categoryKey;
+//@property (nonatomic, copy) NSNumber *categoryKey;
 @property (nonatomic, copy) NSArray *categoryKeys;
 -(id)initWithName:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date;
 -(id)initWithDataAndKey:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSNumber *)storeKey description:(NSString *)description picture:(NSData *)picture key:(NSNumber *)key category:(NSNumber *)categoryKey;
--(id)initWithDataAndKey:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSNumber *)storeKey description:(NSString *)description picture:(NSData *)picture key:(NSNumber *)key category:(NSNumber *)categoryKey categoryKeys:(NSArray *)categoryKeys;
+-(id)initWithDataAndKey:(NSString *)name cost:(NSNumber *)cost date:(NSDate *)date store:(NSNumber *)storeKey description:(NSString *)description picture:(NSData *)picture key:(NSNumber *)key categoryKeys:(NSArray *)categoryKeys;
 @end

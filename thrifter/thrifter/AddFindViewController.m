@@ -34,6 +34,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
     if ([[self find] key] != nil)
     {
         self.storeKey = [[self find] storeKey];
@@ -45,8 +46,35 @@
         [[self TextFieldDescription] setText:[[self find] description]];
         [[self ImageFind] setImage:[[UIImage alloc] initWithData:[self imageData]]];
         Store *s = [[self dataController] storeForKey:[self storeKey]];
-        [[self LabelCity] setText:[s city]];
-        [[self LabelName] setText:[s name]];
+        if (s != nil)
+        {
+            [[self LabelCity] setText:[s city]];
+            [[self LabelName] setText:[s name]];
+        }
+        else
+        {
+            [[self LabelCity] setText:@"city"];
+            [[self LabelName] setText:@"store"];
+        }
+        if ([[self categoryKeys] lastObject] != nil)
+        {
+            NSEnumerator *categories = [_categoryKeys objectEnumerator];
+            NSNumber *c = [[NSNumber alloc] init];
+            NSString *categoryList = [[NSString alloc] init];
+            c = [categories nextObject];
+            categoryList = [categoryList stringByAppendingString:[[[self dataController] categoryForKey:c] name]];
+            while ( c = [categories nextObject] )
+            {
+                categoryList = [categoryList stringByAppendingString:@", "];
+                categoryList = [categoryList stringByAppendingString:[[[self dataController] categoryForKey:c] name]];
+            }
+            NSLog(@"%@", categoryList);
+            [[self TextViewCategories] setText:categoryList];
+        }
+        else
+        {
+            [[self TextViewCategories] setText:@""];
+        }
     }
     
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
@@ -77,7 +105,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"UnwindAddSegue"]) {
+    if ([[segue identifier] isEqualToString:@"UnwindAddFind"]) {
         if ([[[self TextFieldCost] text] length] == 0)
         {
             [[self TextFieldCost] setText:@"0.00"];
@@ -89,6 +117,18 @@
         if (![[self TextFieldDescription] hasText])
         {
             [[self TextFieldDescription] setText:@"uninteresting"];
+        }
+        if ([self storeKey] == nil)
+        {
+            self.storeKey = [[NSNumber alloc] initWithInt:-1];
+        }
+        if ([self categoryKeys] == nil)
+        {
+            self.categoryKeys = [[NSArray alloc] init];
+        }
+        if ([self imageData] == nil)
+        {
+            self.imageData = [[NSData alloc] init];
         }
     }
     if([[segue identifier] isEqualToString:@"SegueStoreSelect"]){
@@ -199,46 +239,46 @@
     if ([[segue identifier] isEqualToString:@"UnwindSelectCategory"]) {
         CategorySelectViewController *categoryController = [segue sourceViewController];
         [self.dataController refresh];
-        /*NSArray *selectedRows = [[categoryController tableView] indexPathsForSelectedRows];
-        NSEnumerator *row = [selectedRows objectEnumerator];
-        NSIndexPath *indexPath = [[NSIndexPath alloc] init];
-        NSMutableArray *tempCategoryArray = [[NSMutableArray alloc] init];
-        while ( indexPath = [row nextObject])
+        if ([[categoryController selections] lastObject] != nil)
         {
-            CustomDynamicCell *cdc = [[categoryController tableView] cellForRowAtIndexPath:indexPath];
-            if (cdc.categoryKey != nil)
-            {
-                [tempCategoryArray addObject:cdc.categoryKey];
-            }
-        }
-         */
-        //_categoryKeys = [[NSArray alloc] initWithArray:tempCategoryArray];
-        _categoryKeys = [[NSArray alloc] initWithArray:[categoryController selections]];
-        _categoryKey = [[self categoryKeys] objectAtIndex:0];
-        //Category *categoryForFind = [[self dataController] categoryForKey:_categoryKey];
-        NSEnumerator *categories = [_categoryKeys objectEnumerator];
-        NSNumber *c = [[NSNumber alloc] init];
-        NSString *categoryList = [[NSString alloc] init];
-        c = [categories nextObject];
-        //Category *cat = [[self dataController] categoryForKey:c];
-        categoryList = [categoryList stringByAppendingString:[[[self dataController] categoryForKey:c] name]];
-        while ( c = [categories nextObject] )
-        {
-            categoryList = [categoryList stringByAppendingString:@", "];
+            _categoryKeys = [[NSArray alloc] initWithArray:[categoryController selections]];
+            //_categoryKey = [[self categoryKeys] objectAtIndex:0];
+            NSEnumerator *categories = [_categoryKeys objectEnumerator];
+            NSNumber *c = [[NSNumber alloc] init];
+            NSString *categoryList = [[NSString alloc] init];
+            c = [categories nextObject];
             categoryList = [categoryList stringByAppendingString:[[[self dataController] categoryForKey:c] name]];
+            while ( c = [categories nextObject] )
+            {
+                categoryList = [categoryList stringByAppendingString:@", "];
+                categoryList = [categoryList stringByAppendingString:[[[self dataController] categoryForKey:c] name]];
+            }
+            NSLog(@"%@", categoryList);
+            [[self TextViewCategories] setText:categoryList];
         }
-        NSLog(@"%@", categoryList);
-        [[self TextViewCategories] setText:categoryList];
- 
+        else
+        {
+            _categoryKeys = [[NSArray alloc] initWithArray:[categoryController selections]];
+            [[self TextViewCategories] setText:@""];
+        }
     }
     if ([[segue identifier] isEqualToString:@"UnwindSelectStore"]) {
         StoreSelectViewController *storeController = [segue sourceViewController];
         [self.dataController  refresh];
-        _storeKey = ((CustomDynamicCell *)[[storeController tableView] cellForRowAtIndexPath:[[storeController tableView] indexPathForSelectedRow]]).storeKey;
-        Store *storeForFind = [[self dataController] storeForKey:_storeKey];
-        if (storeForFind) {
-            self.LabelCity.text = storeForFind.city;
-            self.LabelName.text = storeForFind.name;
+        if ([[storeController tableView] indexPathForSelectedRow] != nil)
+        {
+            _storeKey = ((CustomDynamicCell *)[[storeController tableView] cellForRowAtIndexPath:[[storeController tableView] indexPathForSelectedRow]]).storeKey;
+            Store *storeForFind = [[self dataController] storeForKey:_storeKey];
+            if (storeForFind) {
+                self.LabelCity.text = storeForFind.city;
+                self.LabelName.text = storeForFind.name;
+            }
+        }
+        else
+        {
+            _storeKey = nil;
+            self.LabelCity.text = @"city";
+            self.LabelName.text = @"name";
         }
     }
     

@@ -51,13 +51,9 @@
     }
     Find *detailFind = [[self dataController] findForKey:[self findKey]];
     Store *detailStore = [[self dataController] storeForFind:detailFind];
-    [self.TextLabelCost setText:[numberFormatter stringFromNumber:detailFind.cost]];
-    [self.TextLabelDate setText:[dateFormatter stringFromDate:detailFind.date]];
-    [self.TextLabelFind setText:detailFind.name];
-    [self.TextViewDescription setText:detailFind.description];
-    [self.PictureFind setImage:[[UIImage alloc] initWithData:detailFind.picture]];
-    if (detailStore)
+    if (detailStore != nil)
     {
+
         [self.TextLabelCity setText:detailStore.city];
         [self.TextLabelStore setText:detailStore.name];
     }
@@ -66,11 +62,21 @@
         [self.TextLabelCity setText:@"not found"];
         [self.TextLabelStore setText:@"not found"];
     }
+    [self.TextLabelCost setText:[numberFormatter stringFromNumber:detailFind.cost]];
+    [self.TextLabelDate setText:[dateFormatter stringFromDate:detailFind.date]];
+    [self.TextLabelFind setText:detailFind.name];
+    [self.TextViewDescription setText:detailFind.description];
+    [self.PictureFind setImage:[[UIImage alloc] initWithData:detailFind.picture]];
+
+
     NSEnumerator *categories = [[detailFind categoryKeys] objectEnumerator];
     NSNumber *c = [[NSNumber alloc] init];
     NSString *categoryList = [[NSString alloc] init];
     c = [categories nextObject];
-    categoryList = [categoryList stringByAppendingString:[[[self dataController] categoryForKey:c] name]];
+    if (c != nil)
+        categoryList = [categoryList stringByAppendingString:[[[self dataController] categoryForKey:c] name]];
+    else
+        categoryList = @"none";
     while ( c = [categories nextObject] )
     {
         categoryList = [categoryList stringByAppendingString:@", "];
@@ -132,7 +138,7 @@
         detailFind.name = [[editController TextFieldName] text];
         detailFind.cost = [numberFormater numberFromString:[[editController TextFieldCost] text]];
         detailFind.storeKey = [editController storeKey];
-        detailFind.categoryKey = [[editController categoryKeys] objectAtIndex:0];
+        //detailFind.categoryKey = [[editController categoryKeys] objectAtIndex:0];
         detailFind.categoryKeys = [editController categoryKeys];
         detailFind.picture = [editController imageData];
         detailFind.description = [[editController TextFieldDescription] text];
